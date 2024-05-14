@@ -6,7 +6,7 @@ Hướng dẫn sử dụng branch Dev
 ```
 git clone git@github.com:UITWEB-development/FINAL-REPORT.git
 ```
-- Step 2. Access FINAL-REPORT file and checkout currently branch:
+- Step 2. Access FINAL-REPORT file and checkout dev branch:
 ```
 cd FINAL-REPORT
 git checkout dev
