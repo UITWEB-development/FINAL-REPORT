@@ -17,16 +17,20 @@ git checkout -b <your branch>
 ```
 - Step 4. Install composer- dependencies:
 ```
-php install
+composer install
 ```
 - Step 5. Install npm- dependencies
 ```
 npm install
 ```
 - Step 6. Copy .env.example file to .env
+      + Using bash
 ```
-cp .env.example .env  => using bash
-copy .env.example .env => using powershell
+cp .env.example .env
+```
+    or Using powershell
+```
+copy .env.example .env 
 ```
 - Step 7. Generate encryption key and run migration
 ```
