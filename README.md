@@ -4,7 +4,7 @@ Guildline how to use this code. (Using Gitbash)
 
 - Step 1. Clone code:
 ```
-git clone git@github.com:UITWEB-development/FINAL-REPORT.git
+git clone https://github.com/UITWEB-development/FINAL-REPORT.git
 ```
 - Step 2. Access FINAL-REPORT file and checkout currently branch:
 ```
@@ -17,7 +17,7 @@ git checkout -b <your branch>
 ```
 - Step 4. Install composer- dependencies:
 ```
-php install
+composer install
 ```
 - Step 5. Install npm- dependencies
 ```
