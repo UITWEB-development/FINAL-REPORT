@@ -1,6 +1,6 @@
 
 # Dev description
-Hướng dẫn sử dụng branch Dev
+Guildline how to use this code. (Using Gitbash)
 
 - Step 1. Clone code:
 ```
