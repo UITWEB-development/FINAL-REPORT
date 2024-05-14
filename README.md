@@ -24,11 +24,11 @@ composer install
 npm install
 ```
 - Step 6. Copy .env.example file to .env
-      + Using bash
+      - Using bash
 ```
 cp .env.example .env
 ```
-    or Using powershell
+     - or Using powershell
 ```
 copy .env.example .env 
 ```
