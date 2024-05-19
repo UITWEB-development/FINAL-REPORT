@@ -17,22 +17,23 @@ class DatabaseSeeder extends Seeder
         User::factory()->create([
             'name' => 'Admin',
             'email' => 'admin@example.com',
-            'password' => 'admin',
-            'role_id' => 1
+            'password' => '12345678',
+            'role_id' => 0,
+            'email_verified_at' => null
         ]);
 
         User::factory()->create([
             'name' => 'Seller',
             'email' => 'seller@example.com',
-            'password' => 'seller',
-            'role_id' => 2
+            'password' => '12345678',
+            'role_id' => 1
         ]);
 
         User::factory()->create([
             'name' => 'User',
             'email' => 'user@example.com',
-            'password' => 'user',
-            'role_id' => 3
+            'password' => '12345678',
+            'role_id' => 2
         ]);
     }
 }
