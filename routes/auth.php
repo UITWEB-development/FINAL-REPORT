@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Livewire\AdminSignin;
+use App\Livewire\ForgotPassword;
 use App\Livewire\Signin;
 use App\Livewire\Signup;
 use Illuminate\Support\Facades\Route;
@@ -11,6 +12,7 @@ Route::middleware(['guest'])->group(function() {
     Route::get('/{user_type}/sign-up', Signup::class)->whereIn('user_type', ['user', 'seller'])->name('signup');
     Route::get('/{user_type}/sign-in', Signin::class)->whereIn('user_type', ['user', 'seller'])->name('signin');
     Route::get('/admin/sign-in', AdminSignin::class)->name('admin.signin');
+    Route::get('/forgot-password', ForgotPassword::class)->name('password.forgot');
 });
 
 
