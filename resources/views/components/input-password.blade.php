@@ -1,7 +1,7 @@
-@props(['title','name', 'input_class'])
+@props(['title','name', 'input_class', 'label_class'])
 
 <div class="flex flex-col">
-    <label for="{{ $name }}" class="block font-bold text-10xl">{{ $title }}</label>
+    <label for="{{ $name }}" class="{{ $label_class ?? 'block font-bold text-10xl'}}">{{ $title }}</label>
     <div x-data="{show : false, value: ''}" x-modelable="value" class="relative flex items-center">
         <input :type=" show ? 'text': 'password'" name="{{ $name }}" id="{{ $name }}" required x-model="value" class="{{$input_class ?? 'block w-full p-2 rounded-md border-gray-400 border-2 focus:outline-none focus:ring-0 focus:border-black pr-10'}}" placeholder="{{ $title }}" {{ $attributes }}>
         <button type="button" class="absolute right-2 bg-transparent flex items-center justify-center hover:text-blue-600" @click="show = !show" tabindex="-1">

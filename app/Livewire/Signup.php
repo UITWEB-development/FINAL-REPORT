@@ -2,13 +2,14 @@
 
 namespace App\Livewire;
 
-use App\Trait\UserTypeMount;
+
 use Livewire\Attributes\Layout;
 use Livewire\Component;
 use Livewire\Attributes\Locked;
 use Livewire\Attributes\Title;
 use Livewire\Attributes\Validate;
 use App\Models\User;
+use App\Traits\UserTypeMount;
 
 #[Layout('components.layouts.user-auth')]
 #[Title('Sign Up')] 

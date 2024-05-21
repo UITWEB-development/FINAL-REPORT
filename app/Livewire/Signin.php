@@ -2,7 +2,7 @@
 
 namespace App\Livewire;
 
-use App\Trait\UserTypeMount;
+use App\Traits\UserTypeMount;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
 use Livewire\Attributes\Locked;
@@ -62,6 +62,11 @@ class Signin extends Component
         }
 
         session()->flash('error', 'Invalid credentials!');
+    }
+
+    public function forgotPassword() {
+        session()->put('sign_in_url', "/$this->user_type/sign-in");
+        return redirect()->route('password.email');
     }
 
     public function googleSigin() {

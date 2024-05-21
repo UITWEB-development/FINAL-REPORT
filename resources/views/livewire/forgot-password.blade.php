@@ -1,12 +1,16 @@
 <div class="flex justify-center items-center h-[85.8vh]">
     <div class="w-[80%] md:w-[60%] lg:w-[70%] xl:w-[38.6%]  bg-[#fadaa3] aspect-[1000/705] p-[3.5cqmin] rounded-2xl flex flex-col">
-        <form wire:submit="signin">
-            <h1 class="text-center font-[1000] text-[5cqmin]">RESET PASSWORD</h1>
+        <form wire:submit="send">
+            <h1 class="text-center font-[1000] text-[5cqmin]">FORGOT PASSWORD</h1>
             <p class="text-center text-[2.5cqmin]">Enter your email address & we’ll send you a link to reset your password</p>
-            @if (session('error'))
-                <p class="text-red-600 text-center font-bold">{{ session('error') }}</p>
+
+            @if (session('status'))
+                <p class="text-green-600 text-center font-bold">{{ session('status') }}</p>
             @endif
 
+            @if (session('email'))
+                <p class="text-red-600 text-center font-bold">{{ session('email') }}</p>
+            @endif
         
 
             {{-- Email --}}
@@ -26,7 +30,7 @@
 
         <div>
             <div class="text-center">
-                <p>Return to <a href="" class="text-blue-700 font-bold">Sign in</a></p>
+                <p>Return to <a wire:click.prevent="returnSignin" href="" class="text-blue-700 font-bold">Sign in</a></p>
             </div>
         </div>
     </div>
