@@ -8,10 +8,14 @@ use Livewire\Attributes\Validate;
 use Livewire\Attributes\Layout;
 use Livewire\Attributes\Title;
 use App\Constants\AuthStatusConstants;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\ValidationException;
 
+
+use function PHPSTORM_META\map;
 
 #[Layout('components.layouts.user-auth')]
-#[Title('Admin sign in')] 
+#[Title('Admin Sign In')] 
 class AdminSignin extends Component
 {
     use Toast;
@@ -30,7 +34,36 @@ class AdminSignin extends Component
     public $password;
 
     public function signin() {
-        $this->validate();
+        $validator = Validator::make(
+            [
+                'email' => $this->email,
+                'password' => $this->password,
+            ],
+            [
+                'email' => 'required|lowercase|email|max:255',
+                'password' => 'required|string|min:8',
+            ],
+            [
+                'required' => 'The :attribute field is required',
+                'string' => 'The :attribute must be a string.',
+                'min:8' => 'The :attribute must contain at least 8 characters',
+            ]
+        );
+
+        if ($validator->fails()) {
+            $errors = $validator->errors()->all();
+
+            foreach ($errors as $error) {
+                $this->toast([
+                    'type' => 'danger',
+                    'expand' => true,
+                    'message' => $error,
+                    'position' => 'top-right',
+                ]);   
+            }
+
+            throw new ValidationException($validator);
+        }
 
         $credentials = [
             'email' => $this->email,

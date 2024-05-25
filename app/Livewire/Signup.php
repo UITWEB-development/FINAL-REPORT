@@ -47,13 +47,13 @@ class Signup extends Component
             ],
             [
                 'name' => 'required|string|between:1,255',
-                'email' => 'required|string|lowercase|email|max:255|unique:users',
+                'email' => 'required|lowercase|email|max:255|unique:users',
                 'password' => 'required|confirmed|string|min:8',
             ],
             [
                 'required' => 'The :attribute field is required',
                 'string' => 'The :attribute must be a string.',
-                'min:8' => 'The :attribute must contain at least 8 character'
+                'min:8' => 'The :attribute must contain at least 8 characters'
             ]
         );
 

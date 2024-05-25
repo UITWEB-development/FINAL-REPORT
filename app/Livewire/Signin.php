@@ -10,7 +10,6 @@ use Livewire\Attributes\Layout;
 use Livewire\Component;
 use Livewire\Attributes\Locked;
 use Livewire\Attributes\Title;
-use Livewire\Attributes\Validate;
 use Illuminate\Validation\ValidationException;
 
 
@@ -46,14 +45,14 @@ class Signin extends Component
                 'remember_me' => $this->remember_me,
             ],
             [
-                'email' => 'required|string|lowercase|email|max:255',
+                'email' => 'required|lowercase|email|max:255',
                 'password' => 'required|string|min:8',
                 'remember_me' => 'boolean',
             ],
             [
                 'required' => 'The :attribute field is required',
                 'string' => 'The :attribute must be a string.',
-                'min:8' => 'The :attribute must contain at least 8 character',
+                'min:8' => 'The :attribute must contain at least 8 characters',
                 'boolean' => 'The :attribute must be a boolean.'
             ]
         );

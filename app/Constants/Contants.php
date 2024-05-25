@@ -9,4 +9,6 @@ class AuthStatusConstants {
 
     const INVALID_CREDENTIALS = 'Invalid credentials!';
     const AUTHENTICATION_ERROR = 'Authentication failed!';
+
+    const INVALID_RESET_TOKEN = 'Invalid reset token!';
 }

@@ -2,9 +2,6 @@
     <livewire:toast></livewire:toast>
     <div class="bg-[#FADAA3] w-[80vw] md:w-[60.18vw] lg:w-[46.18vw] aspect-[482/320] py-5 px-12 rounded-xl">
         <h1 class="text-center font-bold text-[6cqmin]">ADMIN PANEL</h1>
-        @if (session('error'))
-            <p class="text-red-600 text-center font-bold">{{ session('error') }}</p>
-        @endif
         <form wire:submit="signin" class="flex flex-col items-center gap-5" >
             <div class="w-full">
                 <label for="email" class="font-extrabold text-[4cqmin]">Email</label>

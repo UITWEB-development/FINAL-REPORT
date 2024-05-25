@@ -11,14 +11,13 @@
                     <label for="email" class="block font-extrabold text-[3cqmin]">Email</label>
                     <input wire:model="email" type="email" name="email" id="email" class="block w-full h-full p-3 rounded-lg border-gray-400 border-2 text-[2.5cqmin]" required placeholder="Email">
                 </div>
-                <x-input-error name="email"></x-input-error>
             </div>
-            
+
+            {{-- Submit Button  --}}
             <div class="mb-[4cqmin]">
                 <input type="submit" value="Send email" class="block w-full p-3 rounded-lg border-2 font-bold bg-[#cd853f] outline-none border-none text-white hover:bg-blue-700 text-[2.5cqmin]">
             </div>
         </form>
-
 
         <div>
             <div class="text-center">
