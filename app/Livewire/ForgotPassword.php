@@ -5,10 +5,12 @@ namespace App\Livewire;
 use App\Models\User;
 use App\Traits\Toast;
 use Illuminate\Support\Facades\Password;
+use Illuminate\Support\Facades\Validator;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
 use Livewire\Attributes\Title;
 use Livewire\Attributes\Validate;
+use Illuminate\Validation\ValidationException;
 
 
 #[Layout('components.layouts.user-auth')]
@@ -17,11 +19,37 @@ class ForgotPassword extends Component
 {
     use Toast;
         
-    #[Validate('required|string|lowercase|email|max:255')]
     public $email;
 
     public function send() {
-        $this->validate();
+
+        $validator = Validator::make(
+            [
+                'email' => $this->email
+            ],
+            [
+                'email' => 'required|lowercase|email|max:255',
+            ],
+            [
+                'required' => 'The :attribute field is required',
+                'max:255' => 'The :attribute must contain at most 255 characters',
+            ]
+        );
+
+        if ($validator->fails()) {
+            $errors = $validator->errors()->all();
+
+            foreach ($errors as $error) {
+                $this->toast([
+                    'type' => 'danger',
+                    'expand' => true,
+                    'message' => $error,
+                    'position' => 'top-right',
+                ]);   
+            }
+
+            throw new ValidationException($validator);
+        }
 
         $status = Password::sendResetLink(
             $this->only('email')
