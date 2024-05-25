@@ -7,7 +7,7 @@
                 <label for="email" class="font-extrabold text-[4cqmin]">Email</label>
                 <div class="border-solid px-4 flex gap-5 items-center mt-2 relative txt_field">
                     <img src="{{ asset('assets/icon_user.png') }}" alt="User icon" class="block h-[5cqmin]">
-                    <input wire:model="email" type="email" name="email" id="email"required class="w-full border-none bg-[#FADAA3] outline-none text-[5cqmin] peer">
+                    <input wire:model="email" type="email" name="email" id="email"required class="w-full border-none bg-[#FADAA3] outline-none text-[5cqmin]  peer">
                     <span class="absolute bottom-0 left-0 right-0 block before:content-[''] before:absolute before:top-full before:w-0 before:h-1 before:left-0 before:bg-[#CD853F] before:transition-all before:duration-500 peer-focus:before:w-full peer-hover:before:w-full"></span>
                 </div>
             </div>
@@ -15,7 +15,7 @@
                 <label for="password" class="font-extrabold text-[4cqmin]">Password</label>
                 <div class="border-solid px-4 flex gap-5 items-center mt-2 relative txt_field">
                     <img src="{{ asset('assets/icon_key_password.png') }}" alt="Key icon" class="block h-[5cqmin]">
-                    <input wire:model="password" type="password" name="password" id="password" required class="w-full border-none bg-[#FADAA3] outline-none text-[5cqmin] peer"> 
+                    <input pattern=".{8,}" oninvalid="this.setCustomValidity('Password must be at least 8 characters long')" oninput="this.setCustomValidity('')" wire:model="password" type="password" name="password" id="password" required class="w-full border-none bg-[#FADAA3] outline-none text-[5cqmin] peer"> 
                     <span class="absolute bottom-0 left-0 right-0 block before:content-[''] before:absolute before:top-full before:w-0 before:h-1 before:left-0 before:bg-[#CD853F] before:transition-all before:duration-500 peer-focus:before:w-full peer-hover:before:w-full"></span>
                 </div>
             </div>

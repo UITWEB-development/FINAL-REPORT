@@ -35,7 +35,7 @@
     
             {{-- PASSWORD --}}
             <div class="mt-[2cqmin]">
-                <x-input-password title="Password" name="password" label_class="text-[3cqmin] block font-bold" input_class="block w-full h-full p-3 rounded-md border-gray-400 border-2 focus:outline-none focus:ring-0 focus:border-black pr-10 text-[2.5cqmin] h-[7.5cqmin]" wire:model="password"></x-input-password>
+            <x-input-password pattern=".{8,}" title="Password" name="password" wire:model="password" label_class="block font-bold text-[2.5cqmin]" input_class="block w-full p-2 rounded-md border-gray-400 border-2 h-[5.9cqmin] text-[2.3cqmin]" oninvalid="this.setCustomValidity('Password must be at least 8 characters long')" oninput="this.setCustomValidity('')"></x-input-password>
             </div>
             
             {{-- REMEMBER PASSWORD --}}
