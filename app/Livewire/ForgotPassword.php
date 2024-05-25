@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use App\Models\User;
+use App\Traits\Toast;
 use Illuminate\Support\Facades\Password;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
@@ -14,6 +15,7 @@ use Livewire\Attributes\Validate;
 #[Title('Forgot Password')] 
 class ForgotPassword extends Component
 {
+    use Toast;
         
     #[Validate('required|string|lowercase|email|max:255')]
     public $email;
@@ -25,7 +27,21 @@ class ForgotPassword extends Component
             $this->only('email')
         );
 
-        return $status === Password::RESET_LINK_SENT ? session()->flash('status', __($status)) : session()->flash('email', __($status));
+        if ($status === Password::RESET_LINK_SENT) {
+            $this->toast([
+                'position' => 'top-right',
+                'expand' => true,
+                'type' => 'success',
+                'message' => __($status),
+            ]);
+        } else {
+            $this->toast([
+                'position' => 'top-right',
+                'expand' => true,
+                'type' => 'danger',
+                'message' => __($status),
+            ]);
+        }
     }
     
     public function returnSignin() {

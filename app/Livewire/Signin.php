@@ -2,42 +2,34 @@
 
 namespace App\Livewire;
 
+use App\Constants\AuthStatusConstants;
+use App\Traits\Toast;
 use App\Traits\UserTypeMount;
+use Illuminate\Support\Facades\Validator;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
 use Livewire\Attributes\Locked;
 use Livewire\Attributes\Title;
 use Livewire\Attributes\Validate;
+use Illuminate\Validation\ValidationException;
 
 
 #[Layout('components.layouts.user-auth')]
 #[Title('Sign In')] 
 class Signin extends Component
 {
-    use UserTypeMount;
+    use UserTypeMount, Toast;
 
     #[Locked]
-    #[Validate('required|integer|between:1,2')]
     public $role_id;
     
     #[Locked]
     public $user_type;
 
-    #[Validate('required|string|lowercase|email|max:255')]
     public $email;
 
-    #[Validate([
-        'required',
-        'string',
-        'min:8',
-    ], message:[
-        'required' => 'The :attribute is required.',
-        'string' => 'The :attribute must be a string.',
-        'min:8' => 'The :attribute must contain at least 8 character',
-    ])]
     public $password;
 
-    #[Validate('boolean')]
     public $remember_me = false;
 
     public function render()
@@ -46,7 +38,40 @@ class Signin extends Component
     }
 
     public function signin() {
-        $this->validate();
+
+        $validator = Validator::make(
+            [
+                'email' => $this->email,
+                'password' => $this->password,
+                'remember_me' => $this->remember_me,
+            ],
+            [
+                'email' => 'required|string|lowercase|email|max:255',
+                'password' => 'required|string|min:8',
+                'remember_me' => 'boolean',
+            ],
+            [
+                'required' => 'The :attribute field is required',
+                'string' => 'The :attribute must be a string.',
+                'min:8' => 'The :attribute must contain at least 8 character',
+                'boolean' => 'The :attribute must be a boolean.'
+            ]
+        );
+
+        if ($validator->fails()) {
+            $errors = $validator->errors()->all();
+
+            foreach ($errors as $error) {
+                $this->toast([
+                    'type' => 'danger',
+                    'expand' => true,
+                    'message' => $error,
+                    'position' => 'top-right',
+                ]);   
+            }
+
+            throw new ValidationException($validator);
+        }
 
         $credentials = [
             'email' => $this->email,
@@ -57,11 +82,16 @@ class Signin extends Component
         if (auth()->attempt($credentials, $this->remember_me)) {
             session()->regenerate();
 
-            session()->flash('message', 'You have successfully signed in!');
+            session()->flash('success', AuthStatusConstants::SIGN_IN_SUCCESS);
             return $this->redirectIntended('/'.$this->user_type);
         }
 
-        session()->flash('error', 'Invalid credentials!');
+        $this->toast([
+            'type' => 'danger',
+            'position' => 'top-right',
+            'expand' => false,
+            'message' => AuthStatusConstants::INVALID_CREDENTIALS
+        ]);
     }
 
     public function forgotPassword() {
@@ -77,4 +107,5 @@ class Signin extends Component
         ]);
         $this->redirectRoute('google.redirect');
     }
+
 }

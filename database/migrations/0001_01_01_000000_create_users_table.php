@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('password');
             $table->tinyInteger('role_id', false, true);
             $table->string('google_id')->nullable();
+            $table->string('profile_image_path')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
             $table->timestamps();

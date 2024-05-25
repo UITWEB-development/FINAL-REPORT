@@ -1,3 +1,3 @@
 @props(['name'])
 
-<div class="text-red-600" {{ $attributes }}>@error($name) {{ $message }} @enderror</div>
+<div class="text-red-600 text-[2cqmin]" {{ $attributes }}>@error($name) {{ $message }} @enderror</div>

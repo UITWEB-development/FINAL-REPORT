@@ -2,6 +2,8 @@
     <form wire:submit="signup" class="w-[80%] md:w-[60%] lg:w-[70%] xl:w-[38.46%] max-h-[90%] bg-[#fadaa3] aspect-[1047/997] p-[3.5cqmin] rounded-2xl flex flex-col gap-[2cqmin]">
         <h1 class="text-center font-extrabold text-[5cqmin]">SIGN UP</h1>
         
+
+        <livewire:toast></livewire:toast>
         {{-- NAME --}}
         <div>
             <div class="flex flex-col w-full">
@@ -15,7 +17,7 @@
                     </div>
                 </div>
             </div>
-            <x-input-error name="name"></x-input-error>
+            {{-- <x-input-error name="name"></x-input-error> --}}
         </div>
 
         {{-- Email --}}
@@ -24,29 +26,30 @@
                 <label for="email" class="block font-bold text-[2.5cqmin]">Email</label>
                 <input wire:model="email" type="email" name="email" id="email" class="block w-full p-2 rounded-md border-gray-400 border-2 h-[5.9cqmin] text-[2.3cqmin]" required placeholder="Email">
             </div>
-            <x-input-error name="email"></x-input-error>
+            {{-- <x-input-error name="email"></x-input-error> --}}
         </div>
         
 
         {{-- PASSWORD --}}
         <div>
             <x-input-password title="Password" name="password" wire:model="password" label_class="block font-bold text-[2.5cqmin]" input_class="block w-full p-2 rounded-md border-gray-400 border-2 h-[5.9cqmin] text-[2.3cqmin]"></x-input-password>
-            <x-input-error name="password"></x-input-error>
+            {{-- <x-input-error name="password"></x-input-error> --}}
         </div>
     
         {{-- CONFIRM PASSORD --}}
         <div>
             <x-input-password title="Confirm password" name="password_confirmation" wire:model="password_confirmation" label_class="block font-bold text-[2.5cqmin]" input_class="block w-full p-2 rounded-md border-gray-400 border-2 h-[5.9cqmin] text-[2.3cqmin]"></x-input-password>
+            {{-- <x-input-error name="password_confirmation"></x-input-error> --}}
         </div>
         
         {{-- SIGN UP --}}
         <div>
-            <label for="email" class="block font-bold text-[2.5cqmin] select-none">&nbsp;</label>
+            <label for="email" class="block font-bold text-[2cqmin] select-none">&nbsp;</label>
             <input type="submit" value="Sign up" class="flex items-center justify-center w-full rounded-md border-2 font-bold bg-[#cd853f] outline-none border-none text-white hover:bg-blue-700 h-[5.9cqmin] text-[2.5cqmin]">
         </div>
 
 
-        <div class="text-center text-[2.5cqmin] mt-[1cqmin]">
+        <div class="text-center text-[2.5cqmin]">   
             <p>Already have an account? <a href="sign-in" class="text-blue-700 font-bold">Sign in now</a></p>
         </div>
     </form>

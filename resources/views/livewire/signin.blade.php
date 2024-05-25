@@ -1,32 +1,41 @@
 <div class="flex justify-center items-center h-[85.8vh] bg-[#f7ebd3]">
+    <livewire:toast></livewire:toast>
+
+    @if(session()->has('success'))
+        <script>
+            window.onload = function() {
+                window.toast('{{session()->get("success")}}', {type: "success", position: "top-right"})
+            }
+        </script>
+    @endif
+
+    @if(session()->has('danger'))
+        <script>
+            window.onload = function() {
+                window.toast('{{session()->get("danger")}}', {type: "danger", position: "top-right"})
+            }
+        </script>
+    @endif
+
+
     <div class="w-[80%] md:w-[60%] lg:w-[70%] xl:w-[38.46%] max-h-[90%] bg-[#fadaa3] aspect-[1045/1000] p-[3.5cqmin] rounded-2xl flex flex-col">
         <form wire:submit="signin" class="flex flex-col gap-[1.5cqmin]">
             <h1 class="text-center font-extrabold text-[5cqmin]">SIGN IN</h1>
-            
-            @if (session('status'))
-                <p class="text-green-600 text-center font-bold">{{ session('status') }}</p>
-            @endif
 
-            @if (session('error'))
-                <p class="text-red-600 text-center font-bold">{{ session('error') }}</p>
-            @endif
 
-        
-
+    
             {{-- Email --}}
             <div>
                 <div>
                     <label for="email" class="block font-bold text-[3cqmin]">Email</label>
                     <input wire:model="email" type="email" name="email" id="email" class="block w-full p-3 rounded-md border-gray-400 border-2 text-[2.5cqmin] h-[7.5cqmin]" required placeholder="Email">
                 </div>
-                <x-input-error name="email"></x-input-error>
             </div>
             
     
             {{-- PASSWORD --}}
             <div class="mt-[2cqmin]">
                 <x-input-password title="Password" name="password" label_class="text-[3cqmin] block font-bold" input_class="block w-full h-full p-3 rounded-md border-gray-400 border-2 focus:outline-none focus:ring-0 focus:border-black pr-10 text-[2.5cqmin] h-[7.5cqmin]" wire:model="password"></x-input-password>
-                <x-input-error name="password"></x-input-error>
             </div>
             
             {{-- REMEMBER PASSWORD --}}

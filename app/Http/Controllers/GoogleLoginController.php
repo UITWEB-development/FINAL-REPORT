@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Constants\AuthStatusConstants;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Laravel\Socialite\Facades\Socialite;
@@ -23,12 +24,17 @@ class GoogleLoginController extends Controller
         $user_type = session()->pull('user_type');
 
 
-        $googleUser = Socialite::driver('google')->stateless()->user();
+        try {
+            $googleUser = Socialite::driver('google')->stateless()->user();
+        } catch (\Throwable $th) {
+            session()->flash('danger', AuthStatusConstants::AUTHENTICATION_ERROR);
+            return redirect($redirect_url.'/sign-in');
+        }
         $user = User::where('email', $googleUser->email)->first();
 
         if ($user) {
            if ($user->role_id !== $role_id) {
-                session()->flash('error', 'Invalid credentials!');
+                session()->flash('danger', AuthStatusConstants::INVALID_CREDENTIALS);
                 return redirect()->route('signin', ['user_type' => $user_type]);
            }
         } else {
@@ -38,6 +44,7 @@ class GoogleLoginController extends Controller
 
         Auth::login($user);
 
+        session()->flash('success', AuthStatusConstants::SIGN_IN_SUCCESS);
         return redirect($redirect_url);
     }
 }

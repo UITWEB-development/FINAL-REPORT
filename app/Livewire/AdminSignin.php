@@ -2,17 +2,19 @@
 
 namespace App\Livewire;
 
+use App\Traits\Toast;
 use Livewire\Component;
 use Livewire\Attributes\Validate;
 use Livewire\Attributes\Layout;
 use Livewire\Attributes\Title;
+use App\Constants\AuthStatusConstants;
 
 
 #[Layout('components.layouts.user-auth')]
 #[Title('Admin sign in')] 
 class AdminSignin extends Component
 {
-
+    use Toast;
     #[Validate('required|string|lowercase|email|max:255')]
     public $email;
 
@@ -38,11 +40,17 @@ class AdminSignin extends Component
 
         if (auth()->attempt($credentials)) {
             session()->regenerate();
-            session()->flash('message', 'You have successfully signed in!');
+            session()->flash('success', AuthStatusConstants::SIGN_IN_SUCCESS);
             return $this->redirectIntended('/admin');
         }
 
-        session()->flash('error', 'Invalid credentials!');
+        
+        $this->toast([
+            'type' => 'danger',
+            'position' => 'top-right',
+            'expand' => false,
+            'message' => AuthStatusConstants::INVALID_CREDENTIALS
+        ]);
     }
 
     public function render()
