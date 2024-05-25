@@ -21,7 +21,12 @@
     
         {{-- CONFIRM PASSORD --}}
         <div>
-            <x-input-password title="Confirm password" name="password_confirmation" wire:model="password_confirmation"></x-input-password>
+            <x-input-password 
+            title="Confirm password" name="password_confirmation" wire:model="password_confirmation"
+            pattern=".{8,}"
+            oninvalid="this.setCustomValidity('Password must be at least 8 characters long')"
+            oninput="this.setCustomValidity('')"
+            ></x-input-password>
         </div>
         
         <div class="mt-[3cqmin]">

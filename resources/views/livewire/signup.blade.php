@@ -41,7 +41,7 @@
     
         {{-- CONFIRM PASSORD --}}
         <div>
-            <x-input-password title="Confirm password" name="password_confirmation" wire:model="password_confirmation" label_class="block font-bold text-[2.5cqmin]" input_class="block w-full p-2 rounded-md border-gray-400 border-2 h-[5.9cqmin] text-[2.3cqmin]"></x-input-password>
+            <x-input-password pattern=".{8,}" title="Confirm password" name="password_confirmation" wire:model="password_confirmation" label_class="block font-bold text-[2.5cqmin]" input_class="block w-full p-2 rounded-md border-gray-400 border-2 h-[5.9cqmin] text-[2.3cqmin]" oninvalid="this.setCustomValidity('Password must be at least 8 characters long')" oninput="this.setCustomValidity('')"></x-input-password>
         </div>
         
         {{-- SIGN UP --}}
