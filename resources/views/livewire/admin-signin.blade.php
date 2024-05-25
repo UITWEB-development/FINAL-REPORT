@@ -1,4 +1,5 @@
 <div class="flex justify-center items-center h-[85.8vh]">
+    <livewire:toast></livewire:toast>
     <div class="bg-[#FADAA3] w-[80vw] md:w-[60.18vw] lg:w-[46.18vw] aspect-[482/320] py-5 px-12 rounded-xl">
         <h1 class="text-center font-bold text-[6cqmin]">ADMIN PANEL</h1>
         @if (session('error'))

@@ -6,8 +6,9 @@ use App\Livewire\UserDashboard;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return "Home page";
+    return view('welcome');
 });
+
 
 Route::get('/admin', AdminDashboard::class)->middleware('auth:admin,0');
 Route::get('/seller', SellerDashboard::class)->middleware('auth:seller,1');
