@@ -43,11 +43,15 @@ php artisan migrate
 ```
 php artisan db:seed
 ```
-- Step 9. Run vite 
+- Step 9. Run autoload:
+```
+composer dump-autoload
+```
+- Step 10. Run vite 
 ```
 npm run dev
 ```
-- Step 10. Run Laravel dev server
+- Step 11. Run Laravel dev server
 ```
 php artisan serve
 ```
