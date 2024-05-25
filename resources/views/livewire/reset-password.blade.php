@@ -13,7 +13,10 @@
         
         {{-- PASSWORD --}}
         <div>
-            <x-input-password title="Password" name="password" wire:model="password"></x-input-password>
+            <x-input-password 
+            title="Password" name="password" wire:model="password"
+            pattern=".{8,}"
+            oninvalid="this.setCustomValidity('Password must be at least 8 characters long')" oninput="this.setCustomValidity('')"></x-input-password>
         </div>
     
         {{-- CONFIRM PASSORD --}}
