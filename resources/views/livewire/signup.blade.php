@@ -4,6 +4,8 @@
         
 
         <livewire:toast></livewire:toast>
+
+        
         {{-- NAME --}}
         <div>
             <div class="flex flex-col w-full">
@@ -17,7 +19,6 @@
                     </div>
                 </div>
             </div>
-            {{-- <x-input-error name="name"></x-input-error> --}}
         </div>
 
         {{-- Email --}}
@@ -26,20 +27,17 @@
                 <label for="email" class="block font-bold text-[2.5cqmin]">Email</label>
                 <input wire:model="email" type="email" name="email" id="email" class="block w-full p-2 rounded-md border-gray-400 border-2 h-[5.9cqmin] text-[2.3cqmin]" required placeholder="Email">
             </div>
-            {{-- <x-input-error name="email"></x-input-error> --}}
         </div>
         
 
         {{-- PASSWORD --}}
         <div>
             <x-input-password title="Password" name="password" wire:model="password" label_class="block font-bold text-[2.5cqmin]" input_class="block w-full p-2 rounded-md border-gray-400 border-2 h-[5.9cqmin] text-[2.3cqmin]"></x-input-password>
-            {{-- <x-input-error name="password"></x-input-error> --}}
         </div>
     
         {{-- CONFIRM PASSORD --}}
         <div>
             <x-input-password title="Confirm password" name="password_confirmation" wire:model="password_confirmation" label_class="block font-bold text-[2.5cqmin]" input_class="block w-full p-2 rounded-md border-gray-400 border-2 h-[5.9cqmin] text-[2.3cqmin]"></x-input-password>
-            {{-- <x-input-error name="password_confirmation"></x-input-error> --}}
         </div>
         
         {{-- SIGN UP --}}
@@ -49,7 +47,7 @@
         </div>
 
 
-        <div class="text-center text-[2.5cqmin]">   
+        <div class="text-center text-[2.5cqmin] text-nowrap">   
             <p>Already have an account? <a href="sign-in" class="text-blue-700 font-bold">Sign in now</a></p>
         </div>
     </form>
