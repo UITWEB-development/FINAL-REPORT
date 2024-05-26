@@ -1,5 +1,5 @@
 <div class="flex flex-col justify-center items-center h-[85.8vh] bg-[#f7ebd3]">
-    <form wire:submit="signup" class="w-[80%] md:w-[60%] lg:w-[70%] xl:w-[38.46%] max-h-[90%] bg-[#fadaa3] aspect-[1047/997] p-[3.5cqmin] rounded-2xl flex flex-col gap-[2cqmin]">
+    <form wire:submit="signup" class="w-[80%] md:w-[60%] lg:w-[70%] xl:w-[38.46%] max-h-[90%] bg-[#fadaa3] aspect-[1047/997] px-[3.5cqmin] py-[2cqmin] rounded-2xl flex flex-col gap-[2cqmin]">
         <h1 class="text-center font-extrabold text-[5cqmin]">SIGN UP</h1>
         
 
@@ -47,7 +47,7 @@
         {{-- SIGN UP --}}
         <div>
             <label for="email" class="block font-bold text-[2cqmin] select-none">&nbsp;</label>
-            <input type="submit" value="Sign up" class="flex items-center justify-center w-full rounded-md border-2 font-bold bg-[#cd853f] outline-none border-none text-white hover:bg-blue-700 h-[5.9cqmin] text-[2.5cqmin]">
+            <input type="submit" value="Sign up" class="flex items-center justify-center w-full rounded-md border-2 font-bold bg-[#cd853f] outline-none border-none text-white hover:bg-[#9e6a35] active:bg-[#9e6a35] h-[5.9cqmin] text-[2.5cqmin]">
         </div>
 
 

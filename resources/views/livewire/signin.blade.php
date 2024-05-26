@@ -18,7 +18,7 @@
     @endif
 
 
-    <div class="w-[80%] md:w-[60%] lg:w-[70%] xl:w-[38.46%] max-h-[90%] bg-[#fadaa3] aspect-[1045/1000] p-[3.5cqmin] rounded-2xl flex flex-col">
+    <div class="w-[80%] md:w-[60%] lg:w-[70%] xl:w-[38.46%] max-h-[90%] bg-[#fadaa3] aspect-[1045/1000] px-[3.5cqmin] py-[2cqmin] rounded-2xl flex flex-col">
         <form wire:submit="signin" class="flex flex-col gap-[1.5cqmin]">
             <h1 class="text-center font-extrabold text-[5cqmin]">SIGN IN</h1>
 
@@ -35,7 +35,7 @@
     
             {{-- PASSWORD --}}
             <div class="mt-[2cqmin]">
-            <x-input-password pattern=".{8,}" title="Password" name="password" wire:model="password" label_class="block font-bold text-[2.5cqmin]" input_class="block w-full p-2 rounded-md border-gray-400 border-2 h-[5.9cqmin] text-[2.3cqmin]" oninvalid="this.setCustomValidity('Password must be at least 8 characters long')" oninput="this.setCustomValidity('')"></x-input-password>
+                <x-input-password title="Password" name="password" label_class="text-[3cqmin] block font-bold" input_class="block w-full p-3 rounded-md border-gray-400 border-2 focus:outline-none focus:ring-0 focus:border-black pr-10 text-[2.5cqmin] h-[7.5cqmin]" wire:model="password" pattern=".{8,}" oninvalid="this.setCustomValidity('Password must be at least 8 characters long')" oninput="this.setCustomValidity('')"></x-input-password>
             </div>
             
             {{-- REMEMBER PASSWORD --}}
@@ -50,7 +50,7 @@
             </div>
     
             <div>
-                <input type="submit" value="Sign in" class="flex items-center justify-center w-full rounded-md font-bold bg-[#cd853f] outline-none border-none text-white hover:bg-blue-700 text-[3cqmin] h-[7cqmin]">
+                <input type="submit" value="Sign in" class="flex items-center justify-center w-full rounded-md font-bold bg-[#cd853f] outline-none border-none text-white hover:bg-[#9e6a35] active:bg-[#9e6a35] text-[3cqmin] h-[7.5cqmin]">
             </div>
         </form>
         <div class="flex justify-center my-[5cqmin]">
@@ -74,7 +74,7 @@
 
         <div>
             <div class="text-center text-[3cqmin]">
-                <p>Don't have an account? <a href="sign-up" class="text-blue-700 font-bold">Sign up now</a></p>
+                <p>Don't have an account? <a href="sign-up" class="text-blue-700 font-bold text-nowrap">Sign up now</a></p>
             </div>
         </div>
     </div>
