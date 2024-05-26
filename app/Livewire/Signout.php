@@ -2,20 +2,15 @@
 
 namespace App\Livewire;
 
-use Livewire\Attributes\Locked;
+
 use Livewire\Component;
 
 class Signout extends Component
 {   
-    #[Locked]
-    public string $signin_route;
-
-    public function mount(string $signin_route) {
-        $this->signin_route = $signin_route;
-    }
-
     public function signout() {
         $user = auth()->user();
+        $user_type = $user->role->name; 
+
         $user->remember_token = null;
         $user->save();
         
@@ -23,7 +18,7 @@ class Signout extends Component
         session()->invalidate();
         session()->regenerateToken();
         
-        $this->redirect($this->signin_route);
+        return redirect()->route('signin', ['user_type' => $user_type]);
     }
     public function render()
     {

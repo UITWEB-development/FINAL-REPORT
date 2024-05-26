@@ -7,6 +7,8 @@
             }
         </script>
     @endif
-    <p>Hello {{ auth()->user()->name}}</p>
-    <livewire:signout signin_route="/admin/sign-in"></livewire:signout>
+    <h2 class="mb-2 text-3xl font-semibold">Dashboard</h2>
+    <h3 class="mb-8 text-sm font-medium text-slate-500">
+        Welcome {{auth()->user()->name}}, everything looks great!
+    </h3>
 </div>

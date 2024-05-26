@@ -1,3 +1,1 @@
-<div>
-    <a class="bg-red-600 p-5 block" wire:click.prevent="signout">Signout</a>
-</div>
+<x-nav-item label="Signout" route_name="" route_active="" icon="bx-log-out" wire:click.prevent="signout"></x-nav-item>

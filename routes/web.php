@@ -7,11 +7,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
 
 
-Route::get('/admin', AdminDashboard::class)->middleware('auth:admin,0');
-Route::get('/seller', SellerDashboard::class)->middleware('auth:seller,1');
+
+Route::get('/admin', AdminDashboard::class)->middleware('auth:admin,0')->name('admin.dashboard');
+Route::get('/seller', SellerDashboard::class)->middleware('auth:seller,1')->name('seller.dashboard');
 Route::get('/user', UserDashboard::class)->middleware('auth:user,2');
+
 
 require __DIR__ . '/auth.php';

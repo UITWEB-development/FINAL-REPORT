@@ -5,8 +5,6 @@ use App\Livewire\ForgotPassword;
 use App\Livewire\ResetPassword;
 use App\Livewire\Signin;
 use App\Livewire\Signup;
-use App\Livewire\TestToast;
-use App\Livewire\Toast;
 use Illuminate\Support\Facades\Route;
 
 use function App\Helpers\getUserTypes;
@@ -32,7 +30,7 @@ Route::middleware(['guest'])->group(function() {
 Route::get('/google/redirect', [App\Http\Controllers\GoogleLoginController::class, 'redirectToGoogle'])->name('google.redirect');
 Route::get('/google/callback', [App\Http\Controllers\GoogleLoginController::class, 'handleGoogleCallback'])->name('google.callback');
 
-Route::get('test', Toast::class);
+
 
 
 
