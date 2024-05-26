@@ -15,7 +15,7 @@
 
             {{-- Submit Button  --}}
             <div class ='mb-[4cqmin]'>
-                <input type="submit" value="Send email" class="flex items-center justify-center w-full rounded-lg border-2 font-bold bg-[#cd853f] outline-none border-none text-white hover:bg-blue-700 h-[5.9cqmin] text-[2.5cqmin]">
+                <input type="submit" value="Send email" class="flex items-center justify-center w-full rounded-lg border-2 font-bold bg-[#cd853f] outline-none border-none text-white hover:bg-[#9e6a35] active:bg-[#9e6a35] h-[5.9cqmin] text-[2.5cqmin]">
             </div>
 
             <div class="text-center text-[2.5cqmin]">

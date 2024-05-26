@@ -49,6 +49,7 @@
                 </div>
             </div>
     
+            {{-- SUBMIT PASSWORD --}}
             <div>
                 <input type="submit" value="Sign in" class="flex items-center justify-center w-full rounded-md font-bold bg-[#cd853f] outline-none border-none text-white hover:bg-[#9e6a35] active:bg-[#9e6a35] text-[3cqmin] h-[7.5cqmin]">
             </div>
