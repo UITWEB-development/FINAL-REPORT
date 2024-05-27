@@ -27,7 +27,7 @@
         <div id="page-container" class="mx-auto flex min-h-screen w-full min-w-[320px] flex-col bg-white lg:ps-64">
             <!-- Page Sidebar -->
             <nav id="page-sidebar"
-                class="fixed bottom-0 start-0 top-0 z-50 flex h-full w-80 flex-col overflow-auto bg-[#ECCC95] transition-transform duration-500 ease-out lg:w-64 ltr:lg:translate-x-0 rtl:lg:translate-x-0"
+                class="fixed bottom-0 start-0 top-0 z-35 flex h-full w-80 flex-col overflow-auto bg-[#ECCC95] transition-transform duration-500 ease-out lg:w-64 ltr:lg:translate-x-0 rtl:lg:translate-x-0"
                 x-bind:class="{
           'ltr:-translate-x-full rtl:translate-x-full': !mobileSidebarOpen,
           'translate-x-0': mobileSidebarOpen,
@@ -37,8 +37,8 @@
                     <!-- Brand -->
                     <a href=""
                         class="inline-flex items-center gap-2 text-lg font-bold tracking-wide text-slate-800 transition hover:opacity-75 active:opacity-100">
-                        @svg('gouchill', 'bi bi-window-sidebar inline-block h-8 w-8')
-                        <span>GOUCHILL</span>
+                        @svg('gouchill', 'bi bi-window-sidebar inline-block h-36 w-36')
+                        
                     </a>
                     
                     <!-- END Brand -->
@@ -72,7 +72,7 @@
 
                 <!-- Sub Navigation -->
                 <div class="w-full flex-none space-y-3 p-4">
-                    <x-nav-item label="Settings" route_name="" route_active="" icon="settings"></x-nav-item>                    
+{{--                     <x-nav-item label="Settings" route_name="" route_active="" icon="settings"></x-nav-item>         --}}            
                     <livewire:signout></livewire:signout>
                 </div>
                 <!-- END Sub Navigation -->
@@ -105,15 +105,14 @@
                         <!-- Brand -->
                         <a href=""
                             class="inline-flex items-center gap-2 text-lg font-bold tracking-wide text-slate-800 transition hover:opacity-75 active:opacity-100">
-                            @svg('gouchill', 'bi bi-window-sidebar inline-block h-10 w-10')
-                            <span>GOUCHILL</span>
+                            @svg('gouchill', 'bi bi-window-sidebar inline-block h-44 w-44')
                         </a>
                         <!-- END Brand -->
                     </div>
                     <!-- END Middle Section -->
 
                     <!-- Right Section -->
-                    <div class="flex items-center gap-2 {{-- invisible --}}">
+                    <div class="flex items-center gap-2 invisible">
                         <!-- Settings -->
                         <a href=""
                             class="inline-flex items-center justify-center gap-2 rounded border border-slate-300 bg-white px-2 py-1.5 font-semibold leading-6 text-slate-800 shadow-sm hover:border-slate-300 hover:bg-slate-100 hover:text-slate-800 hover:shadow focus:outline-none focus:ring focus:ring-slate-500/25 active:border-white active:bg-white active:shadow-none">
@@ -155,6 +154,7 @@
         </div>
         <!-- END Page Container -->
     </div>
+    @livewire('wire-elements-modal')
 </body>
 
 </html>
