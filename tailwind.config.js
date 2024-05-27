@@ -27,6 +27,14 @@ export default {
             },
         },
     },
+<<<<<<< HEAD
+    plugins: [aspectRatio, forms, typography],
+    safelist: [
+        {
+            pattern: /max-w-(sm|md|lg|xl|2xl|3xl|4xl|5xl|6xl|7xl)/,
+            variants: ["sm", "md", "lg", "xl", "2xl"],
+        },
+=======
     variants: {
         extend: {
             backgroundColor: ['autofill'],
@@ -55,5 +63,6 @@ export default {
                 });
             });
         }),
+>>>>>>> 9e9b29f (Style_remove input background color for Chrome autocomplete)
     ],
 };
