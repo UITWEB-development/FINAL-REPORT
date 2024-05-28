@@ -27,7 +27,7 @@
         <div id="page-container" class="mx-auto flex min-h-screen w-full min-w-[320px] flex-col bg-white lg:ps-64">
             <!-- Page Sidebar -->
             <nav id="page-sidebar"
-                class="fixed bottom-0 start-0 top-0 z-35 flex h-full w-80 flex-col overflow-auto bg-[#ECCC95] transition-transform duration-500 ease-out lg:w-64 ltr:lg:translate-x-0 rtl:lg:translate-x-0"
+                class="fixed bottom-0 start-0 top-0 z-40 flex h-full w-80 flex-col overflow-auto bg-[#ECCC95] transition-transform duration-500 ease-out lg:w-64 ltr:lg:translate-x-0 rtl:lg:translate-x-0"
                 x-bind:class="{
           'ltr:-translate-x-full rtl:translate-x-full': !mobileSidebarOpen,
           'translate-x-0': mobileSidebarOpen,

@@ -13,7 +13,14 @@ class Product extends Model
     use HasFactory, HasUlids, SoftDeletes;
 
     protected $fillable = [
-
+        'name',
+        'price',
+        'name',
+        'description',
+        'image_path',
+        'is_available',
+        'user_id',
+        'category_id',
     ];
 
     public function user() : BelongsTo {

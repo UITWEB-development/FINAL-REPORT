@@ -63,4 +63,9 @@ class ProductPolicy
     // {
     //     //
     // }
+
+    public function add(User $user): bool
+    {
+        return $user->role_id === 1;
+    }
 }
