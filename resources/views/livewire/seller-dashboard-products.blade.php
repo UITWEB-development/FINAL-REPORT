@@ -52,4 +52,37 @@
             </form>
         </div>
     </div>
+    <div class=" xl:max-w-7xl">
+        <nav
+          class="flex items-center gap-4 rounded  p-5 lg:gap-8"
+        >
+            <a
+            href="javascript:void(0)"
+            class=" flex items-center font-bold text-dark transition hover:text-[#da9858] active:text-[#9b4b14] text-xl"
+          >
+            <span>All</span>
+          </a>
+          
+          <a
+            href="javascript:void(0)"
+            class="flex items-center font-bold text-dark transition hover:text-[#da9858] active:text-[#9b4b14] text-xl"
+          >
+            <span>Food</span>
+          </a>
+          <a
+            href="javascript:void(0)"
+            class="flex items-center font-bold text-dark transition hover:text-[#da9858] active:text-[#9b4b14] text-xl"
+          >
+            <span>Beverage</span>
+          </a>
+        </nav>
+      </div>
+    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8 ">
+        <livewire:product-card></livewire:product-card>
+        <livewire:product-card></livewire:product-card>
+        <livewire:product-card></livewire:product-card>
+        <livewire:product-card></livewire:product-card>
+        <livewire:product-card></livewire:product-card>
+        <livewire:product-card></livewire:product-card>
+    </div>
 </div>
