@@ -37,7 +37,7 @@ class AddProduct extends ModalComponent
                 'name' => 'required|string|between:1,255',
                 'price' => 'required|numeric|min:0',
                 'category_id' => 'required|integer|exists:categories,id',
-                'description' => 'string',
+                'description' => 'required|string',
                 'image' => 'required|image|max:1024',
                 'is_available' => 'required|boolean',
             ],

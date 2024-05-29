@@ -9,7 +9,8 @@ class SearchProduct extends Component
     public $search = '';
 
     public function update() {
-        $this->dispatch('search-updated', search: $this->search)->to(ProductList::class);
+        $search = strip_tags($this->search);
+        $this->dispatch('search-updated', search: $search)->to(ProductList::class);
         $this->dispatch('product_updated')->to(ProductList::class);
     }
 
