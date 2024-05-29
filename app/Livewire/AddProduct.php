@@ -5,7 +5,6 @@ namespace App\Livewire;
 use App\Models\Category;
 use App\Models\Product;
 use App\Traits\Toast;
-use Illuminate\Support\Facades\Gate;
 use Livewire\WithFileUploads;
 use LivewireUI\Modal\ModalComponent;
 use Illuminate\Support\Facades\Validator;
@@ -65,7 +64,9 @@ class AddProduct extends ModalComponent
             throw new ValidationException($validator);
         }
 
-        $filename = $this->image->store(path:"public");
+        $storedFile  = $this->image->store('public');
+        $filename = basename($storedFile);
+        
 
         Product::create([
             'user_id' => auth()->user()->id,
@@ -77,13 +78,19 @@ class AddProduct extends ModalComponent
             'is_available' => $this->is_available
         ]);
 
-        $this->closeModal();
+        
+        
 
         $this->toast([
             'type' => 'success',
             'position' => 'top-right',
             'expand' => false,
             'message' => 'Product created successfully!'
+        ]);
+
+
+        $this->closeModalWithEvents([
+            ProductList::class => 'product_updated'
         ]);
 
     }

@@ -6,6 +6,7 @@ use Livewire\Component;
 use Livewire\Attributes\Title;
 use App\Constants\DashboardConstants;
 
+
 #[Title('Seller Dashboard')] 
 class SellerDashboard extends Component
 {

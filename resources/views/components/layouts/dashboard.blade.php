@@ -133,7 +133,7 @@
             <!-- Page Content -->
             <main id="page-content" class="flex max-w-full flex-auto flex-col pt-20 lg:pt-0">
                 <!-- Page Section -->
-                <div class="container mx-auto space-y-10 px-4 py-8 lg:space-y-16 lg:px-8 lg:py-12 xl:max-w-7xl">
+                <div class="container mx-auto space-y-10 px-4 pt-8 lg:space-y-16 lg:px-8 lg:pt-12 xl:max-w-7xl">
                     {{$slot}}
                 </div>
                 <!-- END Page Section -->

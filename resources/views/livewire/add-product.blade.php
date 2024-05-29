@@ -18,7 +18,7 @@
             </div>
         </div>
 
-        <form wire:submit="add">
+        <form wire:submit="add" action="">
             <div class="gap-4 mb-4">
                 <div>
                     <label for="name"
@@ -75,7 +75,6 @@
                                         800x400px)</p>
                                 </div>
                             @endif
-                            {{-- <div wire:loading wire:target="image">Uploading...</div> --}}
 
                             <div wire:loading wire:target="image" role="status" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
                                 <svg aria-hidden="true" class="inline w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-green-500" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -109,7 +108,7 @@
                 </label>
             </div>
             <div class="text-center mt-10">
-                <button wire:loading.attr="disabled" wire:target="add" class="bg-[#cd853f] hover:bg-[#7e5832] text-white font-bold py-1 px-4 w-full h-12 flex justify-center items-center">
+                <button wire:loading.attr="disabled" wire:target="add, image" class="bg-[#cd853f] hover:bg-[#7e5832] text-white font-bold py-1 px-4 w-full h-12 flex justify-center items-center">
                     <span wire:loading.remove wire:target="add">
                         Add product
                     </span>
