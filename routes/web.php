@@ -2,13 +2,13 @@
 
 use App\Livewire\AdminDashboard;
 use App\Livewire\SellerDashboard;
+use App\Livewire\TestHome;
 use App\Livewire\UserDashboard;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('home');
 
+
+Route::get('/', TestHome::class)->name('home');
 
 
 Route::get('/admin', AdminDashboard::class)->middleware('auth:admin,0')->name('admin.dashboard');
