@@ -21,7 +21,8 @@ class AddProduct extends ModalComponent
     public $image;
     public bool $is_available = true;
 
-    public function add() {
+    public function add()
+    {
         $this->authorize('add', Product::class);
 
         $validator = Validator::make(
@@ -30,7 +31,7 @@ class AddProduct extends ModalComponent
                 'price' => $this->price,
                 'category_id' => $this->category_id,
                 'description' => $this->description,
-                'image'       => $this->image,
+                'image' => $this->image,
                 'is_available' => $this->is_available,
             ],
             [
@@ -45,8 +46,8 @@ class AddProduct extends ModalComponent
                 'required' => 'The :attribute field is required',
                 'string' => 'The :attribute must be a string.',
                 'min:8' => 'The :attribute must contain at least 8 characters',
-                'boolean' => 'The :attribute must be a boolean.'
-            ]
+                'boolean' => 'The :attribute must be a boolean.',
+            ],
         );
 
         if ($validator->fails()) {
@@ -58,15 +59,14 @@ class AddProduct extends ModalComponent
                     'expand' => true,
                     'message' => $error,
                     'position' => 'top-right',
-                ]);   
+                ]);
             }
 
             throw new ValidationException($validator);
         }
 
-        $storedFile  = $this->image->store('public');
+        $storedFile = $this->image->store('public');
         $filename = basename($storedFile);
-        
 
         Product::create([
             'user_id' => auth()->user()->id,
@@ -75,30 +75,25 @@ class AddProduct extends ModalComponent
             'category_id' => $this->category_id,
             'description' => $this->description,
             'image_path' => $filename,
-            'is_available' => $this->is_available
+            'is_available' => $this->is_available,
         ]);
-
-        
-        
 
         $this->toast([
             'type' => 'success',
             'position' => 'top-right',
             'expand' => false,
-            'message' => 'Product created successfully!'
+            'message' => 'Product created successfully!',
         ]);
-
 
         $this->closeModalWithEvents([
-            ProductList::class => 'product_updated'
+            ProductList::class => 'product_updated',
         ]);
-
     }
-    
+
     public function render()
     {
         return view('livewire.add-product', [
-            'categories' => Category::all()
+            'categories' => Category::all(),
         ]);
     }
 
@@ -108,7 +103,7 @@ class AddProduct extends ModalComponent
     }
 
     public static function closeModalOnClickAway(): bool
-{
-    return false;
-}
+    {
+        return false;
+    }
 }

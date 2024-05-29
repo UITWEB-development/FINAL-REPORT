@@ -1,5 +1,4 @@
-
-    <div  class="">
+    <div class="">
         <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
           <!-- Modal content -->
           <div class="sm:flex sm:items-start">
@@ -16,15 +15,15 @@
               </svg>
             </div>
             <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
-              <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-headline"> Delete Product </h3>
+              <h3 class="text-lg leading-6 font-bold text-gray-900" id="modal-headline"> Delete Product </h3>
               <div class="mt-2">
-                <p class="text-sm text-gray-500"> Are you sure you want to delete <span class="font-bold">this Product</span>? This action cannot be undone. </p>
+                <p class="text-sm"> Are you sure you want to delete <span class="font-bold">{{ $product->name }}</span>? This action cannot be undone.</p>
               </div>
             </div>
           </div>
         </div>
         <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
-          <button  type="button" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-500 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm"> Delete </button>
-          <button  type="button" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-200 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"> Cancel </button>
+          <button wire:click="delete" type="button" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-500 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm"> Delete </button>
+          <button wire:click="$dispatch('closeModal')"  type="button" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-200 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"> Cancel </button>
         </div>
     </div>

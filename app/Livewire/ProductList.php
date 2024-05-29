@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use App\Models\Product;
+use Illuminate\Support\Facades\DB;
 use Livewire\Attributes\On;
 use Livewire\Component;
 use Livewire\WithPagination;
@@ -33,8 +34,7 @@ class ProductList extends Component
         $products = auth()->user()->products();
 
         if ($this->search !== '') {
-            $products = $products->where('name', 'LIKE', "%{$this->search}%");
-
+            $products = $products->whereRaw('LOWER(`name`) like ?', '%'.strtolower($this->search).'%');      
         }
 
         if ($this->category_id !== -1) {

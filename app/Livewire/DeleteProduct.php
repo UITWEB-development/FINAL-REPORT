@@ -3,31 +3,43 @@
 namespace App\Livewire;
 
 use App\Models\Product;
+use App\Traits\Toast;
 use LivewireUI\Modal\ModalComponent;
 
 class DeleteProduct extends ModalComponent
 {
+    use Toast;
     public Product $product;
 
-    public function delete() {
-        $this->authorize('delete', Product::class);
+    public function delete()
+    {
+        $this->authorize('delete', $this->product);
 
-        $product->delete();
+        $this->product->delete();
 
         $this->toast([
             'type' => 'success',
             'position' => 'top-right',
             'expand' => false,
-            'message' => 'Product created successfully!'
+            'message' => 'Product deleted successfully!',
         ]);
 
-
         $this->closeModalWithEvents([
-            ProductList::class => 'product_updated'
+            ProductList::class => 'product_updated',
         ]);
     }
     public function render()
     {
         return view('livewire.delete-product');
+    }
+
+    public static function modalMaxWidth(): string
+    {
+        return '2xl';
+    }
+
+    public static function closeModalOnClickAway(): bool
+    {
+        return false;
     }
 }
