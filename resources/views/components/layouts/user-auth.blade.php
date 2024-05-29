@@ -20,6 +20,7 @@
     </header>
 
     {{ $slot }}
+    @livewire('wire-elements-modal')
 </body>
 
 </html>

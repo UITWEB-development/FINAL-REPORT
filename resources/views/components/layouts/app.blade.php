@@ -13,6 +13,7 @@
 
 <body class="font-roboto-slab">
     {{ $slot }}
+    @livewire('wire-elements-modal')
 </body>
 
 </html>

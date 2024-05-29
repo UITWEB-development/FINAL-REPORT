@@ -12,3 +12,57 @@ class AuthStatusConstants {
 
     const INVALID_RESET_TOKEN = 'Invalid reset token!';
 }
+
+class DashboardConstants {
+    const SELLER_DASHBOARD_MENU = [
+        'menu' => [
+            [
+                'label' => 'Dashboard',
+                'route_name' => 'seller.dashboard',
+                'active_route' => 'seller.dashboard',
+                'icon' => 'dashboard'
+            ],
+            [
+                'label' => 'Products',
+                'route_name' => 'seller.products',
+                'active_route' => 'seller.products',
+                'icon' => 'elusive-list-alt'
+            ],
+            [
+                'label' => 'Orders',
+                'route_name' => '',
+                'active_route' => '',
+                'icon' => 'order'
+            ]
+        ]
+    ];
+
+    const ADMIN_DASHBOARD_MENU =  [
+        'menu' => [
+            [
+                'label' => 'Dashboard',
+                'route_name' => 'admin.dashboard',
+                'active_route' => 'admin.dashboard',
+                'icon' => 'dashboard'
+            ],
+            [
+                'label' => 'Restaurants',
+                'route_name' => '',
+                'active_route' => '',
+                'icon' => 'restaurant'
+            ],
+            [
+                'label' => 'Customers',
+                'route_name' => '',
+                'active_route' => '',
+                'icon' => 'customer'
+            ],
+            [
+                'label' => 'Reports',
+                'route_name' => '',
+                'active_route' => '',
+                'icon' => 'fluentui-data-bar-vertical-16'
+            ]
+        ]
+    ];
+}
