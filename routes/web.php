@@ -3,6 +3,7 @@
 use App\Livewire\AdminDashboard;
 use App\Livewire\SellerDashboard;
 use App\Livewire\SellerDashboardProducts;
+use App\Livewire\TestHome;
 use App\Livewire\UserDashboard;
 use Illuminate\Support\Facades\Route;
 
