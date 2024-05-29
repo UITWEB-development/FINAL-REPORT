@@ -1,9 +1,24 @@
 <nav class="grid gap-4 lg:gap-8 mt-4" >
     <a class=" group aspect-h-10 aspect-w-16 relative overflow-hidden rounded-2xl bg-black/25 transition hover:ring-4 hover:ring-[#cd853f] active:opacity-75">
         <img class="object-cover" src="{{ asset('storage/'.$product->image_path) }}"/>
-        <div class="cursor-pointer absolute inset-0 flex  justify-between bg-gradient-to-b from-transparen to-black/80">
-       
+        <div class="cursor-pointer absolute inset-0 flex  justify-between bg-gradient-to-b from-transparent via-black/60 to-black">
             <div class="flex items-end justify-between gap-2 px-4 py-5">
+                {{-- Out of stock
+                <div class="cursor-pointer flex h-10 w-10 items-center justify-center rounded-full bg-slate-500/25 text-slate-400 transition group-hover:scale-110 group-hover:bg-[#7e7d7d] group-hover:text-white group-active:scale-100 absolute top-4 left-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="hi-mini hi-play h-5 w-5">
+                        <path d="M3.375 3C2.339 3 1.5 3.84 1.5 4.875v.75c0 1.036.84 1.875 1.875 1.875h17.25c1.035 0 1.875-.84 1.875-1.875v-.75C22.5 3.839 21.66 3 20.625 3H3.375Z" />
+                        <path fill-rule="evenodd" d="m3.087 9 .54 9.176A3 3 0 0 0 6.62 21h10.757a3 3 0 0 0 2.995-2.824L20.913 9H3.087Zm6.133 2.845a.75.75 0 0 1 1.06 0l1.72 1.72 1.72-1.72a.75.75 0 1 1 1.06 1.06l-1.72 1.72 1.72 1.72a.75.75 0 1 1-1.06 1.06L12 15.685l-1.72 1.72a.75.75 0 1 1-1.06-1.06l1.72-1.72-1.72-1.72a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+                      </svg>
+                </div>
+                Out of stock --}}
+                {{-- In stock --}}
+                <div class="cursor-pointer flex h-10 w-10 items-center justify-center rounded-full bg-slate-500/25 text-slate-400 transition group-hover:scale-110 group-hover:bg-[#64c859] group-hover:text-white group-active:scale-100 absolute top-4 left-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+                        <path d="M3.375 3C2.339 3 1.5 3.84 1.5 4.875v.75c0 1.036.84 1.875 1.875 1.875h17.25c1.035 0 1.875-.84 1.875-1.875v-.75C22.5 3.839 21.66 3 20.625 3H3.375Z" />
+                        <path fill-rule="evenodd" d="m3.087 9 .54 9.176A3 3 0 0 0 6.62 21h10.757a3 3 0 0 0 2.995-2.824L20.913 9H3.087ZM12 10.5a.75.75 0 0 1 .75.75v4.94l1.72-1.72a.75.75 0 1 1 1.06 1.06l-3 3a.75.75 0 0 1-1.06 0l-3-3a.75.75 0 1 1 1.06-1.06l1.72 1.72v-4.94a.75.75 0 0 1 .75-.75Z" clip-rule="evenodd" />
+                      </svg>
+                </div>
+                {{-- In stock --}}
                 <div class="space-y-1">
                     <h3 class="text-lg font-semibold text-white ">{{ $product->name }}</h3>
                     <p class="text-sm font-semibold text-[#e1e0e2]">{{ $product->price }}</p>
