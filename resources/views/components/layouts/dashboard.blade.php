@@ -71,8 +71,11 @@
                 <!-- END Main Navigation -->
 
                 <!-- Sub Navigation -->
-                <div class="w-full flex-none space-y-3 p-4">
-{{--                     <x-nav-item label="Settings" route_name="" route_active="" icon="settings"></x-nav-item>         --}}            
+                <div class="w-full flex-none space-y-3 p-4">     
+                    @foreach ($submenu as $subNavItem )
+                        <x-nav-item :label="$subNavItem['label']" :route_name="$subNavItem['route_name']" 
+                        :route_active="$subNavItem['active_route']" :icon="$subNavItem['icon']"></x-nav-item>
+                    @endforeach
                     <livewire:signout></livewire:signout>
                 </div>
                 <!-- END Sub Navigation -->

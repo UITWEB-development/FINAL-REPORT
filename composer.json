@@ -20,6 +20,7 @@
         "livewire/livewire": "^3.4",
         "mallardduck/blade-boxicons": "^2.4",
         "owenvoke/blade-fontawesome": "^2.6",
+        "saade/blade-iconsax": "^1.2",
         "wire-elements/modal": "^2.0"
     },
     "require-dev": {

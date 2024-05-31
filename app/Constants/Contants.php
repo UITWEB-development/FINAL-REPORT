@@ -30,10 +30,18 @@ class DashboardConstants {
             ],
             [
                 'label' => 'Orders',
-                'route_name' => '',
-                'active_route' => '',
+                'route_name' => 'seller.orders',
+                'active_route' => 'seller.orders',
                 'icon' => 'order'
             ]
+        ],
+        'submenu' => [
+            [
+                'label' => 'Profile',
+                'route_name' => 'seller.profile',
+                'active_route' => 'seller.profile',
+                'icon' => 'iconsax-bol-profile-circle'
+            ],
         ]
     ];
 
@@ -63,6 +71,8 @@ class DashboardConstants {
                 'active_route' => '',
                 'icon' => 'fluentui-data-bar-vertical-16'
             ]
-        ]
+        ],
+        'submenu' => [],
+
     ];
 }

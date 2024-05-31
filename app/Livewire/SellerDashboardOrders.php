@@ -6,12 +6,12 @@ use App\Constants\DashboardConstants;
 use Livewire\Component;
 use Livewire\Attributes\Title;
 
-#[Title('Seller Profile')]
-class SellerProfile extends Component
+#[Title('Seller Orders')]
+class SellerDashboardOrders extends Component
 {
     public function render()
     {
-        return view('livewire.seller-profile')
+        return view('livewire.seller-dashboard-orders')
             ->layout('components.layouts.dashboard', DashboardConstants::SELLER_DASHBOARD_MENU);
     }
 }
