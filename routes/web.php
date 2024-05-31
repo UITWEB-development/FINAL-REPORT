@@ -1,12 +1,16 @@
 <?php
 
 use App\Livewire\AdminDashboard;
+use App\Livewire\DistrictShow;
+use App\Livewire\ProvinceShow;
 use App\Livewire\SellerDashboard;
 use App\Livewire\SellerDashboardOrders;
 use App\Livewire\SellerDashboardProducts;
 use App\Livewire\SellerProfile;
 use App\Livewire\TestHome;
 use App\Livewire\UserDashboard;
+use App\Livewire\WardShow;
+use App\Models\Province;
 use Illuminate\Support\Facades\Route;
 
 
@@ -21,5 +25,9 @@ Route::get('/seller/profile', SellerProfile::class)->middleware('auth:seller,1')
 Route::get('/seller/orders', SellerDashboardOrders::class)->middleware('auth:seller,1')->name('seller.orders');
 Route::get('/user', UserDashboard::class)->middleware('auth:user,2');
 
+
+Route::get('/provinces', ProvinceShow::class);
+Route::get('/districts', DistrictShow::class);
+Route::get('/wards', WardShow::class);
 
 require __DIR__ . '/auth.php';
