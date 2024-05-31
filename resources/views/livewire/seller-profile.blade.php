@@ -12,7 +12,7 @@
                         </h2>
                     </div>
                 </div>
-                <div class="cursor-pointer flex h-10 w-10 items-center justify-center rounded-full bg-slate-500/25 text-white transition group-hover:scale-110 group-hover:bg-[#da9858] group-hover:text-white group-active:scale-100 absolute top-4 right-4">
+                <div wire:click="$dispatch('openModal', { component: 'edit-restaurant' })" class="cursor-pointer flex h-10 w-10 items-center justify-center rounded-full bg-slate-500/25 text-white transition group-hover:scale-110 group-hover:bg-[#da9858] group-hover:text-white group-active:scale-100 absolute top-4 right-4">
                     @svg('edit', 'hi-mini hi-play h-5 w-5')                      
                 </div>
             </div>
@@ -61,6 +61,6 @@
                 </div>
             </div>
         </section>
-        <livewire:google-map></livewire:google-map>
+        <livewire:google-map-test></livewire:google-map-test>
     </section>
 </div>
