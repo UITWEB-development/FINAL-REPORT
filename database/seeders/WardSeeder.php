@@ -22,6 +22,9 @@ class WardSeeder extends Seeder
                 'id' => (int)$row[0],
                 'district_id' => (int)$row[1],
                 'name' => $row[2],
+                'longitude' => $row[3] ? (float)$row[3] : null,
+                'latitude' => $row[4] ? (float)$row[4] : null,
+                
             ];
         }
 

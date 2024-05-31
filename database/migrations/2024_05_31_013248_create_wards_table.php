@@ -15,6 +15,8 @@ return new class extends Migration
         Schema::create('wards', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->float('longitude')->nullable();
+            $table->float('latitude')->nullable();
             $table->foreignIdFor(District::class);
             $table->timestamps();
         });
