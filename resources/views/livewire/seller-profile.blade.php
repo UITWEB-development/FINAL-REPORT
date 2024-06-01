@@ -1,10 +1,7 @@
 <div>
     <!-- component -->
-    <link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/styles/tailwind.css">
-    <link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css">
-
     <section class="relative">
-        <div class="relative pt-16 pb-32 flex content-center items-center justify-center min-h-screen-75">
+        <div class="relative pt-16 pb-32 flex content-center items-center justify-center min-h-[70vh]">
             <div class="absolute top-0 w-full h-full bg-center bg-cover group" style="background-image: url('https://th.bing.com/th/id/OIP.ZJ1xzTKdVbk6dH-iN3kFOgHaE8?w=720&h=480&rs=1&pid=ImgDetMain');">
                 <div class="absolute inset-0 h-full w-full bg-black/65 flex flex-col justify-center items-center">
                     <div class="relative text-center">
@@ -36,7 +33,7 @@
                     <div class="w-full md:w-4/12 px-4 text-center group">
                         <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg transition-transform transform group-hover:scale-105">
                             <div class="px-4 py-5 flex-auto">
-                                <div class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-lightBlue-400">
+                                <div class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-blue-400">
                                     @svg('fas-map-location-dot')
                                 </div>
                                 <h6 class="text-xl font-semibold">Address</h6>
