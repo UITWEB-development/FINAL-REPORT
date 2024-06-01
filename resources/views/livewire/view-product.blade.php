@@ -18,7 +18,7 @@
                         </h1>
                  
                         <p class="text-sm">
-                            inventore cupiditate.
+                            inventore cupiditate. Lorem ipsum dolor sit amet consectetur adipisicing elit. Id facere in consequuntur at numquam! Cum hic voluptatibus rerum nam necessitatibus tempore alias facilis impedit eos iste provident, incidunt sit, obcaecati, at dignissimos ab quam praesentium molestiae ipsa commodi amet esse consectetur blanditiis! Cumque beatae expedita, necessitatibus facilis quo in magni, officiis eaque architecto fuga voluptatem harum ducimus atque eum fugit mollitia, distinctio culpa recusandae? Consectetur expedita dolorem possimus dolorum animi commodi, impedit aspernatur adipisci eum, voluptatem nisi nam libero. Praesentium commodi aut ipsa consectetur repellendus. Nemo suscipit placeat esse dicta nesciunt molestiae harum ea eius, similique veritatis eligendi, tenetur in!
                         </p>
                     </div>
                 </div>
