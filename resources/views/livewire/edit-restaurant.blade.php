@@ -1,4 +1,4 @@
-<div>
+<form wire:submit="edit">
     <div class="w-full h-full p-8">
         <div class="w-full flex flex-col">
             <div class="flex justify-between items-center pb-4 mb-4 rounded-t border-b sm:mb-5 dark:border-gray-600">
@@ -22,9 +22,6 @@
             <div class="flex flex-col items-center justify-center w-full relative">
                 <label for="dropzone-file"
                     class="flex flex-col items-center justify-center w-full h-56 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
-                    
-               
-
                     <div wire:loading wire:target="image" role="status" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
                         <svg aria-hidden="true" class="inline w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-green-500" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor"/>
@@ -32,8 +29,6 @@
                         </svg>
                         <span class="sr-only">Loading...</span>
                     </div>
-
-
                     <input wire:model="image" id="dropzone-file" type="file" accept="image/*" class="hidden" />
                 </label>
             </div>
@@ -44,35 +39,41 @@
                 class="block mb-2 text-lg  text-gray-900 dark:text-white font-semibold">Restaurant Name</label>
             <input type="text" name="name" id="name"
                 class="mb-4 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                placeholder="Your Restaurant Name" required="">
+                placeholder="Your Restaurant Name" required>
         </div>
         <div>
             <label for="phone"
                 class="block mb-2 text-lg font-semibold text-gray-900 dark:text-white">Phone Number</label>
-                <input type="number" name="phone" id="phone"
+                <input type="tel" name="phone" id="phone"
                 class="mb-4 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                placeholder="Phone Number" required="">
+                placeholder="Phone Number" required>
          
         </div>
-        <div class="mb-5  flex md:flex-row md:items-center md:flex-nowrap flex-col">
-            <label for="opentime" class="w-full md:w-32 font-bold mb-2 md:mb-0">Open time</label>
-            <input type="time" name="opentime" id="opentime" class="h-9 flex-1 rounded-lg mb-2 md:mb-0 md:mr-7 md:ml-0" required="">
-            <label for="closetime" class="w-full md:w-32 font-bold mb-2 md:mb-0">Close time</label>
-            <input type="time" name="closetime" id="closetime" class="h-9 flex-1 rounded-lg" required="">
+        <div class="mb-5 flex md:flex-row md:items-center md:justify-between md:flex-nowrap md:gap-0 flex-col gap-2">
+            <div class="flex items-center">
+                <label for="opentime" class="w-full md:w-32 font-bold mb-2 md:mb-0">Open time</label>
+                <x-flat-pickr wire:model="opentime" name="opentime" :options="['enableTime' => true, 'noCalendar' => true, 'dateFormat' => 'H:i', 'time_24hr' => true, 'allowInput' => true]" format="hh:mm" class="h-9 flex-1 rounded-lg w-40" required/> 
+            </div>
+            
+            <div class="flex items-center">
+                <label for="closetime" class="w-full md:w-32 font-bold mb-2 md:mb-0">Close time</label>
+                <x-flat-pickr wire:model="closetime" name="opentime" :options="['enableTime' => true, 'noCalendar' => true, 'dateFormat' => 'H:i', 'time_24hr' => true]" format="hh:mm" class="h-9 flex-1 rounded-lg w-40"/> 
+            </div>
+
+
         </div>
         
         
         <div > 
-        <div class="pb-6"><livewire:google-map></livewire:google-map></div>
+        
+        {{-- <div class="pb-6"><livewire:google-map-edit></livewire:google-map-edit></div> --}}
+        <div class="pb-6">
+            <livewire:alpine-google-map wire:model="position"></livewire:alpine-google-map>
         </div>
-        
-        
-        
-        
-            
+        </div>
             <div class="text-center">
               <button class="bg-[#cd853f] hover:bg-[#7e5832] text-white font-bold py-1 px-4 w-full h-12 flex justify-center items-center text-lg">Save</button>
           </div> 
         </div>
-    </div>
+    </form>
 </div>
