@@ -17,8 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('restaurant_name');
             $table->foreignIdFor(User::class);
-            $table->string('detail_address');
-            $table->foreignIdFor(Ward::class);
+            $table->string('address');
             $table->string('phone_number');
             $table->time('opening_time');
             $table->time('closing_time');
