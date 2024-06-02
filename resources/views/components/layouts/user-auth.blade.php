@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
     @vite('resources/css/app.css')
+    @vite('resources/js/app.js')
 </head>
 
 <body class="font-roboto-slab">
@@ -21,6 +22,7 @@
 
     {{ $slot }}
     @livewire('wire-elements-modal')
+    <x-toaster-hub />
 </body>
 
 </html>

@@ -13,6 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
 
     @vite('resources/css/app.css')
+    @vite('resources/js/app.js')
     
     <style>
         [x-cloak] {

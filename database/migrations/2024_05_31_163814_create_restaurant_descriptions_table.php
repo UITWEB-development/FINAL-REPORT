@@ -16,11 +16,11 @@ return new class extends Migration
         Schema::create('restaurant_descriptions', function (Blueprint $table) {
             $table->id();
             $table->string('restaurant_name');
-            $table->foreignIdFor(User::class);
+            $table->foreignIdFor(User::class)->unique();
             $table->string('address');
             $table->string('phone_number');
-            $table->time('opening_time');
-            $table->time('closing_time');
+            $table->time('opening_time')->format('H:i');
+            $table->time('closing_time')->format('H:i');
             $table->float('longitude')->nullable();
             $table->float('latitude')->nullable();
             $table->timestamps();

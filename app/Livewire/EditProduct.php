@@ -3,16 +3,16 @@
 namespace App\Livewire;
 
 use App\Models\Product;
-use App\Traits\Toast;
 use Livewire\WithFileUploads;
 use LivewireUI\Modal\ModalComponent;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\ValidationException;
 use App\Models\Category;
+use Masmerise\Toaster\Toaster;
 
 class EditProduct extends ModalComponent
 {
-    use Toast, WithFileUploads;
+    use WithFileUploads;
 
     public Product $product;
 
@@ -66,14 +66,10 @@ class EditProduct extends ModalComponent
             $errors = $validator->errors()->all();
 
             foreach ($errors as $error) {
-                $this->toast([
-                    'type' => 'danger',
-                    'expand' => true,
-                    'message' => $error,
-                    'position' => 'top-right',
-                ]);
+                Toaster::error($error);
             }
 
+            
             throw new ValidationException($validator);
         }
 
@@ -89,13 +85,7 @@ class EditProduct extends ModalComponent
 
             if ($imageValidator->fails()) {
                 $imageErr = $imageValidator->errors()->first();
-
-                $this->toast([
-                    'type' => 'danger',
-                    'expand' => true,
-                    'message' => $imageErr,
-                    'position' => 'top-right',
-                ]);
+                Toaster::error($imageErr);
 
                 throw new ValidationException($imageValidator);
             }
@@ -114,13 +104,8 @@ class EditProduct extends ModalComponent
             'is_available' => $this->is_available,
         ]);
 
-        $this->toast([
-            'type' => 'success',
-            'position' => 'top-right',
-            'expand' => false,
-            'message' => 'Product updated successfully!',
-        ]);
-
+        Toaster::success('Product updated successfully!');
+        
         $this->closeModalWithEvents([
             ProductList::class => 'product_updated',
         ]);

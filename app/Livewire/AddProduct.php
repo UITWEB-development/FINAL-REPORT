@@ -9,10 +9,11 @@ use Livewire\WithFileUploads;
 use LivewireUI\Modal\ModalComponent;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\ValidationException;
+use Masmerise\Toaster\Toaster;
 
 class AddProduct extends ModalComponent
 {
-    use WithFileUploads, Toast;
+    use WithFileUploads;
 
     public string $name;
     public float $price;
@@ -54,12 +55,7 @@ class AddProduct extends ModalComponent
             $errors = $validator->errors()->all();
 
             foreach ($errors as $error) {
-                $this->toast([
-                    'type' => 'danger',
-                    'expand' => true,
-                    'message' => $error,
-                    'position' => 'top-right',
-                ]);
+                Toaster::error($error);
             }
 
             throw new ValidationException($validator);
@@ -78,12 +74,8 @@ class AddProduct extends ModalComponent
             'is_available' => $this->is_available,
         ]);
 
-        $this->toast([
-            'type' => 'success',
-            'position' => 'top-right',
-            'expand' => false,
-            'message' => 'Product created successfully!',
-        ]);
+
+        Toaster::success('Product created successfully!');
 
         $this->closeModalWithEvents([
             ProductList::class => 'product_updated',

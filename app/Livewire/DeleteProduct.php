@@ -3,12 +3,11 @@
 namespace App\Livewire;
 
 use App\Models\Product;
-use App\Traits\Toast;
 use LivewireUI\Modal\ModalComponent;
+use Masmerise\Toaster\Toaster;
 
 class DeleteProduct extends ModalComponent
 {
-    use Toast;
     public Product $product;
 
     public function delete()
@@ -17,12 +16,7 @@ class DeleteProduct extends ModalComponent
 
         $this->product->delete();
 
-        $this->toast([
-            'type' => 'success',
-            'position' => 'top-right',
-            'expand' => false,
-            'message' => 'Product deleted successfully!',
-        ]);
+        Toaster::success('Product deleted successfully!');
 
         $this->closeModalWithEvents([
             ProductList::class => 'product_updated',

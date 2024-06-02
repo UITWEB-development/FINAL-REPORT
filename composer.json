@@ -8,7 +8,7 @@
     ],
     "license": "MIT",
     "require": {
-        "php": "^8.2",
+        "php": "^8.3",
         "blade-ui-kit/blade-icons": "^1.6",
         "blade-ui-kit/blade-ui-kit": "^0.6.2",
         "codeat3/blade-elusive-icons": "^1.4",
@@ -20,7 +20,9 @@
         "laravel/tinker": "^2.9",
         "livewire/livewire": "^3.4",
         "mallardduck/blade-boxicons": "^2.4",
+        "masmerise/livewire-toaster": "^2.2",
         "owenvoke/blade-fontawesome": "^2.6",
+        "propaganistas/laravel-phone": "^5.3",
         "saade/blade-iconsax": "^1.2",
         "wire-elements/modal": "^2.0"
     },

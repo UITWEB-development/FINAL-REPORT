@@ -25,7 +25,7 @@ Route::get('/seller', SellerDashboard::class)->middleware('auth:seller,1')->name
 Route::get('/seller/products', SellerDashboardProducts::class)->middleware('auth:seller,1')->name('seller.products');
 Route::get('/seller/profile', SellerProfile::class)->middleware('auth:seller,1')->name('seller.profile');
 Route::get('/seller/orders', SellerDashboardOrders::class)->middleware('auth:seller,1')->name('seller.orders');
-Route::get('/user', UserDashboard::class)->middleware('auth:user,2');
+Route::get('/user', UserDashboard::class)->middleware('auth:user,2')->name('user.dashboard');
 
 
 Route::get('/provinces', ProvinceShow::class);

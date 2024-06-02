@@ -1,5 +1,4 @@
 <div class="flex flex-col justify-center items-center h-[85.8vh]">
-    <livewire:toast></livewire:toast>
     <div class="bg-[#FADAA3] w-[80vw] md:w-[60.18vw] lg:w-[46.18vw] aspect-[482/310] py-[3cqmin] px-[6.6cqmin] rounded-xl my-10">
         <h1 class="text-center font-bold text-[6cqmin]">ADMIN PANEL</h1>
         <form wire:submit="signin" class="flex flex-col items-center gap-[4cqmin]" >

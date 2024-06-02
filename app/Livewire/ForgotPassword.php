@@ -3,21 +3,20 @@
 namespace App\Livewire;
 
 use App\Models\User;
-use App\Traits\Toast;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Facades\Validator;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
 use Livewire\Attributes\Title;
-use Livewire\Attributes\Validate;
 use Illuminate\Validation\ValidationException;
+use Masmerise\Toaster\Toaster;
 
 
 #[Layout('components.layouts.user-auth')]
 #[Title('Forgot Password')] 
 class ForgotPassword extends Component
 {
-    use Toast;
+
         
     public $email;
 
@@ -40,12 +39,7 @@ class ForgotPassword extends Component
             $errors = $validator->errors()->all();
 
             foreach ($errors as $error) {
-                $this->toast([
-                    'type' => 'danger',
-                    'expand' => true,
-                    'message' => $error,
-                    'position' => 'top-right',
-                ]);   
+                Toaster::error($error);
             }
 
             throw new ValidationException($validator);
@@ -56,19 +50,9 @@ class ForgotPassword extends Component
         );
 
         if ($status === Password::RESET_LINK_SENT) {
-            $this->toast([
-                'position' => 'top-right',
-                'expand' => true,
-                'type' => 'success',
-                'message' => __($status),
-            ]);
+            Toaster::success(__($status));
         } else {
-            $this->toast([
-                'position' => 'top-right',
-                'expand' => true,
-                'type' => 'danger',
-                'message' => __($status),
-            ]);
+            Toaster::error(__($status));
         }
     }
     

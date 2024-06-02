@@ -1,5 +1,5 @@
 <div>
-    <livewire:toast></livewire:toast>
+{{--     <livewire:toast></livewire:toast>
 
     @if (session()->has('success'))
         <script>
@@ -10,7 +10,7 @@
                 })
             }
         </script>
-    @endif
+    @endif --}}
     <div class="flex items-center justify-between">
         <div>
             <div class="hidden md:block">

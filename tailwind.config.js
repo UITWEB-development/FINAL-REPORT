@@ -13,6 +13,7 @@ export default {
         "./resources/**/*.js",
         "./vendor/wire-elements/modal/resources/views/*.blade.php",
         "./storage/framework/views/*.php",
+        "./vendor/masmerise/livewire-toaster/resources/views/*.blade.php",
     ],
     darkMode: "class",
     theme: {
@@ -23,7 +24,7 @@ export default {
             },
         },
     },
-    plugins: [aspectRatio, forms, typography,],
+    plugins: [aspectRatio, forms, typography],
     safelist: [
         {
             pattern: /max-w-(sm|md|lg|xl|2xl|3xl|4xl|5xl|6xl|7xl)/,

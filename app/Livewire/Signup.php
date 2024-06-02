@@ -7,18 +7,17 @@ use Livewire\Attributes\Layout;
 use Livewire\Component;
 use Livewire\Attributes\Locked;
 use Livewire\Attributes\Title;
-use Livewire\Attributes\Validate;
 use App\Models\User;
-use App\Traits\Toast;
 use App\Traits\UserTypeMount;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\ValidationException;
+use Masmerise\Toaster\Toaster;
 
 #[Layout('components.layouts.user-auth')]
 #[Title('Sign Up')] 
 class Signup extends Component
 {
-    use UserTypeMount, Toast;
+    use UserTypeMount;
 
     #[Locked]
     public $role_id;
@@ -35,8 +34,6 @@ class Signup extends Component
     public $password_confirmation;
 
     public function signup() {
-        /* $this->validate(); */
-
         $validator = Validator::make(
             [
                 'name' => $this->name,
@@ -61,12 +58,7 @@ class Signup extends Component
             $errors = $validator->errors()->all();
 
             foreach ($errors as $error) {
-                $this->toast([
-                    'type' => 'danger',
-                    'expand' => true,
-                    'message' => $error,
-                    'position' => 'top-right',
-                ]);   
+                Toaster::error($error);
             }
 
             throw new ValidationException($validator);
@@ -84,7 +76,7 @@ class Signup extends Component
         $this->reset(['name', 'email', 'password', 'password_confirmation']);
 
 
-        return redirect()->route('signin', ['user_type' => $this->user_type])->with('success', AuthStatusConstants::SIGN_UP_SUCCESS);
+        return redirect()->route('signin', ['user_type' => $this->user_type])->success(AuthStatusConstants::SIGN_UP_SUCCESS);
         
     }
 

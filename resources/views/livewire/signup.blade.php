@@ -2,10 +2,6 @@
     <form wire:submit="signup" class="w-[80%] md:w-[60%] lg:w-[70%] xl:w-[38.46%] max-h-[90%] bg-[#fadaa3] aspect-[1047/997] px-[3.5cqmin] py-[2cqmin] rounded-2xl flex flex-col gap-[2cqmin]">
         <h1 class="text-center font-extrabold text-[5cqmin]">SIGN UP</h1>
         
-
-        <livewire:toast></livewire:toast>
-
-        
         {{-- NAME --}}
         <div>
             <div class="flex flex-col w-full">

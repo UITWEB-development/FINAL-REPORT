@@ -2,23 +2,22 @@
 
 namespace App\Livewire;
 
-use App\Traits\Toast;
+
 use Livewire\Component;
 use Livewire\Attributes\Validate;
 use Livewire\Attributes\Layout;
 use Livewire\Attributes\Title;
 use App\Constants\AuthStatusConstants;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\ValidationException;
-
-
-
+use Masmerise\Toaster\Toaster;
 
 #[Layout('components.layouts.user-auth')]
 #[Title('Admin Sign In')] 
 class AdminSignin extends Component
 {
-    use Toast;
+
     #[Validate('required|string|lowercase|email|max:255')]
     public $email;
 
@@ -54,12 +53,7 @@ class AdminSignin extends Component
             $errors = $validator->errors()->all();
 
             foreach ($errors as $error) {
-                $this->toast([
-                    'type' => 'danger',
-                    'expand' => true,
-                    'message' => $error,
-                    'position' => 'top-right',
-                ]);   
+                Toaster::error($error);
             }
 
             throw new ValidationException($validator);
@@ -73,17 +67,10 @@ class AdminSignin extends Component
 
         if (auth()->attempt($credentials)) {
             session()->regenerate();
-            session()->flash('success', AuthStatusConstants::SIGN_IN_SUCCESS);
-            return $this->redirectIntended('/admin');
+            return Redirect::route('admin.dashboard')->success(AuthStatusConstants::SIGN_IN_SUCCESS);
         }
 
-        
-        $this->toast([
-            'type' => 'danger',
-            'position' => 'top-right',
-            'expand' => false,
-            'message' => AuthStatusConstants::INVALID_CREDENTIALS
-        ]);
+        Toaster::success(AuthStatusConstants::INVALID_CREDENTIALS);
     }
 
     public function render()

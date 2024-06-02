@@ -4,7 +4,6 @@ namespace App\Livewire;
 
 use App\Constants\AuthStatusConstants;
 use App\Models\User;
-use App\Traits\Toast;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Password;
 use Livewire\Attributes\Layout;
@@ -16,12 +15,13 @@ use Illuminate\Auth\Events\PasswordReset;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\ValidationException;
+use Masmerise\Toaster\Toaster;
 
 #[Layout('components.layouts.user-auth')]
 #[Title('Reset Password')] 
 class ResetPassword extends Component
 {
-    use Toast;
+    
     public $email;
 
     public $password;
@@ -57,12 +57,7 @@ class ResetPassword extends Component
             $errors = $validator->errors()->all();
 
             foreach ($errors as $error) {
-                $this->toast([
-                    'type' => 'danger',
-                    'expand' => true,
-                    'message' => $error,
-                    'position' => 'top-right',
-                ]);   
+                Toaster::error($error);
             }
 
             throw new ValidationException($validator);
@@ -71,12 +66,7 @@ class ResetPassword extends Component
         $reset = DB::table('password_reset_tokens')->where(['email' => $this->email])->first();
 
         if (!$reset || !Hash::check($this->token, $reset->token)) {
-            $this->toast([
-                'type' => 'danger',
-                'position' => 'top-right',
-                'expand' => false,
-                'message' => AuthStatusConstants::INVALID_RESET_TOKEN,
-            ]);
+            Toaster::error(AuthStatusConstants::INVALID_RESET_TOKEN);
             return;
         }
 
@@ -92,15 +82,10 @@ class ResetPassword extends Component
 
         if (Password::PASSWORD_RESET) {
             $user = User::where('email', $this->email)->first();
-            session()->flash('success', __($status));
-            return redirect()->route('signin', ['user_type' => $user->role->name]);
+            /* session()->flash('success', __($status)); */
+            return redirect()->route('signin', ['user_type' => $user->role->name])->success(__($status));
         } else {
-            $this->toast([
-                'type' => 'danger',
-                'position' => 'top-right',
-                'expand' => false,
-                'message' => __($status),
-            ]);
+            Toaster::error(__($status));
         }
     }
 

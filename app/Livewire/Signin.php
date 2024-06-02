@@ -3,21 +3,21 @@
 namespace App\Livewire;
 
 use App\Constants\AuthStatusConstants;
-use App\Traits\Toast;
 use App\Traits\UserTypeMount;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
 use Livewire\Attributes\Locked;
 use Livewire\Attributes\Title;
 use Illuminate\Validation\ValidationException;
-
+use Masmerise\Toaster\Toaster;
 
 #[Layout('components.layouts.user-auth')]
 #[Title('Sign In')] 
 class Signin extends Component
 {
-    use UserTypeMount, Toast;
+    use UserTypeMount;
 
     #[Locked]
     public $role_id;
@@ -61,12 +61,7 @@ class Signin extends Component
             $errors = $validator->errors()->all();
 
             foreach ($errors as $error) {
-                $this->toast([
-                    'type' => 'danger',
-                    'expand' => true,
-                    'message' => $error,
-                    'position' => 'top-right',
-                ]);   
+                Toaster::error($error);
             }
 
             throw new ValidationException($validator);
@@ -80,17 +75,10 @@ class Signin extends Component
 
         if (auth()->attempt($credentials, $this->remember_me)) {
             session()->regenerate();
-
-            session()->flash('success', AuthStatusConstants::SIGN_IN_SUCCESS);
-            return $this->redirectIntended('/'.$this->user_type);
+            return Redirect::route($this->user_type.'.dashboard')->success(AuthStatusConstants::SIGN_IN_SUCCESS);
         }
 
-        $this->toast([
-            'type' => 'danger',
-            'position' => 'top-right',
-            'expand' => false,
-            'message' => AuthStatusConstants::INVALID_CREDENTIALS
-        ]);
+        Toaster::error(AuthStatusConstants::INVALID_CREDENTIALS);
     }
 
     public function forgotPassword() {
