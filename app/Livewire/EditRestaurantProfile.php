@@ -31,9 +31,11 @@ class EditRestaurantProfile extends ModalComponent
 
         $this->restaurant_name = $restaurant_description->restaurant_name;
         $this->phone_number = $restaurant_description->phone_number;
-        $this->opening_time = \Carbon\Carbon::createFromFormat('H:i:s',$restaurant_description->opening_time)->format('h:i');
+        $this->opening_time = \Carbon\Carbon::createFromFormat('H:i:s',$restaurant_description->opening_time)->format('H:i');;
         
-        $this->closing_time = \Carbon\Carbon::createFromFormat('H:i:s',$restaurant_description->closing_time)->format('h:i');;
+        $this->closing_time = \Carbon\Carbon::createFromFormat('H:i:s',$restaurant_description->closing_time)->format('H:i');;
+
+        
 
         $this->position = [
             'lat' => $restaurant_description->latitude,
@@ -45,6 +47,7 @@ class EditRestaurantProfile extends ModalComponent
     }
     
     public function edit(){
+        
         $this->authorize('update', $this->restaurant_description);
 
         $validator = Validator::make(
