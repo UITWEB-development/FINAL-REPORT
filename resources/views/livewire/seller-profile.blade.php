@@ -60,7 +60,7 @@
                                 </div>
                                 <h6 class="text-xl font-semibold">Opening time</h6>
                                 <p class="mt-2 mb-4 text-blueGray-500">
-                                {{$is_profile_exist ? \Carbon\Carbon::createFromFormat('H:i:s',$restaurant_description->opening_time)->format('H:i').' - '.\Carbon\Carbon::createFromFormat('H:i:s',$restaurant_description->closing_time)->format('H:i') : ''}}
+                                {{$is_profile_exist ? $restaurant_description->opening_time.' - '. $restaurant_description->closing_time : ''}}
                                 </p>
                             </div>
                         </div>

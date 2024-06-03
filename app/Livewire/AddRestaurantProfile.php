@@ -48,7 +48,7 @@ class AddRestaurantProfile extends ModalComponent
                 'restaurant_name' => 'required|string|between:3,100',
                 'phone_number' => 'required|phone:VN',
                 'opening_time' => 'required|date_format:H:i',
-                'closing_time' => 'required|date_format:H:i|after:opening_time',
+                'closing_time' => 'required|date_format:H:i',
                 
                 'latitude' => 'required|numeric|between:-90,90',
                 'longitude' => 'required|numeric|between:-180,180',

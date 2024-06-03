@@ -31,9 +31,9 @@ class EditRestaurantProfile extends ModalComponent
 
         $this->restaurant_name = $restaurant_description->restaurant_name;
         $this->phone_number = $restaurant_description->phone_number;
-        $this->opening_time = \Carbon\Carbon::createFromFormat('H:i:s',$restaurant_description->opening_time)->format('H:i');;
-        
-        $this->closing_time = \Carbon\Carbon::createFromFormat('H:i:s',$restaurant_description->closing_time)->format('H:i');;
+
+        $this->opening_time = $restaurant_description->opening_time;
+        $this->closing_time = $restaurant_description->closing_time;
 
         
 
@@ -64,7 +64,7 @@ class EditRestaurantProfile extends ModalComponent
                 'restaurant_name' => 'required|string|between:3,100',
                 'phone_number' => 'required|phone:VN',
                 'opening_time' => 'required|date_format:H:i',
-                'closing_time' => 'required|date_format:H:i|after:opening_time',
+                'closing_time' => 'required|date_format:H:i',
                 
                 'latitude' => 'required|numeric|between:-90,90',
                 'longitude' => 'required|numeric|between:-180,180',
