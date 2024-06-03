@@ -4,10 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Constants\AuthStatusConstants;
 use App\Models\User;
-use Illuminate\Http\Request;
 use Laravel\Socialite\Facades\Socialite;
 use Illuminate\Support\Facades\Auth;
-use App\Providers\RouteServiceProvider;
+use Illuminate\Support\Facades\Redirect;
+use Masmerise\Toaster\Toaster;
+
 
 class GoogleLoginController extends Controller
 {
@@ -27,15 +28,16 @@ class GoogleLoginController extends Controller
         try {
             $googleUser = Socialite::driver('google')->stateless()->user();
         } catch (\Throwable $th) {
-            session()->flash('danger', AuthStatusConstants::AUTHENTICATION_ERROR);
-            return redirect($redirect_url.'/sign-in');
+        
+
+            return redirect($redirect_url.'/sign-in')->error(AuthStatusConstants::AUTHENTICATION_ERROR);
         }
         $user = User::where('email', $googleUser->email)->first();
 
         if ($user) {
            if ($user->role_id !== $role_id) {
                 session()->flash('danger', AuthStatusConstants::INVALID_CREDENTIALS);
-                return redirect()->route('signin', ['user_type' => $user_type]);
+                return Redirect::route('signin', ['user_type' => $user_type])->error(AuthStatusConstants::INVALID_CREDENTIALS);
            }
         } else {
             $user = User::create(['name' => $googleUser->name, 'email' => $googleUser->email, 'password' => \Hash::make(rand(100000,999999)), 'role_id' => $role_id]);
@@ -43,8 +45,6 @@ class GoogleLoginController extends Controller
 
 
         Auth::login($user);
-
-        session()->flash('success', AuthStatusConstants::SIGN_IN_SUCCESS);
-        return redirect($redirect_url);
+        return Redirect::route('signin', ['user_type' => $user_type])->success(AuthStatusConstants::SIGN_IN_SUCCESS);
     }
 }
