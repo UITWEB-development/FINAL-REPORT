@@ -1,3 +1,6 @@
 *
 !public/
 !.gitignore
+!district.csv
+!province.csv
+!ward.csv
