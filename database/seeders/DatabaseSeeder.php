@@ -23,7 +23,8 @@ class DatabaseSeeder extends Seeder
             CategorySeeder::class,
             ProvinceSeeder::class,
             DistrictSeeder::class,
-            WardSeeder::class
+            WardSeeder::class,
+            RestaurantSeeder::class,
         ]);
 
     }

@@ -5,6 +5,7 @@ use App\Livewire\AdminDashboard;
 use App\Livewire\AlpineGoogleMap;
 use App\Livewire\Contact;
 use App\Livewire\DistrictShow;
+use App\Livewire\HomePage;
 use App\Livewire\ProvinceShow;
 use App\Livewire\SellerDashboard;
 use App\Livewire\SellerDashboardOrders;
@@ -19,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::get('/', TestHome::class)->name('home');
+Route::get('/', HomePage::class)->name('home');
 
 
 Route::get('/admin', AdminDashboard::class)->middleware('auth:admin,0')->name('admin.dashboard');

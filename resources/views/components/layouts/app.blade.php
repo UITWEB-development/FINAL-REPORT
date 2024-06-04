@@ -15,6 +15,8 @@
 </head>
 
 <body class="font-roboto-slab">
+    {{-- Header here --}}
+    
     {{ $slot }}
     @livewire('wire-elements-modal')
     <x-toaster-hub />
