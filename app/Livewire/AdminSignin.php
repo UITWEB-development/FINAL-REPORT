@@ -70,7 +70,7 @@ class AdminSignin extends Component
             return Redirect::route('admin.dashboard')->success(AuthStatusConstants::SIGN_IN_SUCCESS);
         }
 
-        Toaster::success(AuthStatusConstants::INVALID_CREDENTIALS);
+        Toaster::error(AuthStatusConstants::INVALID_CREDENTIALS);
     }
 
     public function render()
