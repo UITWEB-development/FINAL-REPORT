@@ -55,20 +55,20 @@ class DashboardConstants {
             ],
             [
                 'label' => 'Restaurants',
-                'route_name' => '',
-                'active_route' => '',
+                'route_name' => 'admin.restaurants',
+                'active_route' => 'admin.restaurants',
                 'icon' => 'restaurant'
             ],
             [
                 'label' => 'Customers',
-                'route_name' => '',
-                'active_route' => '',
+                'route_name' => 'admin.customers',
+                'active_route' => 'admin.customers',
                 'icon' => 'customer'
             ],
             [
                 'label' => 'Reports',
-                'route_name' => '',
-                'active_route' => '',
+                'route_name' => 'admin.reports',
+                'active_route' => 'admin.reports',
                 'icon' => 'fluentui-data-bar-vertical-16'
             ]
         ],

@@ -2,6 +2,9 @@
 
 use App\Livewire\AboutUs;
 use App\Livewire\AdminDashboard;
+use App\Livewire\AdminDashboardRestaurants;
+use App\Livewire\AdminDashboardCustomers;
+use App\Livewire\AdminDashboardReports;
 use App\Livewire\Contact;
 use App\Livewire\RestaurantList;
 use App\Livewire\RestaurantPage;
@@ -19,6 +22,9 @@ Route::get('/restaurant/{id}', RestaurantPage::class)->name('restaurant.page');
 
 
 Route::get('/admin', AdminDashboard::class)->middleware('auth:admin,0')->name('admin.dashboard');
+Route::get('/admin/restaurants', AdminDashboardRestaurants::class)->middleware('auth:admin,0')->name('admin.restaurants');
+Route::get('/admin/customers', AdminDashboardCustomers::class)->middleware('auth:admin,0')->name('admin.customers');
+Route::get('/admin/reports', AdminDashboardReports::class)->middleware('auth:admin,0')->name('admin.reports');
 Route::get('/seller', SellerDashboard::class)->middleware('auth:seller,1')->name('seller.dashboard');
 Route::get('/seller/products', SellerDashboardProducts::class)->middleware('auth:seller,1')->name('seller.products');
 Route::get('/seller/profile', SellerProfile::class)->middleware('auth:seller,1')->name('seller.profile');
