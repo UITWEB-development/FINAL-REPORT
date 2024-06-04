@@ -1,7 +1,9 @@
 <?php
 
+use App\Livewire\AboutUs;
 use App\Livewire\AdminDashboard;
 use App\Livewire\AlpineGoogleMap;
+use App\Livewire\Contact;
 use App\Livewire\DistrictShow;
 use App\Livewire\ProvinceShow;
 use App\Livewire\SellerDashboard;
@@ -26,6 +28,10 @@ Route::get('/seller/products', SellerDashboardProducts::class)->middleware('auth
 Route::get('/seller/profile', SellerProfile::class)->middleware('auth:seller,1')->name('seller.profile');
 Route::get('/seller/orders', SellerDashboardOrders::class)->middleware('auth:seller,1')->name('seller.orders');
 Route::get('/user', UserDashboard::class)->middleware('auth:user,2')->name('user.dashboard');
+
+
+Route::get('/about-us', AboutUs::class)->name('about-us');
+Route::get('/contact', Contact::class)->name('contact');
 
 
 Route::get('/provinces', ProvinceShow::class);
