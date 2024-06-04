@@ -13,9 +13,9 @@
 </head>
 
 <body class="font-roboto-slab">
-    <header >
+    <header>
         @svg('gouchill', 'bi bi-window-sidebar inline-block h-20 w-20')
-        <livewire:signout signin_route="/user/sign-in"></livewire:signout>
+        <livewire:user-sign-out></livewire:user-sign-out>
     </header>
 
     {{ $slot }}
