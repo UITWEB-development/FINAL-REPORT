@@ -3,8 +3,6 @@
         <form wire:submit="signin" class="flex flex-col gap-[1.5cqmin]">
             <h1 class="text-center font-extrabold text-[5cqmin]">SIGN IN</h1>
 
-
-    
             {{-- Email --}}
             <div>
                 <div>

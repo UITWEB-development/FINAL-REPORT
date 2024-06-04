@@ -2,7 +2,6 @@
 
 namespace App\Livewire;
 
-use App\Models\User;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Facades\Validator;
 use Livewire\Attributes\Layout;
