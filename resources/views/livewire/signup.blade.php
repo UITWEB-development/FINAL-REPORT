@@ -43,7 +43,7 @@
         {{-- SIGN UP --}}
         <div>
             <label for="email" class="block font-bold text-[2cqmin] select-none">&nbsp;</label>
-            <input type="submit" value="Sign up" class="flex items-center justify-center w-full rounded-md border-2 font-bold bg-[#cd853f] outline-none border-none text-white hover:bg-[#9e6a35] active:bg-[#9e6a35] h-[5.9cqmin] text-[2.5cqmin]">
+            <input type="submit" value="Sign up" class="flex items-center justify-center w-full rounded-md border-2 font-bold bg-[#cd853f] outline-none border-none text-white hover:bg-[#9e6a35] active:bg-[#9e6a35] text-[3cqmin] h-[7.5cqmin]">
         </div>
 
 

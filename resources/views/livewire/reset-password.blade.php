@@ -22,7 +22,7 @@
         </div>
         
         <div class="mt-[3cqmin]">
-            <input type="submit" value="Reset password" class="block w-full p-2 rounded-md border-2 text-[2.6cqmin] font-bold bg-[#cd853f] outline-none border-none text-white hover:bg-blue-700">
+            <input type="submit" value="Reset password" class="block w-full p-2 rounded-md border-2 text-[3cqmin] h-[7.5cqmin] font-bold bg-[#cd853f] outline-none border-none text-white hover:bg-blue-700">
         </div>
 
     </form>

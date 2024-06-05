@@ -19,7 +19,7 @@
                 </div>
             </div>
             <div class="w-full flex justify-center">
-                <input type="submit" value="Sign in" class="block bg-[#cd853f] text-white text-center aspect-[250/85] text-[4cqmin] rounded-lg cursor-pointer px-6 py-2 hover:bg-[#9e6a35] active:bg-[#9e6a35]">
+                <input type="submit" value="Sign in" class="block font-bold text-[3cqmin] h-[7.5cqmin] bg-[#cd853f] text-white text-center aspect-[250/85] rounded-lg cursor-pointer px-6 py-2 hover:bg-[#9e6a35] active:bg-[#9e6a35]">
             </div>
         </form>
     </div>
