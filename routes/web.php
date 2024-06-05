@@ -36,7 +36,7 @@ Route::get('/user', UserDashboard::class)->middleware('auth:user,2')->name('user
 
 Route::get('/about-us', AboutUs::class)->name('about-us');
 Route::get('/contact', Contact::class)->name('contact');
-
+Route::post('/contact', [Contact::class, 'sendEmail']);
 
 Route::get('/provinces', ProvinceShow::class);
 Route::get('/districts', DistrictShow::class);
