@@ -1,4 +1,4 @@
-<div class="flex justify-center items-center h-[85.8vh] bg-[#f7ebd3]">
+<div class="flex justify-center items-center h-[85.8vh] sm:h-[90vh] bg-[#f7ebd3]">
     <livewire:toast></livewire:toast>
     <form wire:submit="resetPassword" class="max-h-[80%] w-[80%] md:w-[50%] lg:w-[50%] xl:w-[38.46%] bg-[#fadaa3] aspect-[1000/900] px-[4.5cqmin] py-[3cqmin] rounded-2xl flex flex-col justify-center gap-[2.5cqmin] ">
         <h1 class="text-center font-extrabold text-[4cqmin]">RESET PASSWORD</h1>

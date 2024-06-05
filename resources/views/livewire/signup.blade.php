@@ -1,4 +1,4 @@
-<div class="flex flex-col justify-center items-center h-[85.8vh] bg-[#f7ebd3]">
+<div class="flex flex-col justify-center items-center h-[85.8] sm:h-[90vh] bg-[#f7ebd3]">
     <form wire:submit="signup" class="w-[80%] md:w-[60%] lg:w-[70%] xl:w-[38.46%] max-h-[90%] bg-[#fadaa3] aspect-[1047/997] px-[3.5cqmin] py-[2cqmin] rounded-2xl flex flex-col gap-[2cqmin]">
         <h1 class="text-center font-extrabold text-[5cqmin]">SIGN UP</h1>
         
