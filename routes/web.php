@@ -38,9 +38,5 @@ Route::get('/about-us', AboutUs::class)->name('about-us');
 Route::get('/contact', Contact::class)->name('contact');
 Route::post('/contact', [Contact::class, 'sendEmail']);
 
-Route::get('/provinces', ProvinceShow::class);
-Route::get('/districts', DistrictShow::class);
-Route::get('/wards', WardShow::class);
-
 
 require __DIR__ . '/auth.php';
