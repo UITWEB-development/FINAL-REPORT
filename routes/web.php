@@ -39,6 +39,5 @@ Route::get('/provinces', ProvinceShow::class);
 Route::get('/districts', DistrictShow::class);
 Route::get('/wards', WardShow::class);
 
-Route::get('/map', AlpineGoogleMap::class);
 
 require __DIR__ . '/auth.php';
