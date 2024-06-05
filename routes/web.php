@@ -7,6 +7,8 @@ use App\Livewire\Contact;
 use App\Livewire\DistrictShow;
 use App\Livewire\HomePage;
 use App\Livewire\ProvinceShow;
+use App\Livewire\RestaurantList;
+use App\Livewire\RestaurantPage;
 use App\Livewire\SellerDashboard;
 use App\Livewire\SellerDashboardOrders;
 use App\Livewire\SellerDashboardProducts;
@@ -20,7 +22,8 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::get('/', HomePage::class)->name('home');
+Route::get('/', RestaurantList::class)->name('home');
+Route::get('/restaurant/{id}', RestaurantPage::class)->name('restaurant.page');
 
 
 Route::get('/admin', AdminDashboard::class)->middleware('auth:admin,0')->name('admin.dashboard');

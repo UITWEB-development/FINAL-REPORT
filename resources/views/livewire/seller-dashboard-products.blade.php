@@ -1,16 +1,4 @@
 <div>
-{{--     <livewire:toast></livewire:toast>
-
-    @if (session()->has('success'))
-        <script>
-            window.onload = function() {
-                window.toast('{{ session()->get('success') }}', {
-                    type: "success",
-                    position: "top-right"
-                })
-            }
-        </script>
-    @endif --}}
     <div class="flex items-center justify-between">
         <div>
             <div class="hidden md:block">
@@ -23,10 +11,7 @@
                 @svg('fab-product-hunt', 'size-12')
             </div>
         </div>
-          <livewire:search-product></livewire:search-product>
-        <div>
-
-        </div>
+        <livewire:search-product></livewire:search-product>
         <div>
             <form action="">
                 <button wire:click="$dispatch('openModal', { component: 'add-product' })" type="button"
@@ -37,16 +22,14 @@
                             d="M12 3.75a.75.75 0 01.75.75v6.75h6.75a.75.75 0 010 1.5h-6.75v6.75a.75.75 0 01-1.5 0v-6.75H4.5a.75.75 0 010-1.5h6.75V4.5a.75.75 0 01.75-.75z"
                             clip-rule="evenodd" />
                     </svg>
-
                     <span class="hidden md:block">Create</span>
                 </button>
-
             </form>
         </div>
     </div>
     <div class=" xl:max-w-7xl">
         <div id="categories" class="flex items-center justify-between">
-          <livewire:select-category></livewire:select-category>
+            <livewire:select-category></livewire:select-category>
         </div>
     </div>
     <div class="relative">

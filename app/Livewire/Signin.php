@@ -11,6 +11,7 @@ use Livewire\Component;
 use Livewire\Attributes\Locked;
 use Livewire\Attributes\Title;
 use Illuminate\Validation\ValidationException;
+use Livewire\Attributes\Url;
 use Masmerise\Toaster\Toaster;
 
 #[Layout('components.layouts.user-auth')]
@@ -18,6 +19,9 @@ use Masmerise\Toaster\Toaster;
 class Signin extends Component
 {
     use UserTypeMount;
+
+    #[Url]
+    public $redirect_url = '';
 
     #[Locked]
     public $role_id;
@@ -75,7 +79,11 @@ class Signin extends Component
 
         if (auth()->attempt($credentials, $this->remember_me)) {
             session()->regenerate();
-            return Redirect::route($this->user_type.'.dashboard')->success(AuthStatusConstants::SIGN_IN_SUCCESS);
+            if ($this->redirect_url != '') {
+                return redirect($this->redirect_url)->success(AuthStatusConstants::SIGN_IN_SUCCESS);
+            } else {
+                return Redirect::route($this->user_type.'.dashboard')->success(AuthStatusConstants::SIGN_IN_SUCCESS);
+            }
         }
 
         Toaster::error(AuthStatusConstants::INVALID_CREDENTIALS);
