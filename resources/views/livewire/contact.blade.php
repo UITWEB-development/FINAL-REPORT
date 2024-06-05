@@ -1,11 +1,11 @@
-<section id="contact">
+<section id="contact" class="pt-4">
     <div class="mx-auto max-w-7xl px-4  sm:px-6 lg:px-8 ">
         <div class="mb-4">
             <div class="mb-6 max-w-3xl text-center sm:text-center md:mx-auto md:mb-6">
                 <!-- <p class="text-base font-semibold uppercase tracking-wide text-[#A05A16] dark:text-blue-200">
                     Contact
                 </p> -->
-                <div class="bg-[#FFEFD5] rounded-lg w-64 mx-auto">
+                <div class="bg-[#FFEFD5] rounded-lg  w-64 mx-auto">
                     <p
                         class="mb-4  text-[#A05A16] dark:text-blue-200 px-4 py-2 rounded-lg  md:mx-auto w-full text-base font-semibold tracking-wide  uppercase">
                         Contact
