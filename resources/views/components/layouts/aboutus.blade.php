@@ -16,7 +16,7 @@
     {{-- HEADER HERE --}}
     <nav x-data="{ mobileMenuIsOpen: false }" @click.away="mobileMenuIsOpen = false" class=" bg-[#eccc95] flex items-center justify-between gap-4 px-6 py-4" aria-label="penguin ui menu">
         <!-- Brand Logo -->
-        <a href="#" class="text-2xl font-bold text-black dark:text-white ">
+        <a href="/" class="text-2xl font-bold text-black dark:text-white ">
           @svg('gouchill', 'h-10 w-36')
         </a>
         <!-- Desktop Menu -->
@@ -86,8 +86,8 @@
                 <li><a href="/seller/sign-in?redirect_url=/" class="block bg-slate-100 px-4 py-2 text-sm text-slate-700 hover:bg-slate-800/5 hover:text-black focus-visible:bg-slate-800/10 focus-visible:text-black focus-visible:outline-none dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-100/5 dark:hover:text-white dark:focus-visible:bg-slate-100/10 dark:focus-visible:text-white">Seller</a></li>
               @endguest
               @auth
-                <li><a href="#" class="block bg-slate-100 px-4 py-2 text-sm text-slate-700 hover:bg-slate-800/5 hover:text-black focus-visible:bg-slate-800/10 focus-visible:text-black focus-visible:outline-none dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-100/5 dark:hover:text-white dark:focus-visible:bg-slate-100/10 dark:focus-visible:text-white">Account</a></li>
-                <li><a href="#" class="block bg-slate-100 px-4 py-2 text-sm text-slate-700 hover:bg-slate-800/5 hover:text-black focus-visible:bg-slate-800/10 focus-visible:text-black focus-visible:outline-none dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-100/5 dark:hover:text-white dark:focus-visible:bg-slate-100/10 dark:focus-visible:text-white">Sign Out</a></li>
+                <li><a href="{{ route(auth()->user()->role->name.'.dashboard') }}" class="block bg-slate-100 px-4 py-2 text-sm text-slate-700 hover:bg-slate-800/5 hover:text-black focus-visible:bg-slate-800/10 focus-visible:text-black focus-visible:outline-none dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-100/5 dark:hover:text-white dark:focus-visible:bg-slate-100/10 dark:focus-visible:text-white">Account</a></li>
+                <livewire:nav-signout></livewire:nav-signout>
               @endauth
             </ul>
           </li>
@@ -106,26 +106,27 @@
           @auth
             <li class="mb-4 border-none">
               <div class="flex items-center gap-2 py-2">
-                <img src="https://penguinui.s3.amazonaws.com/component-assets/avatar-8.webp" alt="User Profile" class="size-12 rounded-full object-cover"  />
+                <img src="{{ asset('storage/'.auth()->user()->image_path) }}" alt="User Profile" class="size-12 rounded-full object-cover"  />
                 <div>
-                  <span class="font-medium text-black dark:text-white">Alice Brown</span>
-                  <p class="text-sm text-slate-700 dark:text-slate-300">alice.brown@gmail.com</p>
+                  <span class="font-medium text-black dark:text-white">{{auth()->user()->name}}</span>
+                  <p class="text-sm text-slate-700 dark:text-slate-300">{{auth()->user()->email}}</p>
                 </div>	
               </div>
             </li>
           @endauth
-          <li class="p-2"><a href="#" class="w-full text-lg font-bold text-blue-700 focus:underline dark:text-blue-600" aria-current="page">Home</a></li>
-          <li class="p-2"><a href="#" class="w-full text-lg font-medium text-slate-700 focus:underline dark:text-slate-300">About Us</a></li>
-          <li class="p-2"><a href="#" class="w-full text-lg font-medium text-slate-700 focus:underline dark:text-slate-300">Contact</a></li>
+          <li class="p-2"><a href="/" class="w-full text-lg font-bold text-blue-700 focus:underline dark:text-blue-600" aria-current="page">Home</a></li>
+          <li class="p-2"><a href="/about-us" class="w-full text-lg font-medium text-slate-700 focus:underline dark:text-slate-300">About Us</a></li>
+          <li class="p-2"><a href="/contact" class="w-full text-lg font-medium text-slate-700 focus:underline dark:text-slate-300">Contact</a></li>
           <hr role="none" class="my-2 border-outline dark:border-slate-700">
           @guest
           <li class="p-2"><a href="#" class="w-full text-slate-700 focus:underline dark:text-slate-300">User sign in</a></li>
           <li class="p-2"><a href="#" class="w-full text-slate-700 focus:underline dark:text-slate-300">Seller sign in</a></li>
           @endguest
-          <li class="p-2"><a href="#" class="w-full text-slate-700 focus:underline dark:text-slate-300">Profile</a></li>
+
           <!-- CTA Button -->
           @auth
-          <li class="mt-4 w-full border-none"><a href="#" class="rounded-xl bg-blue-700 px-4 py-2 block text-center font-medium tracking-wide text-slate-100 hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700 active:opacity-100 active:outline-offset-0 dark:bg-blue-600 dark:text-slate-100 dark:focus-visible:outline-blue-600">Sign Out</a></li>
+            <li class="p-2"><a href="{{ route(auth()->user()->role->name.'.dashboard') }}" class="w-full text-slate-700 focus:underline dark:text-slate-300">Account</a></li>
+            <livewire:home-signout></livewire:home-signout>
           @endauth
         </ul>
       </nav>
