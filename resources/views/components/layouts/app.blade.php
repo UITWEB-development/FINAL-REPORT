@@ -16,7 +16,7 @@
 
 <body class="font-roboto-slab ">
     {{-- Header here --}}
-    <nav x-data="{ mobileMenuIsOpen: false }" @click.away="mobileMenuIsOpen = false" class="flex items-center justify-between gap-4 px-6 py-4" aria-label="penguin ui menu">
+    <nav x-data="{ mobileMenuIsOpen: false }" @click.away="mobileMenuIsOpen = false" class=" bg-[#eccc95] flex items-center justify-between gap-4 px-6 py-4" aria-label="penguin ui menu">
       <!-- Brand Logo -->
       <a href="#" class="text-2xl font-bold text-black dark:text-white ">
         @svg('gouchill', 'h-10 w-36')
@@ -31,8 +31,8 @@
       <!-- Desktop Menu -->
       <ul class="hidden items-center gap-4 flex-shrink-0 sm:flex">
         <li><a href="/" class="font-bold text-orange-600 underline-offset-2 hover:text-orange-600 focus:outline-none focus:underline dark:text-orange-600 dark:hover:text-orange-600" aria-current="page">Home</a></li>
-        <li><a href="/about-us" class="font-medium text-slate-700 underline-offset-2 hover:text-blue-700 focus:outline-none focus:underline dark:text-slate-300 dark:hover:text-blue-600">About Us</a></li>
-        <li><a href="/contact" class="font-medium text-slate-700 underline-offset-2 hover:text-blue-700 focus:outline-none focus:underline dark:text-slate-300 dark:hover:text-blue-600">Contact</a></li>
+        <li><a href="/about-us" class="font-bold underline-offset-2 hover:text-orange-600 focus:outline-none focus:underline dark:text-orange-600 dark:hover:text-orange-600" >About Us</a></li>
+        <li><a href="/contact" class="font-bold  underline-offset-2 hover:text-orange-600 focus:outline-none focus:underline dark:text-orange-600 dark:hover:text-orange-600" >Contact</a></li>
         <!-- User Pic -->
         <li x-data="{ userDropDownIsOpen: false, openWithKeyboard: false }" @keydown.esc.window="userDropDownIsOpen = false, openWithKeyboard = false" class="relative flex items-center">
           <button @click="userDropDownIsOpen = ! userDropDownIsOpen" :aria-expanded="userDropDownIsOpen" @keydown.space.prevent="openWithKeyboard = true" @keydown.enter.prevent="openWithKeyboard = true" @keydown.down.prevent="openWithKeyboard = true" class="rounded-full focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700 dark:focus-visible:outline-blue-600" aria-controls="userMenu">

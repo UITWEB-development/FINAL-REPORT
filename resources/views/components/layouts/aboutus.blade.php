@@ -21,10 +21,47 @@
         </a>
         <!-- Desktop Menu -->
         <ul class="hidden items-center gap-4 flex-shrink-0 sm:flex">
-          <li><a href="/" class="font-bold underline-offset-2  hover:text-orange-600 focus:outline-none focus:underline dark:text-orange-600 dark:hover:text-orange-600" aria-current="page">Home</a></li>
-          <li><a href="/about-us" class="font-medium  text-slate-700 underline-offset-2 hover:text-blue-700 focus:outline-none focus:underline dark:text-slate-300 dark:hover:text-blue-600 ">About Us</a></li>
-          <li><a href="/contact" class="font-medium text-slate-700 underline-offset-2 hover:text-blue-700 focus:outline-none focus:underline dark:text-slate-300 dark:hover:text-blue-600">Contact</a></li>
-          <!-- User Pic -->
+          <li><a href="/" class="font-bold underline-offset-2  hover:text-orange-600 focus:outline-none focus:underline dark:text-orange-600 dark:hover:text-orange-600">Home</a></li>
+          <li>
+            <a href="/about-us" id="aboutUsLink" class="nav-link text-orange-600 font-bold underline-offset-2 hover:text-orange-600 focus:outline-none focus:underline dark:text-orange-600 dark:hover:text-orange-600">About Us</a>
+          </li>
+          <li>
+            <a href="/contact" id="contactLink" class="nav-link text-orange-600 font-bold underline-offset-2 hover:text-orange-600 focus:outline-none focus:underline dark:text-orange-600 dark:hover:text-orange-600">Contact</a>
+          </li>
+          <script>
+            function updateLinkColors() {
+              const aboutUsLink = document.getElementById('aboutUsLink');
+              const contactLink = document.getElementById('contactLink');
+              
+              if (window.location.pathname === '/about-us') {
+                aboutUsLink.classList.add('text-orange-600');
+                contactLink.classList.remove('text-orange-600');
+                contactLink.classList.add('text-black');
+              } else if (window.location.pathname === '/contact') {
+                contactLink.classList.add('text-orange-600');
+                aboutUsLink.classList.remove('text-orange-600');
+                aboutUsLink.classList.add('text-black');
+              }
+            }
+          
+            document.getElementById('aboutUsLink').addEventListener('click', function() {
+              document.getElementById('aboutUsLink').classList.remove('text-black');
+              document.getElementById('aboutUsLink').classList.add('text-orange-600');
+              document.getElementById('contactLink').classList.remove('text-orange-600');
+              document.getElementById('contactLink').classList.add('text-black');
+            });
+          
+            document.getElementById('contactLink').addEventListener('click', function() {
+              document.getElementById('contactLink').classList.remove('text-black');
+              document.getElementById('contactLink').classList.add('text-orange-600');
+              document.getElementById('aboutUsLink').classList.remove('text-orange-600');
+              document.getElementById('aboutUsLink').classList.add('text-black');
+            });
+          
+            // Function to retain color on page load based on URL
+            window.onload = updateLinkColors;
+          </script>
+          
           <li x-data="{ userDropDownIsOpen: false, openWithKeyboard: false }" @keydown.esc.window="userDropDownIsOpen = false, openWithKeyboard = false" class="relative flex items-center">
             <button @click="userDropDownIsOpen = ! userDropDownIsOpen" :aria-expanded="userDropDownIsOpen" @keydown.space.prevent="openWithKeyboard = true" @keydown.enter.prevent="openWithKeyboard = true" @keydown.down.prevent="openWithKeyboard = true" class="rounded-full focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700 dark:focus-visible:outline-blue-600" aria-controls="userMenu">
               @auth
