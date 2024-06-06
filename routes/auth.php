@@ -23,12 +23,12 @@ Route::middleware(['guest'])->group(function() {
         Route::get('/forgot-password', ForgotPassword::class)->whereIn('user_type', $user_types)->name('password.email');
         Route::get('reset-password/{token}', ResetPassword::class)->name('password.reset');
     }
-    
-    
+
+    Route::get('/google/redirect', [App\Http\Controllers\GoogleLoginController::class, 'redirectToGoogle'])->name('google.redirect');
+    Route::get('/google/callback', [App\Http\Controllers\GoogleLoginController::class, 'handleGoogleCallback'])->name('google.callback');
 });
 
-Route::get('/google/redirect', [App\Http\Controllers\GoogleLoginController::class, 'redirectToGoogle'])->name('google.redirect');
-Route::get('/google/callback', [App\Http\Controllers\GoogleLoginController::class, 'handleGoogleCallback'])->name('google.callback');
+
 
 
 
