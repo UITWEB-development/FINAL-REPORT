@@ -7,6 +7,7 @@ use Livewire\Attributes\Title;
 use Livewire\Component;
 use Livewire\WithoutUrlPagination;
 use Livewire\WithPagination;
+use Livewire\Attributes\On;
 
 #[Title('Home')]
 class RestaurantList extends Component
