@@ -1,6 +1,5 @@
 import plugin from "tailwindcss/plugin";
 import defaultTheme from "tailwindcss/defaultTheme";
-import colors from "tailwindcss/colors";
 
 import aspectRatio from "@tailwindcss/aspect-ratio";
 import forms from "@tailwindcss/forms";
@@ -23,37 +22,49 @@ export default {
                 sans: ["Inter", ...defaultTheme.fontFamily.sans],
             },
             colors: {
-                autofillBg: '#FADAA3', // Custom background color for autofill
+                autofillBg: "#FADAA3",
             },
         },
     },
     variants: {
         extend: {
-            backgroundColor: ['autofill'],
-            textColor: ['autofill'],
-            boxShadow: ['autofill'],
+            backgroundColor: ["autofill"],
+            textColor: ["autofill"],
+            boxShadow: ["autofill"],
         },
     },
     plugins: [
         aspectRatio,
         forms,
         typography,
-        plugin(function({ addVariant, e }) {
-            addVariant('autofill', ({ modifySelectors, separator }) => {
+        plugin(function ({ addVariant, e }) {
+            addVariant("autofill", ({ modifySelectors, separator }) => {
                 modifySelectors(({ className }) => {
-                    return `.${e(`autofill${separator}${className}`)}:-webkit-autofill`
+                    return `.${e(
+                        `autofill${separator}${className}`
+                    )}:-webkit-autofill`;
                 });
             });
-            addVariant('autofill-hover', ({ modifySelectors, separator }) => {
+            addVariant("autofill-hover", ({ modifySelectors, separator }) => {
                 modifySelectors(({ className }) => {
-                    return `.${e(`autofill-hover${separator}${className}`)}:-webkit-autofill:hover`
+                    return `.${e(
+                        `autofill-hover${separator}${className}`
+                    )}:-webkit-autofill:hover`;
                 });
             });
-            addVariant('autofill-focus', ({ modifySelectors, separator }) => {
+            addVariant("autofill-focus", ({ modifySelectors, separator }) => {
                 modifySelectors(({ className }) => {
-                    return `.${e(`autofill-focus${separator}${className}`)}:-webkit-autofill:focus`
+                    return `.${e(
+                        `autofill-focus${separator}${className}`
+                    )}:-webkit-autofill:focus`;
                 });
             });
         }),
+    ],
+    safelist: [
+        {
+            pattern: /max-w-(sm|md|lg|xl|2xl|3xl|4xl|5xl|6xl|7xl)/,
+            variants: ["sm", "md", "lg", "xl", "2xl"],
+        },
     ],
 };
