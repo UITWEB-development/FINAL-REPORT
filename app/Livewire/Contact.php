@@ -6,7 +6,9 @@ use Livewire\Component;
 use App\Mail\ContactEmail;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
+use Livewire\Attributes\Title;
 
+#[Title('Contact')]
 class Contact extends Component
 {
     public function render()
