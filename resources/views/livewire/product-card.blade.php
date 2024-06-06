@@ -8,7 +8,8 @@
                 </div>
                 <div class="space-y-1">
                     <h3 class="text-lg font-semibold text-white ">{{ $product->name }}</h3>
-                    <p class="text-sm font-semibold text-[#e1e0e2]">{{ $product->price }}</p>
+                    <p class="text-sm font-semibold text-[#e1e0e2]">{{ number_format($product->price, 0, ',', '.') }} VND
+                    </p>
                 </div>
                 <div wire:click.stop="$dispatch('openModal', { component: 'edit-product', arguments: { product : '{{$product->id}}' }})" class="cursor-pointer flex h-10 w-10 items-center justify-center rounded-full bg-slate-500/25 text-slate-400 transition group-hover:scale-110 group-hover:bg-[#da9858] group-hover:text-white group-active:scale-100 absolute bot-4 right-4">
                     @svg('edit', 'hi-mini hi-play h-5 w-5')                      
