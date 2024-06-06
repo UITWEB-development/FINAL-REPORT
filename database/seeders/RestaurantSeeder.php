@@ -87,59 +87,155 @@ class RestaurantSeeder extends Seeder
         ]);
 
         /* Products */
+        for ($i=0; $i <7 ; $i++) { 
+            $restaurant1_product1 = Product::create([
+                'price' => 295000,
+                'name' => 'Chicken fettuccine',
+                'description' => 'Chicken chicken',
+                'image_path' => '0baf6ade-d782-405f-89f5-fdb77c03dd29.jpg',
+                'is_available' => true,
+                'user_id' => $restaurant1->id,
+                'category_id' => 0,
+            ]);
+        }
 
-        $restaurant3_product1 = Product::create([
-            'price' => 295000,
-            'name' => 'Chicken fettuccine',
-            'description' => 'Chicken chicken',
-            'image_path' => '0baf6ade-d782-405f-89f5-fdb77c03dd29.jpg',
-            'is_available' => true,
-            'user_id' => $restaurant3->id,
-            'category_id' => 0,
-        ]);
+        for ($i=0; $i <7 ; $i++) { 
+            Product::create([
+                'price' => 295000,
+                'name' => 'Chicken fettuccine',
+                'description' => 'Chicken chicken',
+                'image_path' => '0baf6ade-d782-405f-89f5-fdb77c03dd29.jpg',
+                'is_available' => true,
+                'user_id' => $restaurant2->id,
+                'category_id' => 0,
+            ]);
+        }
 
-        $restaurant3_product2 = Product::create([
-            'price' => 360000,
-            'name' => 'Phan Thiet Swordfish with green salsa',
-            'description' => 'Swordfish',
-            'image_path' => '0b13f658-85e1-4894-8d90-ebabd0635f1f.jpg',
-            'is_available' => true,
-            'user_id' => $restaurant3->id,
-            'category_id' => 0,
-        ]);
 
-        $restaurant3_product3 = Product::create([
-            'price' => 235000,
-            'name' => 'Lentil & goat cheese salad',
-            'description' => 'Lentil & goat cheese salad',
-            'image_path' => '0baf6ade-d782-405f-89f5-fdb77c03dd29.jpg',
-            'is_available' => true,
-            'user_id' => $restaurant3->id,
-            'category_id' => 0,
-        ]);
+        for ($i=0; $i <7 ; $i++) { 
+            Product::create([
+                'price' => 295000,
+                'name' => 'Chicken fettuccine',
+                'description' => 'Chicken chicken',
+                'image_path' => '0baf6ade-d782-405f-89f5-fdb77c03dd29.jpg',
+                'is_available' => true,
+                'user_id' => $restaurant3->id,
+                'category_id' => 0,
+            ]);
+        }
 
-        $restaurant4_product7 = Product::create([
-            'price' => 24000,
-            'name' => 'Mirinda Soda Kem',
-            'description' => 'Lentil & goat cheese salad',
-            'image_path' => 'ssw-mirinda-soda-kem.jpg',
-            'is_available' => true,
-            'user_id' => $restaurant4->id,
-            'category_id' => 1,
-        ]);
+        for ($i=0; $i <7 ; $i++) { 
+            Product::create([
+                'price' => 24000,
+                'name' => 'Mirinda Soda Kem',
+                'description' => 'Lentil & goat cheese salad',
+                'image_path' => 'ssw-mirinda-soda-kem.jpg',
+                'is_available' => true,
+                'user_id' => $restaurant4->id,
+                'category_id' => 1,
+            ]);
+        }
 
-        $restaurant4_product8 = Product::create([
-            'price' => 24000,
-            'name' => 'Aquafina',
-            'description' => 'Lentil & goat cheese salad',
-            'image_path' => 'ssw-aquafina.jpg',
-            'is_available' => true,
-            'user_id' => $restaurant4->id,
-            'category_id' => 1,
-        ]);
+        for ($i=0; $i <7 ; $i++) { 
+            Product::create([
+                'price' => 24000,
+                'name' => 'Mirinda Soda Kem',
+                'description' => 'Lentil & goat cheese salad',
+                'image_path' => 'ssw-mirinda-soda-kem.jpg',
+                'is_available' => true,
+                'user_id' => $restaurant5->id,
+                'category_id' => 1,
+            ]);
+        }
+
+        for ($i=0; $i <7 ; $i++) { 
+            Product::create([
+                'price' => 24000,
+                'name' => 'Mirinda Soda Kem',
+                'description' => 'Lentil & goat cheese salad',
+                'image_path' => 'ssw-mirinda-soda-kem.jpg',
+                'is_available' => true,
+                'user_id' => $restaurant6->id,
+                'category_id' => 1,
+            ]);
+        }
+
+        for ($i=0; $i <7 ; $i++) { 
+            Product::create([
+                'price' => 24000,
+                'name' => 'Mirinda Soda Kem',
+                'description' => 'Lentil & goat cheese salad',
+                'image_path' => 'ssw-mirinda-soda-kem.jpg',
+                'is_available' => true,
+                'user_id' => $restaurant7->id,
+                'category_id' => 1,
+            ]);
+        }
+
+        for ($i=0; $i <7 ; $i++) { 
+            Product::create([
+                'price' => 24000,
+                'name' => 'Mirinda Soda Kem',
+                'description' => 'Lentil & goat cheese salad',
+                'image_path' => 'ssw-mirinda-soda-kem.jpg',
+                'is_available' => true,
+                'user_id' => $restaurant8->id,
+                'category_id' => 1,
+            ]);
+        }
+
+        for ($i=0; $i <7 ; $i++) { 
+            Product::create([
+                'price' => 24000,
+                'name' => 'Mirinda Soda Kem',
+                'description' => 'Lentil & goat cheese salad',
+                'image_path' => 'ssw-mirinda-soda-kem.jpg',
+                'is_available' => true,
+                'user_id' => $restaurant9->id,
+                'category_id' => 1,
+            ]);
+        }
+
+        for ($i=0; $i <7 ; $i++) { 
+            Product::create([
+                'price' => 24000,
+                'name' => 'Mirinda Soda Kem',
+                'description' => 'Lentil & goat cheese salad',
+                'image_path' => 'ssw-mirinda-soda-kem.jpg',
+                'is_available' => true,
+                'user_id' => $restaurant10->id,
+                'category_id' => 1,
+            ]);
+        }
+
+
+
 
 
         /* Descriptions */
+
+        $restaurant1_description = RestaurantDescription::create([
+            'restaurant_name' => "Pizza 4P's",
+            'user_id' => $restaurant1->id,
+            'address' => '151B Hai Ba Trung, Ward 6, District 3, Ho Chi Minh City, Vietnam',
+            'phone_number' => '02838230508',
+            'opening_time' => '11:00:00',
+            'closing_time' => '21:00:00',
+            'longitude' => '106.7036239',
+            'latitude' => '10.7782445',
+        ]);
+
+        $restaurant2_description = RestaurantDescription::create([
+            'restaurant_name' => "Cơm Niêu Sài Gòn",
+            'user_id' => $restaurant2->id,
+            'address' => '27 Tú Xương, Phường Võ Thị Sáu, Quận 3, Ho Chi Minh City, Vietnam',
+            'phone_number' => '0826336888',
+            'opening_time' => '06:00:00',
+            'closing_time' => '23:00:00',
+            'longitude' => '106.7036239',
+            'latitude' => '10.7782445',
+        ]);
+        
         $restaurant3_description = RestaurantDescription::create([
             'restaurant_name' => 'The Refinery Saigon',
             'user_id' => $restaurant3->id,
@@ -162,6 +258,70 @@ class RestaurantSeeder extends Seeder
             'latitude' => '10.7619617',
         ]);
 
+        $restaurant5_description = RestaurantDescription::create([
+            'restaurant_name' => 'ĐẬU Homemade',
+            'user_id' => $restaurant5->id,
+            'address' => '241 Đồng Đen, P.11, Q.Tân Bình, TP. HCM',
+            'phone_number' => '0899094779',
+            'opening_time' => '10:00:00',
+            'closing_time' => '21:30:00',
+            'longitude' => '106.7031359',
+            'latitude' => '10.7619617',
+        ]);
 
+        $restaurant6_description = RestaurantDescription::create([
+            'restaurant_name' => 'Lẩu Gà Ớt Hiểm 109',
+            'user_id' => $restaurant6->id,
+            'address' => '190 Hoàng Diệu 2, P. Linh Chiểu, TP. Thủ Đức',
+            'phone_number' => '0899094779',
+            'opening_time' => '10:00:00',
+            'closing_time' => '21:30:00',
+            'longitude' => '106.7031359',
+            'latitude' => '10.7619617',
+        ]);
+
+        $restaurant7_description = RestaurantDescription::create([
+            'restaurant_name' => 'Lẩu Gà Ớt Hiểm 109',
+            'user_id' => $restaurant7->id,
+            'address' => 'Tầng 02, Estella Place, 88 Song Hành, P. An Phú, Q.2',
+            'phone_number' => '0899094779',
+            'opening_time' => '10:00:00',
+            'closing_time' => '21:30:00',
+            'longitude' => '106.7031359',
+            'latitude' => '10.7619617',
+        ]);
+
+        $restaurant8_description = RestaurantDescription::create([
+            'restaurant_name' => 'Hàng Dương Quán',
+            'user_id' => $restaurant8->id,
+            'address' => '32-34 Ngô Đức Kế, P.Bến Nghé, Quận 1, Ho Chi Minh City, Vietnam',
+            'phone_number' => '0899094779',
+            'opening_time' => '10:00:00',
+            'closing_time' => '21:30:00',
+            'longitude' => '106.7031359',
+            'latitude' => '10.7619617',
+        ]);
+
+        $restaurant9_description = RestaurantDescription::create([
+            'restaurant_name' => "Dan's Kitchen",
+            'user_id' => $restaurant9->id,
+            'address' => '334 Nguyễn Tất Thành, Phường 13, Quận 4, Ho Chi Minh City, Vietnam',
+            'phone_number' => '0899094779',
+            'opening_time' => '10:00:00',
+            'closing_time' => '21:30:00',
+            'longitude' => '106.7031359',
+            'latitude' => '10.7619617',
+        ]);
+
+        $restaurant10_description = RestaurantDescription::create([
+            'restaurant_name' => "Nàng Tấm",
+            'user_id' => $restaurant10->id,
+            'address' => '99 Đ. Nguyễn Huệ, Bến Nghé, Quận 1, Ho Chi Minh City, Vietnam',
+            'phone_number' => '0938556666',
+            'opening_time' => '10:00:00',
+            'closing_time' => '21:30:00',
+            'longitude' => '106.7031359',
+            'latitude' => '10.7619617',
+        ]);
     }
 }

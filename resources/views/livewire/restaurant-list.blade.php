@@ -8,4 +8,6 @@
         <livewire:restaurant-card :$restaurant :key="$restaurant->id"></livewire:restaurant-card>
         @endforeach
     </nav>
+
+    <div class="flex justify-center items-center pb-10">{{ $restaurants->links() }}</div> 
 </div>

@@ -27,7 +27,7 @@
                             <span class="text-[3cqmin]">{{ $restaurant->restaurant_description->address }}</span>
                         </div>
                         <div class="flex flex-row gap-3 items-center ml-auto">
-                            <a href="" class="text-[3cqmin]">View on Google Map</a>
+                            <a wire:click.prevent.stop="$dispatch('openModal', { component: 'restaurant-google-map', arguments: { restaurant : '{{$restaurant->id}}' }})" href="" class="text-[3cqmin] hover:text-orange-600 active:text-orange-600">View on Google Map</a>
                         </div>
                     </div>
                 </div>
@@ -46,90 +46,6 @@
         </div>
     </div>
 
-    <nav class="p-5 gap-4 mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
-        <!-- Restaurant cards -->
-        <a
-            class="group aspect-h-10 aspect-w-16 relative overflow-hidden rounded-2xl bg-black/25 transition hover:ring-4 hover:ring-[#cd853f] active:opacity-75">
-            <img class="object-cover"
-                src="https://th.bing.com/th/id/R.4038c562cfc67bf6421a148e7c4ac4d8?rik=Q%2f%2fOp4yxjuMcjg&pid=ImgRaw&r=0" />
-            <div
-                class="cursor-pointer absolute inset-0 flex justify-between bg-gradient-to-b from-transparent to-black">
-                <div
-                    class="space-y-1 transition group-hover:scale-105 text-white group-hover:text-yellow-600 group-active:scale-100 absolute bottom-3 left-3">
-                    <h3 class="text-2xl font-semibold">Nhà hàng Vạn Huê Lầu</h3>
-                    <p class="text-sm font-semibold text-[#e1e0e2]">2500000</p>
-                </div>
-            </div>
-        </a>
 
-        <a
-            class="group aspect-h-10 aspect-w-16 relative overflow-hidden rounded-2xl bg-black/25 transition hover:ring-4 hover:ring-[#cd853f] active:opacity-75">
-            <img class="object-cover"
-                src="https://th.bing.com/th/id/R.4038c562cfc67bf6421a148e7c4ac4d8?rik=Q%2f%2fOp4yxjuMcjg&pid=ImgRaw&r=0" />
-            <div
-                class="cursor-pointer absolute inset-0 flex justify-between bg-gradient-to-b from-transparent to-black">
-                <div
-                    class="space-y-1 transition group-hover:scale-105 text-white group-hover:text-yellow-600 group-active:scale-100 absolute bottom-3 left-3">
-                    <h3 class="text-2xl font-semibold">Nhà hàng Vạn Huê Lầu</h3>
-                    <p class="text-sm font-semibold text-[#e1e0e2]">2500000</p>
-                </div>
-            </div>
-        </a>
-
-        <a
-            class="group aspect-h-10 aspect-w-16 relative overflow-hidden rounded-2xl bg-black/25 transition hover:ring-4 hover:ring-[#cd853f] active:opacity-75">
-            <img class="object-cover"
-                src="https://th.bing.com/th/id/R.4038c562cfc67bf6421a148e7c4ac4d8?rik=Q%2f%2fOp4yxjuMcjg&pid=ImgRaw&r=0" />
-            <div
-                class="cursor-pointer absolute inset-0 flex justify-between bg-gradient-to-b from-transparent to-black">
-                <div
-                    class="space-y-1 transition group-hover:scale-105 text-white group-hover:text-yellow-600 group-active:scale-100 absolute bottom-3 left-3">
-                    <h3 class="text-2xl font-semibold">Nhà hàng Vạn Huê Lầu</h3>
-                    <p class="text-sm font-semibold text-[#e1e0e2]">2500000</p>
-                </div>
-            </div>
-        </a>
-
-        <a
-            class="group aspect-h-10 aspect-w-16 relative overflow-hidden rounded-2xl bg-black/25 transition hover:ring-4 hover:ring-[#cd853f] active:opacity-75">
-            <img class="object-cover"
-                src="https://th.bing.com/th/id/R.4038c562cfc67bf6421a148e7c4ac4d8?rik=Q%2f%2fOp4yxjuMcjg&pid=ImgRaw&r=0" />
-            <div
-                class="cursor-pointer absolute inset-0 flex justify-between bg-gradient-to-b from-transparent to-black">
-                <div
-                    class="space-y-1 transition group-hover:scale-105 text-white group-hover:text-yellow-600 group-active:scale-100 absolute bottom-3 left-3">
-                    <h3 class="text-2xl font-semibold">Nhà hàng Vạn Huê Lầu</h3>
-                    <p class="text-sm font-semibold text-[#e1e0e2]">2500000</p>
-                </div>
-            </div>
-        </a>
-
-        <a
-            class="group aspect-h-10 aspect-w-16 relative overflow-hidden rounded-2xl bg-black/25 transition hover:ring-4 hover:ring-[#cd853f] active:opacity-75">
-            <img class="object-cover"
-                src="https://th.bing.com/th/id/R.4038c562cfc67bf6421a148e7c4ac4d8?rik=Q%2f%2fOp4yxjuMcjg&pid=ImgRaw&r=0" />
-            <div
-                class="cursor-pointer absolute inset-0 flex justify-between bg-gradient-to-b from-transparent to-black">
-                <div
-                    class="space-y-1 transition group-hover:scale-105 text-white group-hover:text-yellow-600 group-active:scale-100 absolute bottom-3 left-3">
-                    <h3 class="text-2xl font-semibold">Nhà hàng Vạn Huê Lầu</h3>
-                    <p class="text-sm font-semibold text-[#e1e0e2]">2500000</p>
-                </div>
-            </div>
-        </a>
-
-        <a
-            class="group aspect-h-10 aspect-w-16 relative overflow-hidden rounded-2xl bg-black/25 transition hover:ring-4 hover:ring-[#cd853f] active:opacity-75">
-            <img class="object-cover"
-                src="https://th.bing.com/th/id/R.4038c562cfc67bf6421a148e7c4ac4d8?rik=Q%2f%2fOp4yxjuMcjg&pid=ImgRaw&r=0" />
-            <div
-                class="cursor-pointer absolute inset-0 flex justify-between bg-gradient-to-b from-transparent to-black">
-                <div
-                    class="space-y-1 transition group-hover:scale-105 text-white group-hover:text-yellow-600 group-active:scale-100 absolute bottom-3 left-3">
-                    <h3 class="text-2xl font-semibold">Nhà hàng Vạn Huê Lầu</h3>
-                    <p class="text-sm font-semibold text-[#e1e0e2]">2500000</p>
-                </div>
-            </div>
-        </a>
-    </nav>
+    <livewire:restaurant-product-list :$restaurant></livewire:restaurant-product-list>
 </div>

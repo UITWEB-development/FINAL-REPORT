@@ -5,8 +5,8 @@ namespace App\Livewire;
 use App\Models\User;
 use Livewire\Attributes\Title;
 use Livewire\Component;
-use Livewire\WithoutUrlPagination;
 use Livewire\WithPagination;
+use Livewire\WithoutUrlPagination;
 use Livewire\Attributes\On;
 
 #[Title('Home')]
@@ -25,7 +25,10 @@ class RestaurantList extends Component
     #[On('restaurant_updated')]
     public function render()
     {
-        $restaurants = User::has('restaurant_description')->get();
+        $restaurants = User::has('restaurant_description');
+
+        $restaurants = $restaurants->paginate(6);
+
         return view('livewire.restaurant-list', ['restaurants' => $restaurants]);
     }
 }

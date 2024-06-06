@@ -98,4 +98,14 @@ class EditUser extends ModalComponent
     {
         return view('livewire.edit-user');
     }
+
+    public static function modalMaxWidth(): string
+    {
+        return 'xl';
+    }
+
+    public static function closeModalOnClickAway(): bool
+    {
+        return false;
+    }
 }

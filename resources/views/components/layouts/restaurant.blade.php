@@ -22,51 +22,6 @@
         </a>
         <!-- Desktop Menu -->
         <ul class="hidden items-center gap-4 flex-shrink-0 sm:flex">
-            <li><a href="/"
-                    class="font-bold underline-offset-2  hover:text-orange-600 focus:outline-none focus:underline dark:text-orange-600 dark:hover:text-orange-600">Home</a>
-            </li>
-            <li>
-                <a href="/about-us" id="aboutUsLink"
-                    class="nav-link text-orange-600 font-bold underline-offset-2 hover:text-orange-600 focus:outline-none focus:underline dark:text-orange-600 dark:hover:text-orange-600">About
-                    Us</a>
-            </li>
-            <li>
-                <a href="/contact" id="contactLink"
-                    class="nav-link text-orange-600 font-bold underline-offset-2 hover:text-orange-600 focus:outline-none focus:underline dark:text-orange-600 dark:hover:text-orange-600">Contact</a>
-            </li>
-            <script>
-                function updateLinkColors() {
-                    const aboutUsLink = document.getElementById('aboutUsLink');
-                    const contactLink = document.getElementById('contactLink');
-
-                    if (window.location.pathname === '/about-us') {
-                        aboutUsLink.classList.add('text-orange-600');
-                        contactLink.classList.remove('text-orange-600');
-                        contactLink.classList.add('text-black');
-                    } else if (window.location.pathname === '/contact') {
-                        contactLink.classList.add('text-orange-600');
-                        aboutUsLink.classList.remove('text-orange-600');
-                        aboutUsLink.classList.add('text-black');
-                    }
-                }
-
-                document.getElementById('aboutUsLink').addEventListener('click', function() {
-                    document.getElementById('aboutUsLink').classList.remove('text-black');
-                    document.getElementById('aboutUsLink').classList.add('text-orange-600');
-                    document.getElementById('contactLink').classList.remove('text-orange-600');
-                    document.getElementById('contactLink').classList.add('text-black');
-                });
-
-                document.getElementById('contactLink').addEventListener('click', function() {
-                    document.getElementById('contactLink').classList.remove('text-black');
-                    document.getElementById('contactLink').classList.add('text-orange-600');
-                    document.getElementById('aboutUsLink').classList.remove('text-orange-600');
-                    document.getElementById('aboutUsLink').classList.add('text-black');
-                });
-
-                // Function to retain color on page load based on URL
-                window.onload = updateLinkColors;
-            </script>
 
             <li x-data="{ userDropDownIsOpen: false, openWithKeyboard: false }" @keydown.esc.window="userDropDownIsOpen = false, openWithKeyboard = false"
                 class="relative flex items-center">
@@ -80,7 +35,7 @@
                             <img src="{{ asset('storage/' . auth()->user()->image_path) }}" alt="User Profile"
                                 class="size-10 rounded-full object-cover" />
                         @else
-                          @svg('zondicon-user-solid-circle', 'size-6 rounded-full object-cover')
+                            @svg('zondicon-user-solid-circle', 'size-6 rounded-full object-cover')
                         @endif
                     @endauth
                     @guest
@@ -152,19 +107,10 @@
                     </div>
                 </li>
             @endauth
-            <li class="p-2"><a href="/"
-                    class="w-full text-lg font-bold text-blue-700 focus:underline dark:text-blue-600"
-                    aria-current="page">Home</a></li>
-            <li class="p-2"><a href="/about-us"
-                    class="w-full text-lg font-medium text-slate-700 focus:underline dark:text-slate-300">About Us</a>
-            </li>
-            <li class="p-2"><a href="/contact"
-                    class="w-full text-lg font-medium text-slate-700 focus:underline dark:text-slate-300">Contact</a>
-            </li>
             <hr role="none" class="my-2 border-outline dark:border-slate-700">
             @guest
-                <li class="p-2"><a href="#"
-                        class="w-full text-slate-700 focus:underline dark:text-slate-300">User sign in</a></li>
+                <li class="p-2"><a href="#" class="w-full text-slate-700 focus:underline dark:text-slate-300">User
+                        sign in</a></li>
                 <li class="p-2"><a href="#"
                         class="w-full text-slate-700 focus:underline dark:text-slate-300">Seller sign in</a></li>
             @endguest

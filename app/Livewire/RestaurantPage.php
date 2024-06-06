@@ -15,6 +15,6 @@ class RestaurantPage extends Component
     public function render()
     {
         return view('livewire.restaurant-page')
-            ->layout('components.layouts.aboutus');
+            ->layout('components.layouts.restaurant');
     }
 }
