@@ -12,14 +12,17 @@ use Livewire\Attributes\Locked;
 use Livewire\Attributes\Title;
 use Illuminate\Validation\ValidationException;
 use Masmerise\Toaster\Toaster;
+use Livewire\Attributes\On;
 
 
 #[Layout('components.layouts.user-dashboard')]
 #[Title('User Profile')] 
 class UserDashboard extends Component
 {
+
+    #[On('user_updated')]
     public function render()
     {
-        return view('livewire.user-dashboard');
+        return view('livewire.user-dashboard', ['user' => auth()->user()]);
     }
 }
