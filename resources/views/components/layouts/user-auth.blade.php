@@ -12,8 +12,8 @@
     @vite('resources/js/app.js')
 </head>
 
-<body class="font-roboto-slab bg-[#f7ebd3]">
-    <header class='flex border-b py-4 px-4 sm:px-10 bg-white font-[sans-serif] min-h-[70px] tracking-wide relative z-50'>
+<body class="font-roboto-slab">
+    <header class='flex border-b py-4 px-4 sm:px-10 bg-[#eccc95] font-[sans-serif] min-h-[70px] tracking-wide relative z-50'>
         <div class='flex flex-wrap items-center  gap-5 w-full '>
         <a href="#" class="">
             @svg('gouchill', 'w-[150px] h-[auto]')

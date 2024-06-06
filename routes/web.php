@@ -2,22 +2,14 @@
 
 use App\Livewire\AboutUs;
 use App\Livewire\AdminDashboard;
-use App\Livewire\AlpineGoogleMap;
 use App\Livewire\Contact;
-use App\Livewire\DistrictShow;
-use App\Livewire\HomePage;
-use App\Livewire\ProvinceShow;
 use App\Livewire\RestaurantList;
 use App\Livewire\RestaurantPage;
 use App\Livewire\SellerDashboard;
 use App\Livewire\SellerDashboardOrders;
 use App\Livewire\SellerDashboardProducts;
 use App\Livewire\SellerProfile;
-use App\Livewire\TestHome;
-use App\Livewire\TimePicker;
 use App\Livewire\UserDashboard;
-use App\Livewire\WardShow;
-use App\Models\Province;
 use Illuminate\Support\Facades\Route;
 
 

@@ -13,6 +13,7 @@ use Livewire\Attributes\Title;
 use Illuminate\Support\Str;
 use Illuminate\Auth\Events\PasswordReset;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\ValidationException;
 use Masmerise\Toaster\Toaster;
@@ -82,8 +83,7 @@ class ResetPassword extends Component
 
         if (Password::PASSWORD_RESET) {
             $user = User::where('email', $this->email)->first();
-            /* session()->flash('success', __($status)); */
-            return redirect()->route('signin', ['user_type' => $user->role->name])->success(__($status));
+            return Redirect::route('signin', ['user_type' => $user->role->name])->success(__($status));
         } else {
             Toaster::error(__($status));
         }

@@ -1,5 +1,4 @@
 <div class="flex justify-center items-center h-[85.8vh] sm:h-[90vh] bg-[#f7ebd3]">
-    <livewire:toast></livewire:toast>
     <form wire:submit="resetPassword" class="max-h-[80%] w-[80%] md:w-[50%] lg:w-[50%] xl:w-[38.46%] bg-[#fadaa3] aspect-[1000/900] px-[4.5cqmin] py-[3cqmin] rounded-2xl flex flex-col justify-center gap-[2.5cqmin] ">
         <h1 class="text-center font-extrabold text-[4cqmin]">RESET PASSWORD</h1>
 
@@ -22,7 +21,7 @@
         </div>
         
         <div class="mt-[3cqmin]">
-            <input type="submit" value="Reset password" class="block w-full p-2 rounded-md border-2 text-[3cqmin] h-[7.5cqmin] font-bold bg-[#cd853f] outline-none border-none text-white hover:bg-blue-700">
+            <input type="submit" value="Reset password" class="block w-full p-2 rounded-md border-2 text-[3cqmin] h-[7.5cqmin] font-bold bg-[#cd853f] outline-none border-none text-white hover:bg-[#9e6a35] active:bg-[#9e6a35]">
         </div>
 
     </form>
