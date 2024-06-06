@@ -3,10 +3,12 @@
 namespace App\Livewire;
 
 use App\Models\User;
+use Livewire\Attributes\Title;
 use Livewire\Component;
 use Livewire\WithoutUrlPagination;
 use Livewire\WithPagination;
 
+#[Title('Home')]
 class RestaurantList extends Component
 {
     use WithPagination, WithoutUrlPagination;
