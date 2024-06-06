@@ -1,4 +1,4 @@
-<div class="flex justify-center items-center h-[85.8vh] sm:h-[90vh]">
+<div class="flex justify-center items-center h-[85.8vh] bg-[#f7ebd3] sm:h-[90vh]">
     <div class="w-[80%] md:w-[60%] lg:w-[70%] xl:w-[38.6%]  bg-[#fadaa3] p-[3.5cqmin] rounded-xl flex flex-col gap-[2cqmin] max-h-[90%]">
         <form wire:submit="send">
             <h1 class="text-center font-[1000] text-[5cqmin]">FORGOT PASSWORD</h1>
