@@ -8,7 +8,7 @@ use Livewire\Component;
 use Livewire\Attributes\Title;
 use Livewire\Attributes\On;
 
-#[Title('Seller Profile')]
+#[Title('Seller Dashboard - Profile')]
 class SellerProfile extends Component
 {
     #[On('profile_updated')]

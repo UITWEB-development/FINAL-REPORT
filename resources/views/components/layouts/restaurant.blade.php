@@ -21,8 +21,7 @@
             @svg('gouchill', 'h-10 w-36')
         </a>
         <!-- Desktop Menu -->
-        <ul class="hidden items-center gap-4 flex-shrink-0 sm:flex">
-
+        <ul class="hidden items-center gap-4 flex-shrink-0 sm:flex justify-center">
             <li x-data="{ userDropDownIsOpen: false, openWithKeyboard: false }" @keydown.esc.window="userDropDownIsOpen = false, openWithKeyboard = false"
                 class="relative flex items-center">
                 <button @click="userDropDownIsOpen = ! userDropDownIsOpen" :aria-expanded="userDropDownIsOpen"
@@ -41,7 +40,10 @@
                     @guest
                         <p>Sign in</p>
                     @endguest
+
                 </button>
+
+
                 <!-- User Dropdown -->
                 <ul x-cloak x-show="userDropDownIsOpen || openWithKeyboard" x-transition.opacity
                     x-trap="openWithKeyboard" @click.outside="userDropDownIsOpen = false, openWithKeyboard = false"
@@ -73,21 +75,30 @@
                     @endauth
                 </ul>
             </li>
+            <li class="relative flex items-center -top-2">
+                <livewire:cart-nav :$restaurant></livewire:cart-nav>
+            </li>
         </ul>
         <!-- Mobile Menu Button -->
-        <button @click="mobileMenuIsOpen = !mobileMenuIsOpen" :aria-expanded="mobileMenuIsOpen"
-            :class="mobileMenuIsOpen ? 'fixed top-6 right-6 z-20' : null" type="button"
-            class="flex text-slate-700 dark:text-slate-300 sm:hidden" aria-label="mobile menu"
-            aria-controls="mobileMenu">
-            <svg x-cloak x-show="!mobileMenuIsOpen" xmlns="http://www.w3.org/2000/svg" fill="none" aria-hidden="true"
-                viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-6">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-            </svg>
-            <svg x-cloak x-show="mobileMenuIsOpen" xmlns="http://www.w3.org/2000/svg" fill="none" aria-hidden="true"
-                viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-6">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-            </svg>
-        </button>
+        <div class="flex items-center justify-center sm:hidden gap-3">
+            <button @click="mobileMenuIsOpen = !mobileMenuIsOpen" :aria-expanded="mobileMenuIsOpen"
+                :class="mobileMenuIsOpen ? 'fixed top-6 right-6 z-20' : null" type="button"
+                class="flex text-slate-700 dark:text-slate-300 sm:hidden" aria-label="mobile menu"
+                aria-controls="mobileMenu">
+                <svg x-cloak x-show="!mobileMenuIsOpen" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    aria-hidden="true" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+                <svg x-cloak x-show="mobileMenuIsOpen" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    aria-hidden="true" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                </svg>
+            </button>
+            <div class="relative -top-2">
+                <livewire:cart-nav :$restaurant></livewire:cart-nav>
+            </div>
+        </div>
         <!-- Mobile Menu -->
         <ul x-cloak x-show="mobileMenuIsOpen"
             x-transition:enter="transition motion-reduce:transition-none ease-out duration-300"

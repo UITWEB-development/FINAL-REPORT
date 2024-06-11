@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\EnsureCartIsNotEmpty;
 use App\Http\Middleware\EnsureUserIsAuth;
 use App\Http\Middleware\EnsureUserIsGuest;
 use Illuminate\Foundation\Application;
@@ -15,7 +16,11 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware) {
         $middleware->alias([
             'guest' => EnsureUserIsGuest::class,
-            'auth' => EnsureUserIsAuth::class
+            'auth' => EnsureUserIsAuth::class,
+            'cart_not_empty' => EnsureCartIsNotEmpty::class
+        ]);
+        $middleware->validateCsrfTokens(except: [
+            'payment/payos'
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {

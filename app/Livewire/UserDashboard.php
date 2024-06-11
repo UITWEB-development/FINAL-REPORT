@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use App\Constants\AuthStatusConstants;
+use App\Constants\OrderStateConstants;
 use App\Traits\UserTypeMount;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
@@ -23,6 +24,8 @@ class UserDashboard extends Component
     #[On('user_updated')]
     public function render()
     {
-        return view('livewire.user-dashboard', ['user' => auth()->user()]);
+        $user = auth()->user();
+        $orders = $user->orders;
+        return view('livewire.user-dashboard', ['user' => $user, 'orders'=> $orders, 'styles' => OrderStateConstants::STYLES]);
     }
 }

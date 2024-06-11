@@ -35,10 +35,9 @@
                 <!-- Sidebar Header -->
                 <div class="flex h-20 w-full flex-none items-center justify-between px-8">
                     <!-- Brand -->
-                    <a href=""
+                    <a href="/"
                         class="inline-flex items-center gap-2 text-lg font-bold tracking-wide text-slate-800 transition hover:opacity-75 active:opacity-100">
                         @svg('gouchill', 'bi bi-window-sidebar inline-block h-36 w-36')
-                        
                     </a>
                     
                     <!-- END Brand -->
@@ -106,7 +105,7 @@
                     <!-- Middle Section -->
                     <div class="flex items-center gap-2">
                         <!-- Brand -->
-                        <a href=""
+                        <a href="/"
                             class="inline-flex items-center gap-2 text-lg font-bold tracking-wide text-slate-800 transition hover:opacity-75 active:opacity-100">
                             @svg('gouchill', 'bi bi-window-sidebar inline-block h-44 w-44')
                         </a>

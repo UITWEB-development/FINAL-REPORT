@@ -1,12 +1,17 @@
-<a
-    class="group aspect-h-10 aspect-w-16 relative overflow-hidden rounded-2xl bg-black/25 transition hover:ring-4 hover:ring-[#cd853f] active:opacity-75">
-    <img class="object-cover"
-        src="{{ asset('storage/'.$product->image_path) }}" />
-    <div class="cursor-pointer absolute inset-0 flex justify-between bg-gradient-to-b from-transparent to-black">
-        <div
-            class="space-y-1 transition group-hover:scale-105 text-white group-hover:text-yellow-600 group-active:scale-100 absolute bottom-3 left-3">
-            <h3 class="text-2xl font-semibold">{{ $product->name }}</h3>
-            <p class="text-sm font-semibold text-[#e1e0e2]">{{ number_format($product->price, 0, ',', '.') }} VND</p>
+<nav wire:click="$dispatch('openModal', { component: 'view-product-cart', arguments: { product : '{{$product->id}}' }})" class="grid gap-4 lg:gap-8 mt-4" >
+    <a class=" group aspect-h-10 aspect-w-16 relative overflow-hidden rounded-2xl bg-black/25 transition hover:ring-4 hover:ring-[#cd853f] active:opacity-75">
+        <img class="object-cover" src="{{ asset('storage/'.$product->image_path) }}"/>
+        <div class="cursor-pointer absolute inset-0 flex  justify-between bg-gradient-to-b from-transparent via-black/60 to-black">
+            <div class="flex items-end justify-between gap-2 px-4 py-5">
+                <div class="cursor-pointer flex h-10 w-10 items-center justify-center rounded-full bg-slate-500/25 text-slate-400 transition group-hover:scale-110 {{$product->is_available ? 'group-hover:bg-[#64c859]' : 'group-hover:bg-[#7e7d7d]'}} group-hover:text-white group-active:scale-100 absolute top-4 left-4">
+                    @svg($product->is_available ? 'instock' : 'outofstock', 'i-mini hi-play h-5 w-5')
+                </div>
+                <div class="space-y-1">
+                    <h3 class="text-lg font-semibold text-white ">{{ $product->name }}</h3>
+                    <p class="text-sm font-semibold text-[#e1e0e2]">{{ number_format($product->price, 0, ',', '.') }} VND
+                    </p>
+                </div>
+            </div>
         </div>
-    </div>
-</a>
+    </a>
+</nav>

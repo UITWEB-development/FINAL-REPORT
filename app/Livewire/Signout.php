@@ -2,7 +2,7 @@
 
 namespace App\Livewire;
 
-
+use Illuminate\Support\Facades\Redirect;
 use Livewire\Component;
 
 class Signout extends Component
@@ -19,6 +19,7 @@ class Signout extends Component
         session()->regenerateToken();
         
         return redirect()->route('signin', ['user_type' => $user_type]);
+        
     }
     public function render()
     {

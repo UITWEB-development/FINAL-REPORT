@@ -7,7 +7,7 @@ use Livewire\Component;
 use Livewire\Attributes\Title;
 
 
-#[Title('Seller Dashboard')]
+#[Title('Seller Dashboard - Products')]
 class SellerDashboardProducts extends Component
 {
     

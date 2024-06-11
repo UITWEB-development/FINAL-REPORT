@@ -2,7 +2,7 @@
     <div class="py-5 relative">
         <div class="w-full px-4 md:px-5 l mx-auto">
             <div class="rounded-3xl p-4 lg:p-3 mb-8 max-lg:w-full max-lg:mx-auto gap-y-4">
-                <img src="{{ asset('storage/' . $restaurant->image_path) }}" alt="speaker image" class="w-full h-[60%]">
+                {{-- <img src="{{ asset('storage/' . $restaurant->image_path) }}" alt="speaker image" class="w-full h-[60%]"> --}}
                 <h1 class="text-center mt-2 font-bold whitespace-nowrap text-[4cqmin]">
                     {{ $restaurant->restaurant_description->restaurant_name }}</h1>
                 <div class="flex flex-row justify-center">
@@ -45,7 +45,6 @@
             <livewire:search-product></livewire:search-product>
         </div>
     </div>
-
 
     <livewire:restaurant-product-list :$restaurant></livewire:restaurant-product-list>
 </div>

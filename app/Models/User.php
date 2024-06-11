@@ -68,6 +68,15 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasOne(RestaurantDescription::class);
     }
 
+    public function orders() : HasMany {
+        $foreignKey = $this->role->name;
+
+        if ($foreignKey == 'seller') {
+            $foreignKey = 'restaurant';
+        }
+        return $this->hasMany(Order::class, $foreignKey.'_id');
+    }
+
     public function sendPasswordResetNotification($token)
     {
         $this->notify(new CustomResetPasswordNotification($token));

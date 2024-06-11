@@ -17,7 +17,6 @@ class EnsureUserIsAuth
      */
     public function handle(Request $request, Closure $next, string $user_type): Response
     {
-
         if (!Auth::check()) {
             return redirect('/'.$user_type.'/sign-in');
         }

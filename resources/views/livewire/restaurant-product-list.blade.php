@@ -6,6 +6,6 @@
     
         
     </nav>
-    <div class="flex justify-center items-center pt-5 pb-10">{{ $products->links() }}</div>  
+    <div class="flex justify-center items-center pt-5 pb-10">{{ $products->links(data: ['scrollTo' => false]) }}</div>  
 </div>
 
