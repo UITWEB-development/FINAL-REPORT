@@ -145,9 +145,9 @@
             </li>
             <hr role="none" class="my-2 border-outline dark:border-slate-700">
             @guest
-                <li class="p-2"><a href="#"
+                <li class="p-2"><a href="/user/sign-in?redirect_url=/"
                         class="w-full text-slate-700 focus:underline dark:text-slate-300">User sign in</a></li>
-                <li class="p-2"><a href="#"
+                <li class="p-2"><a href="/seller/sign-in?redirect_url=/"
                         class="w-full text-slate-700 focus:underline dark:text-slate-300">Seller sign in</a></li>
             @endguest
 
