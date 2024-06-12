@@ -29,7 +29,8 @@
         "postare/blade-mdi": "^1.0",
         "propaganistas/laravel-phone": "^5.3",
         "saade/blade-iconsax": "^1.2",
-        "wire-elements/modal": "^2.0"
+        "wire-elements/modal": "^2.0",
+        "asantibanez/livewire-charts": "dev-l11-compatibility"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
@@ -88,5 +89,11 @@
         }
     },
     "minimum-stability": "stable",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/laravel-shift/livewire-charts.git"
+        }
+    ]
 }

@@ -8,6 +8,7 @@ use App\Models\OrderDetail;
 use App\Models\Product;
 use App\Models\RestaurantDescription;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -24,73 +25,75 @@ class RestaurantSeeder extends Seeder
             'password' => '12345678',
             'role_id' => 1,
             'image_path' => '351548804_6298762480162532_6875065696845119419_n.jpg',
+            'created_at' => Carbon::create(2022, 1, 1, 1, 1),
+            'updated_at' => Carbon::create(2022, 1, 1, 1, 1),
         ]);
         $restaurant2 = User::create([
-            'name' => "Cơm Niêu Sài Gòn",
+            'name' => 'Cơm Niêu Sài Gòn',
             'email' => 'comnieusaigon@gmail.com',
-            'password' =>'12345678',
+            'password' => '12345678',
             'role_id' => 1,
             'image_path' => '367027759_624153716523924_4191213647365491649_n.jpg',
         ]);
         $restaurant3 = User::create([
-            'name' => "The Refinery Saigon",
+            'name' => 'The Refinery Saigon',
             'email' => 'refinery@gmail.com',
-            'password' =>'12345678',
+            'password' => '12345678',
             'role_id' => 1,
             'image_path' => '329041673_673542817884242_2500629958121397007_n.jpg',
         ]);
         $restaurant4 = User::create([
-            'name' => "SushiWay",
+            'name' => 'SushiWay',
             'email' => 'sushiway@gmail.com',
-            'password' =>'12345678',
+            'password' => '12345678',
             'role_id' => 1,
             'image_path' => '445369245_998578048280198_5013509838463136817_n.jpg',
         ]);
         $restaurant5 = User::create([
-            'name' => "ĐẬU Homemade",
+            'name' => 'ĐẬU Homemade',
             'email' => 'dauhomemade@gmail.com',
-            'password' =>'12345678',
+            'password' => '12345678',
             'role_id' => 1,
             'image_path' => '353851970_580269180944198_4479610203829883785_n.png',
         ]);
         $restaurant6 = User::create([
-            'name' => "Lẩu Gà Ớt Hiểm 109 ",
+            'name' => 'Lẩu Gà Ớt Hiểm 109 ',
             'email' => 'laugaothiem109@gmail.com ',
-            'password' =>'12345678',
+            'password' => '12345678',
             'role_id' => 1,
             'image_path' => '375459581_608098211494384_8693940532940652935_n.jpg',
         ]);
         $restaurant7 = User::create([
-            'name' => "Trong Com Vietnamese Casual Food ",
+            'name' => 'Trong Com Vietnamese Casual Food ',
             'email' => 'trongcom@gmail.com ',
-            'password' =>'12345678',
+            'password' => '12345678',
             'role_id' => 1,
             'image_path' => '407708238_763212375823993_6658175459126077109_n.jpg',
         ]);
         $restaurant8 = User::create([
-            'name' => "Hàng Dương Quán",
+            'name' => 'Hàng Dương Quán',
             'email' => 'hangduong@gmail.com',
-            'password' =>'12345678',
+            'password' => '12345678',
             'role_id' => 1,
             'image_path' => '318949576_6064262903604816_4575805603178220557_n.jpg',
         ]);
         $restaurant9 = User::create([
             'name' => "Dan's Kitchen ",
             'email' => 'dankitchen@gmail.com',
-            'password' =>'12345678',
+            'password' => '12345678',
             'role_id' => 1,
             'image_path' => '285357932_104390625631037_2496711201965751305_n.jpg',
         ]);
         $restaurant10 = User::create([
-            'name' => "Nàng Tấm  ",
+            'name' => 'Nàng Tấm  ',
             'email' => 'nangtam@gmail.com',
-            'password' =>'12345678',
+            'password' => '12345678',
             'role_id' => 1,
             'image_path' => '444486135_299243943239012_3748511315571219063_n.jpg',
         ]);
 
         /* Products */
-        for ($i=0; $i <7 ; $i++) { 
+        for ($i = 0; $i < 7; $i++) {
             Product::create([
                 'price' => 295000,
                 'name' => 'Chicken fettuccine',
@@ -102,7 +105,7 @@ class RestaurantSeeder extends Seeder
             ]);
         }
 
-        for ($i=0; $i <7 ; $i++) { 
+        for ($i = 0; $i < 7; $i++) {
             Product::create([
                 'price' => 295000,
                 'name' => 'Chicken fettuccine',
@@ -114,7 +117,7 @@ class RestaurantSeeder extends Seeder
             ]);
         }
 
-        for ($i=0; $i <7 ; $i++) { 
+        for ($i = 0; $i < 7; $i++) {
             Product::create([
                 'price' => 295000,
                 'name' => 'Chicken fettuccine',
@@ -126,7 +129,7 @@ class RestaurantSeeder extends Seeder
             ]);
         }
 
-        for ($i=0; $i <7 ; $i++) { 
+        for ($i = 0; $i < 7; $i++) {
             Product::create([
                 'price' => 24000,
                 'name' => 'Mirinda Soda Kem',
@@ -138,7 +141,7 @@ class RestaurantSeeder extends Seeder
             ]);
         }
 
-        for ($i=0; $i <7 ; $i++) { 
+        for ($i = 0; $i < 7; $i++) {
             Product::create([
                 'price' => 24000,
                 'name' => 'Mirinda Soda Kem',
@@ -150,7 +153,7 @@ class RestaurantSeeder extends Seeder
             ]);
         }
 
-        for ($i=0; $i <7 ; $i++) { 
+        for ($i = 0; $i < 7; $i++) {
             Product::create([
                 'price' => 24000,
                 'name' => 'Mirinda Soda Kem',
@@ -162,7 +165,7 @@ class RestaurantSeeder extends Seeder
             ]);
         }
 
-        for ($i=0; $i <7 ; $i++) { 
+        for ($i = 0; $i < 7; $i++) {
             Product::create([
                 'price' => 24000,
                 'name' => 'Mirinda Soda Kem',
@@ -174,7 +177,7 @@ class RestaurantSeeder extends Seeder
             ]);
         }
 
-        for ($i=0; $i <7 ; $i++) { 
+        for ($i = 0; $i < 7; $i++) {
             Product::create([
                 'price' => 24000,
                 'name' => 'Mirinda Soda Kem',
@@ -186,7 +189,7 @@ class RestaurantSeeder extends Seeder
             ]);
         }
 
-        for ($i=0; $i <7 ; $i++) { 
+        for ($i = 0; $i < 7; $i++) {
             Product::create([
                 'price' => 24000,
                 'name' => 'Mirinda Soda Kem',
@@ -198,7 +201,7 @@ class RestaurantSeeder extends Seeder
             ]);
         }
 
-        for ($i=0; $i <7 ; $i++) { 
+        for ($i = 0; $i < 7; $i++) {
             Product::create([
                 'price' => 24000,
                 'name' => 'Mirinda Soda Kem',
@@ -224,7 +227,7 @@ class RestaurantSeeder extends Seeder
         ]);
 
         $restaurant2_description = RestaurantDescription::create([
-            'restaurant_name' => "Cơm Niêu Sài Gòn",
+            'restaurant_name' => 'Cơm Niêu Sài Gòn',
             'user_id' => $restaurant2->id,
             'address' => '27 Tú Xương, Phường Võ Thị Sáu, Quận 3, Ho Chi Minh City, Vietnam',
             'phone_number' => '0826336888',
@@ -233,7 +236,7 @@ class RestaurantSeeder extends Seeder
             'longitude' => '106.7036239',
             'latitude' => '10.7782445',
         ]);
-        
+
         $restaurant3_description = RestaurantDescription::create([
             'restaurant_name' => 'The Refinery Saigon',
             'user_id' => $restaurant3->id,
@@ -312,7 +315,7 @@ class RestaurantSeeder extends Seeder
         ]);
 
         $restaurant10_description = RestaurantDescription::create([
-            'restaurant_name' => "Nàng Tấm",
+            'restaurant_name' => 'Nàng Tấm',
             'user_id' => $restaurant10->id,
             'address' => '99 Đ. Nguyễn Huệ, Bến Nghé, Quận 1, Ho Chi Minh City, Vietnam',
             'phone_number' => '0938556666',
@@ -332,7 +335,6 @@ class RestaurantSeeder extends Seeder
             'category_id' => 0,
         ]);
 
-
         $restaurant1_product2 = Product::create([
             'price' => 295000,
             'name' => 'Chicken fettuccine 2',
@@ -348,8 +350,9 @@ class RestaurantSeeder extends Seeder
             'email' => 'user@example.com',
             'password' => '12345678',
             'role_id' => 2,
-        ]); 
+        ]);
 
+        /* Order1 */
         $restaurant1_order1 = Order::create([
             'user_id' => $user->id,
             'restaurant_id' => $restaurant1->id,
@@ -364,10 +367,9 @@ class RestaurantSeeder extends Seeder
             'order_id' => $restaurant1_order1->id,
             'ward_id' => 10984,
             'address' => 'KTX KHU A',
-            'phone_number' => '0939192021'
+            'phone_number' => '0939192021',
         ]);
 
-        
         OrderDetail::create([
             'order_id' => $restaurant1_order1->id,
             'product_id' => $restaurant1_product1->id,
@@ -380,6 +382,166 @@ class RestaurantSeeder extends Seeder
             'product_id' => $restaurant1_product2->id,
             'price' => $restaurant1_product2->price,
             'qty' => '1',
+        ]);
+
+        /* Order2 */
+        $restaurant1_order2 = Order::create([
+            'user_id' => $user->id,
+            'restaurant_id' => $restaurant1->id,
+            'order_date' => Carbon::create(2022, 1, 1, 1, 1),
+            'status' => 'Completed',
+            'payment_method' => 'cod',
+            'total' => $restaurant1_product1->price + $restaurant1_product2->price + 30000,
+            'code' => 2,
+            'created_at' => Carbon::create(2022, 1, 1, 1, 1),
+            'updated_at' => Carbon::create(2022, 1, 1, 1, 1),
+        ]);
+
+        $order2_address = OrderAddress::create([
+            'order_id' => $restaurant1_order2->id,
+            'ward_id' => 10984,
+            'address' => 'KTX KHU B',
+            'phone_number' => '0939192025',
+            'created_at' => Carbon::create(2022, 1, 1, 1, 1),
+            'updated_at' => Carbon::create(2022, 1, 1, 1, 1),
+        ]);
+
+        OrderDetail::create([
+            'order_id' => $restaurant1_order2->id,
+            'product_id' => $restaurant1_product1->id,
+            'price' => $restaurant1_product1->price,
+            'qty' => '1',
+            'created_at' => Carbon::create(2022, 1, 1, 1, 1),
+            'updated_at' => Carbon::create(2022, 1, 1, 1, 1),
+        ]);
+
+        OrderDetail::create([
+            'order_id' => $restaurant1_order2->id,
+            'product_id' => $restaurant1_product2->id,
+            'price' => $restaurant1_product2->price,
+            'qty' => '1',
+            'created_at' => Carbon::create(2022, 1, 1, 1, 1),
+            'updated_at' => Carbon::create(2022, 1, 1, 1, 1),
+        ]);
+
+        /* Order3 */
+        $restaurant1_order3 = Order::create([
+            'user_id' => $user->id,
+            'restaurant_id' => $restaurant1->id,
+            'order_date' => Carbon::create(2023, 3, 1, 1, 1),
+            'status' => 'Completed',
+            'payment_method' => 'cod',
+            'total' => $restaurant1_product1->price + $restaurant1_product2->price + 30000,
+            'code' => 3,
+            'created_at' => Carbon::create(2023, 3, 1, 1, 1),
+            'updated_at' => Carbon::create(2023, 3, 1, 1, 1),
+        ]);
+
+        OrderAddress::create([
+            'order_id' => $restaurant1_order3->id,
+            'ward_id' => 10984,
+            'address' => 'KTX KHU B',
+            'phone_number' => '0939192025',
+            'created_at' => Carbon::create(2023, 3, 1, 1, 1),
+            'updated_at' => Carbon::create(2023, 3, 1, 1, 1),
+        ]);
+
+        OrderDetail::create([
+            'order_id' => $restaurant1_order3->id,
+            'product_id' => $restaurant1_product1->id,
+            'price' => $restaurant1_product1->price,
+            'qty' => '1',
+            'created_at' => Carbon::create(2023, 3, 1, 1, 1),
+            'updated_at' => Carbon::create(2023, 3, 1, 1, 1),
+        ]);
+
+        OrderDetail::create([
+            'order_id' => $restaurant1_order3->id,
+            'product_id' => $restaurant1_product2->id,
+            'price' => $restaurant1_product2->price,
+            'qty' => '1',
+            'created_at' => Carbon::create(2023, 3, 1, 1, 1),
+            'updated_at' => Carbon::create(2023, 3, 1, 1, 1),
+        ]);
+
+        /* Order4 */
+        $restaurant1_order4 = Order::create([
+            'user_id' => $user->id,
+            'restaurant_id' => $restaurant1->id,
+            'order_date' => Carbon::create(2023, 7, 1, 1, 1),
+            'status' => 'Completed',
+            'payment_method' => 'cod',
+            'total' => $restaurant1_product1->price + $restaurant1_product2->price + 30000,
+            'code' => 4,
+            'created_at' => Carbon::create(2023, 7, 1, 1, 1),
+            'updated_at' => Carbon::create(2023, 7, 1, 1, 1),
+        ]);
+
+        OrderAddress::create([
+            'order_id' => $restaurant1_order4->id,
+            'ward_id' => 10984,
+            'address' => 'KTX KHU B',
+            'phone_number' => '0939192025',
+            'created_at' => Carbon::create(2023, 7, 1, 1, 1),
+            'updated_at' => Carbon::create(2023, 7, 1, 1, 1),
+        ]);
+
+        OrderDetail::create([
+            'order_id' => $restaurant1_order4->id,
+            'product_id' => $restaurant1_product1->id,
+            'price' => $restaurant1_product1->price,
+            'qty' => '1',
+            'created_at' => Carbon::create(2023, 7, 1, 1, 1),
+            'updated_at' => Carbon::create(2023, 7, 1, 1, 1),
+        ]);
+
+        OrderDetail::create([
+            'order_id' => $restaurant1_order4->id,
+            'product_id' => $restaurant1_product2->id,
+            'price' => $restaurant1_product2->price,
+            'qty' => '1',
+            'created_at' => Carbon::create(2023, 7, 1, 1, 1),
+            'updated_at' => Carbon::create(2023, 7, 1, 1, 1),
+        ]);
+
+        /* Order5 */
+        $restaurant1_order5 = Order::create([
+            'user_id' => $user->id,
+            'restaurant_id' => $restaurant1->id,
+            'order_date' => Carbon::create(2024, 3, 1, 1, 1),
+            'status' => 'Completed',
+            'payment_method' => 'cod',
+            'total' => $restaurant1_product1->price + $restaurant1_product2->price + 30000,
+            'code' => 5,
+            'created_at' => Carbon::create(2024, 3, 1, 1, 1),
+            'updated_at' => Carbon::create(2024, 3, 1, 1, 1),
+        ]);
+
+        OrderAddress::create([
+            'order_id' => $restaurant1_order5->id,
+            'ward_id' => 10984,
+            'address' => 'KTX KHU B',
+            'phone_number' => '0939192025',
+            'created_at' => Carbon::create(2024, 3, 1, 1, 1),
+            'updated_at' => Carbon::create(2024, 3, 1, 1, 1),
+        ]);
+
+        OrderDetail::create([
+            'order_id' => $restaurant1_order5->id,
+            'product_id' => $restaurant1_product1->id,
+            'price' => $restaurant1_product1->price,
+            'qty' => '1',
+            'created_at' => Carbon::create(2024, 3, 1, 1, 1),
+            'updated_at' => Carbon::create(2024, 3, 1, 1, 1),
+        ]);
+
+        OrderDetail::create([
+            'order_id' => $restaurant1_order5->id,
+            'product_id' => $restaurant1_product2->id,
+            'price' => $restaurant1_product2->price,
+            'qty' => '1',
+            'created_at' => Carbon::create(2024, 3, 1, 1, 1),
+            'updated_at' => Carbon::create(2024, 3, 1, 1, 1),
         ]);
     }
 }

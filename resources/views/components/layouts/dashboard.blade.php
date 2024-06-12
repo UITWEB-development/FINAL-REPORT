@@ -158,6 +158,7 @@
     </div>
     @livewire('wire-elements-modal')
     <x-toaster-hub />
+    @livewireChartsScripts
 </body>
 
 </html>
