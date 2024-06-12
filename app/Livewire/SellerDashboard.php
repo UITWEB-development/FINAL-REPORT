@@ -5,8 +5,6 @@ namespace App\Livewire;
 use Livewire\Component;
 use Livewire\Attributes\Title;
 use App\Constants\DashboardConstants;
-use App\Models\Order;
-use Asantibanez\LivewireCharts\Models\ColumnChartModel;
 use Asantibanez\LivewireCharts\Models\LineChartModel;
 use Illuminate\Support\Facades\DB;
 
@@ -21,6 +19,7 @@ class SellerDashboard extends Component
     public function mount()
     {
         $this->selectedYearRevenue = now()->year;
+        $this->selectedYearOrder = now()->year;
         $from = auth()->user()->created_at->year;
         $this->years = range($from, $this->selectedYearRevenue);
     }
