@@ -15,4 +15,9 @@ class RestaurantGoogleMap extends ModalComponent
     {
         return view('livewire.restaurant-google-map');
     }
+
+    public static function closeModalOnClickAway(): bool
+    {
+        return false;
+    }
 }
