@@ -88,9 +88,13 @@ class OrderStateConstants
             'div' => 'flex items-center justify-center shadow-md rounded-lg bg-red-200 shadow-red-300',
             'span' => 'py-1 px-3 rounded-full font-bold text-sm text-red-500',
         ],
+        'Failed' => [
+            'div' => 'flex items-center justify-center shadow-md rounded-lg bg-red-200 shadow-red-300',
+            'span' => 'py-1 px-3 rounded-full font-bold text-sm text-red-500',
+        ],
         'Delivery' => [
-            'div' => 'flex items-center justify-center shadow-md rounded-lg bg-yellow-200 shadow-yellow-400',
-            'span' => 'py-1 px-3 rounded-full font-bold text-sm text-yellow-600',
+            'div' => 'flex items-center justify-center shadow-md rounded-lg bg-orange-200 shadow-orange-400',
+            'span' => 'py-1 px-3 rounded-full font-bold text-sm text-orange-600',
         ],
         'Unpaid' => [
             'div' => 'flex items-center justify-center shadow-md rounded-lg bg-yellow-200 shadow-yellow-400',
@@ -107,7 +111,62 @@ class OrderStateConstants
 
 class OrderMessageConstants {
     const ORDER_STATUS_MESSAGE = [
+        'Unpaid' => 'Please complete your checkout!',
         'Pending' => 'Thank you for ordering, your order will be processed by the restaurant soon!',
         'Cancelled' => 'Your order has been cancelled. If it is a mistake please place an order again or contact the restaurant!',
+        'Delivery' => 'Your order is out for delivery!',
+        'Completed' => 'Your order is delivered and completed!',
+        'Failed' => 'Your order is mark as a failed order by the restaurant!'
+    ];
+}
+
+class OrderActionConstants {
+    const ORDER_ACTIONS = [
+        'Pending' => [
+            'Show' => 'show',
+            'Cancel' => 'cancel',
+            'Confirm' => 'confirm'
+        ],
+        'Unpaid' => [
+            'Show' => 'show',
+            'Cancel' => 'cancel',
+        ],
+        'Cancelled' => [
+            'Show' => 'show',
+        ],
+        'Delivery' => [
+            'Show' => 'show',
+            'Complete' => 'complete',
+            'Fail' => 'fail',
+        ],
+        'Completed' => [
+            'Show' => 'show',
+        ],
+        'Failed' => [
+            'Show' => 'show',
+        ]
+    ];
+
+    const USER_ORDER_ACTIONS = [
+        'Pending' => [
+            'Show' => 'show',
+            'Cancel' => 'cancel',
+        ],
+        'Unpaid' => [
+            'Show' => 'show',
+            'Cancel' => 'cancel',
+        ],
+        'Cancelled' => [
+            'Show' => 'show',
+        ],
+        'Delivery' => [
+            'Show' => 'show',
+        ],
+        'Completed' => [
+            'Show' => 'show',
+        ],
+        'Failed' => [
+            'Show' => 'show',
+        ]
     ];
 }

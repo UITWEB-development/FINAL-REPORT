@@ -28,11 +28,5 @@ class UserSeeder extends Seeder
             'role_id' => 1,
         ]);
 
-        User::factory()->create([
-            'name' => 'User',
-            'email' => 'user@example.com',
-            'password' => '12345678',
-            'role_id' => 2,
-        ]); 
     }
 }

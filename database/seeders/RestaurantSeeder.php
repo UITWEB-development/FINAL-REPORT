@@ -2,6 +2,9 @@
 
 namespace Database\Seeders;
 
+use App\Models\Order;
+use App\Models\OrderAddress;
+use App\Models\OrderDetail;
 use App\Models\Product;
 use App\Models\RestaurantDescription;
 use App\Models\User;
@@ -88,7 +91,7 @@ class RestaurantSeeder extends Seeder
 
         /* Products */
         for ($i=0; $i <7 ; $i++) { 
-            $restaurant1_product1 = Product::create([
+            Product::create([
                 'price' => 295000,
                 'name' => 'Chicken fettuccine',
                 'description' => 'Chicken chicken',
@@ -110,7 +113,6 @@ class RestaurantSeeder extends Seeder
                 'category_id' => 0,
             ]);
         }
-
 
         for ($i=0; $i <7 ; $i++) { 
             Product::create([
@@ -207,10 +209,6 @@ class RestaurantSeeder extends Seeder
                 'category_id' => 1,
             ]);
         }
-
-
-
-
 
         /* Descriptions */
 
@@ -322,6 +320,66 @@ class RestaurantSeeder extends Seeder
             'closing_time' => '21:30:00',
             'longitude' => '106.7031359',
             'latitude' => '10.7619617',
+        ]);
+
+        $restaurant1_product1 = Product::create([
+            'price' => 295000,
+            'name' => 'Chicken fettuccine 1',
+            'description' => 'Chicken chicken 2',
+            'image_path' => '0baf6ade-d782-405f-89f5-fdb77c03dd29.jpg',
+            'is_available' => true,
+            'user_id' => $restaurant1->id,
+            'category_id' => 0,
+        ]);
+
+
+        $restaurant1_product2 = Product::create([
+            'price' => 295000,
+            'name' => 'Chicken fettuccine 2',
+            'description' => 'Chicken chicken 2',
+            'image_path' => '0baf6ade-d782-405f-89f5-fdb77c03dd29.jpg',
+            'is_available' => true,
+            'user_id' => $restaurant1->id,
+            'category_id' => 0,
+        ]);
+
+        $user = User::factory()->create([
+            'name' => 'User',
+            'email' => 'user@example.com',
+            'password' => '12345678',
+            'role_id' => 2,
+        ]); 
+
+        $restaurant1_order1 = Order::create([
+            'user_id' => $user->id,
+            'restaurant_id' => $restaurant1->id,
+            'order_date' => now(),
+            'status' => 'Pending',
+            'payment_method' => 'cod',
+            'total' => $restaurant1_product1->price + $restaurant1_product2->price + 30000,
+            'code' => 1,
+        ]);
+
+        $order1_address = OrderAddress::create([
+            'order_id' => $restaurant1_order1->id,
+            'ward_id' => 10984,
+            'address' => 'KTX KHU A',
+            'phone_number' => '0939192021'
+        ]);
+
+        
+        OrderDetail::create([
+            'order_id' => $restaurant1_order1->id,
+            'product_id' => $restaurant1_product1->id,
+            'price' => $restaurant1_product1->price,
+            'qty' => '1',
+        ]);
+
+        OrderDetail::create([
+            'order_id' => $restaurant1_order1->id,
+            'product_id' => $restaurant1_product2->id,
+            'price' => $restaurant1_product2->price,
+            'qty' => '1',
         ]);
     }
 }

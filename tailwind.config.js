@@ -92,6 +92,9 @@ export default {
         "bg-green-200",
         "shadow-green-300",
         "text-green-600",
+        "bg-orange-200",
+        "shadow-orange-400",
+        "text-orange-600",
         {
             pattern: /max-w-(sm|md|lg|xl|2xl|3xl|4xl|5xl|6xl|7xl)/,
             variants: ["sm", "md", "lg", "xl", "2xl"],

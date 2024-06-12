@@ -168,13 +168,25 @@
                                                 </div>
                                             </td>
                                             {{-- Action --}}
-                                            <td class="py-3 px-4 justify-center text-center">
-                                                <div
-                                                    class="flex  item-center justify-center cursor-pointer w-full ml-2 transform  text-gray-500 hover:scale-110">
-                                                    {{-- Reject --}}
-                                                    @svg('zondicon-view-show', 'w-full h-5 hover:bg-gray-300 rounded-lg')
-                                                </div>
-                                            </td>
+                                            <td x-data="{ isOpen: false, openedWithKeyboard: false }" @keydown.esc.prevent="isOpen = false, openedWithKeyboard = false" class="relative flex items-center justify-center py-3">
+                                                <!-- Toggle Button -->
+                                                <button type="button" aria-label="context menu" @click="isOpen = ! isOpen" @keydown.space.prevent="openedWithKeyboard = true" @keydown.enter.prevent="openedWithKeyboard = true" @keydown.down.prevent="openedWithKeyboard = true" class="inline-flex cursor-pointer items-center bg-transparent transition hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-800 active:opacity-100 dark:focus-visible:outline-slate-300" :class="isOpen || openedWithKeyboard ? 'text-black dark:text-white' : 'text-slate-700 dark:text-slate-300'" :aria-expanded="isOpen || openedWithKeyboard" aria-haspopup="true">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"  class="w-8 h-8">
+                                                        <path fill-rule="evenodd" d="M4.5 12a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0zm6 0a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0zm6 0a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0z" clip-rule="evenodd"/>
+                                                    </svg>
+                                                </button>
+                                                <!-- Dropdown Menu -->
+                                                <div x-cloak x-show="isOpen || openedWithKeyboard" x-transition x-trap="openedWithKeyboard" @click.outside="isOpen = false, openedWithKeyboard = false" @keydown.down.prevent="$focus.wrap().next()" @keydown.up.prevent="$focus.wrap().previous()" class="absolute z-10 top-8 flex w-3/4 flex-col divide-y divide-slate-300 overflow-hidden rounded-xl border border-slate-300 bg-slate-100 dark:divide-slate-700 dark:border-slate-700 dark:bg-slate-800" role="menu">
+                                                    <!-- Dropdown Section -->
+                                                    <ul class="flex flex-col py-1.5" role="none"> 
+                                                        @foreach ($actions[$order->status] as $key => $value)
+                                                            <li @click="isOpen = false; {{'$wire.'.$value."('$order->id')"}} " class="flex font-bold cursor-pointer items-center gap-2 bg-slate-100 px-4 py-2 text-sm text-slate-700 hover:bg-slate-800/5 hover:text-black focus-visible:bg-slate-800/10 focus-visible:text-black focus-visible:outline-none dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-100/5 dark:hover:text-white dark:focus-visible:bg-slate-100/10 dark:focus-visible:text-white" role="menuitem" tabindex="0">
+                                                                {{$key}}
+                                                            </li>
+                                                        @endforeach
+                                                     </ul>
+                                                 </div>
+                                            </td> 
                                         </tr>
                                     @endforeach
                                 </tbody>
