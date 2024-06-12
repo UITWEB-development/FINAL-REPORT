@@ -26,17 +26,6 @@ class SellerDashboard extends Component
 
     public function render()
     {
-        $data = DB::table('orders')
-            ->selectRaw("MONTHNAME(created_at) as month, SUM(orders.total) as total")
-            ->groupByRaw("MONTHNAME(created_at)")
-            ->where(['restaurant_id' => auth()->user()->id, 'status' => 'Completed'])
-            ->whereYear('created_at', $this->selectedYear)
-            ->get()
-            ->map(fn ($row) => get_object_vars($row))
-            ->mapWithKeys(function($item) {
-                return [$item['month'] => $item['total']];
-            });
-        
         $months = [
             'January',
             'February',
@@ -52,7 +41,18 @@ class SellerDashboard extends Component
             'December',
         ];
 
-        $lineChartModel = 
+        $orderData = DB::table('orders')
+            ->selectRaw("MONTHNAME(created_at) as month, SUM(orders.total) as total")
+            ->groupByRaw("MONTHNAME(created_at)")
+            ->where(['restaurant_id' => auth()->user()->id, 'status' => 'Completed'])
+            ->whereYear('created_at', $this->selectedYear)
+            ->get()
+            ->map(fn ($row) => get_object_vars($row))
+            ->mapWithKeys(function($item) {
+                return [$item['month'] => $item['total']];
+            });
+
+        $orderLineChartModel = 
             (new LineChartModel())
             ->setTitle('Revenue')
             ->setAnimated(true)
@@ -60,10 +60,10 @@ class SellerDashboard extends Component
             ->setXAxisVisible(true);
 
         foreach ($months as $month) {
-            if (isset($data[$month])) {
-                $lineChartModel->addPoint($month, $data[$month]);
+            if (isset($orderData[$month])) {
+                $orderLineChartModel->addPoint($month, $orderData[$month]);
             } else {
-                $lineChartModel->addPoint($month, 0);
+                $orderLineChartModel->addPoint($month, 0);
             }
         }
 
@@ -78,9 +78,9 @@ class SellerDashboard extends Component
             $chartConfig['annotations.xaxis'] = [['x'=> $months[now()->month-1], 'borderColor' => '#D29A39', 'borderWidth' => 3, 'strokeDashArray' => 8, 'label' => ['text' => 'Current month', 'borderColor' => '#D8985B', 'orientation' => 'horizontal', 'style' => ['color' => 'white', 'background' => '#D29A39', 'font-weight' => 'bold', 'padding' => ['left' => 10, 'right' => 10, 'top' => 5, 'bottom' => 5]]]]];
         }
 
-        $lineChartModel->setJsonConfig($chartConfig);
+        $orderLineChartModel->setJsonConfig($chartConfig);
 
-        return view('livewire.seller-dashboard', ['lineChartModel' => $lineChartModel])
+        return view('livewire.seller-dashboard', ['orderLineChartModel' => $orderLineChartModel])
             ->layout('components.layouts.dashboard', DashboardConstants::SELLER_DASHBOARD_MENU);
     }
 }

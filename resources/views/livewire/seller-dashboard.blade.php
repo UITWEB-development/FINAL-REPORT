@@ -12,8 +12,8 @@
                 @endforeach
             </select>
             <livewire:livewire-line-chart
-                key="{{ $lineChartModel->reactiveKey() }}"
-                :line-chart-model="$lineChartModel"
+                key="{{ $orderLineChartModel->reactiveKey() }}"
+                :line-chart-model="$orderLineChartModel"
             />
         </div>
     </div>
