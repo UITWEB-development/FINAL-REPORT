@@ -121,8 +121,12 @@
             @auth
                 <li class="mb-4 border-none">
                     <div class="flex items-center gap-2 py-2">
+                        @if (auth()->user()->image_path)
                         <img src="{{ asset('storage/' . auth()->user()->image_path) }}" alt="User Profile"
                             class="size-12 rounded-full object-cover" />
+                    @else
+                        @svg('zondicon-user-solid-circle', 'size-6 rounded-full object-cover')
+                    @endif
                         <div>
                             <span class="font-medium text-black dark:text-white">{{ auth()->user()->name }}</span>
                             <p class="text-sm text-slate-700 dark:text-slate-300">{{ auth()->user()->email }}</p>
@@ -134,10 +138,10 @@
                     class="w-full text-lg font-bold text-orange-600 focus:underline dark:text-orange-600"
                     aria-current="page">Home</a></li>
             <li class="p-2"><a href="/about-us"
-                    class="w-full text-lg font-medium text-slate-700 focus:underline dark:text-slate-300">About Us</a>
+                    class="w-full text-lg font-bold text-slate-700 focus:underline dark:text-slate-300">About Us</a>
             </li>
             <li class="p-2"><a href="/contact"
-                    class="w-full text-lg font-medium text-slate-700 focus:underline dark:text-slate-300">Contact</a>
+                    class="w-full text-lg font-bold text-slate-700 focus:underline dark:text-slate-300">Contact</a>
             </li>
             <hr role="none" class="my-2 border-outline dark:border-slate-700">
             @guest
