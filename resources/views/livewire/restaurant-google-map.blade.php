@@ -1,7 +1,7 @@
 <div class="w-full h-[85.8vh]  px-7 py-7 overflow-y-auto">
     <div class="w-full flex flex-col">
         <div class="flex justify-between items-center pb-4 mb-4 rounded-t border-b sm:mb-5 dark:border-gray-600">
-            <h3 class="text-2xl font-semibold text-[#d38e4a] dark:text-white">
+            <h3 class="text-2xl font-semibold text-black dark:text-white">
                 Location & Contact Information
             </h3>
             <button tabindex="-1" wire:click="$dispatch('closeModal')"
