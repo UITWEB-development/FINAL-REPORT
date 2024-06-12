@@ -34,7 +34,7 @@
             </div>
         </form>
         <div class="flex justify-center my-[5cqmin]">
-            <button class="active:shadow-2xl block relative group" wire:click="googleSigin">
+            <button class="block relative group" wire:click="googleSigin">
                 <div class="group">
                     <svg class="h-[7cqmin] w-auto" width="175" height="41" viewBox="0 0 175 41" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path  d="M171 0.75H4C2.067 0.75 0.5 2.317 0.5 4.25V36.25C0.5 38.183 2.067 39.75 4 39.75H171C172.933 39.75 174.5 38.183 174.5 36.25V4.25C174.5 2.317 172.933 0.75 171 0.75Z" fill="white" stroke="#707070" />
