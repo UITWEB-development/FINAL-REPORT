@@ -25,7 +25,7 @@
                     </div>
                 </div>
 
-                <div class="md:absolute md:left-0 md:bottom-0 bg-gray-800 w-full p-4">
+                <div class="md:absolute md:left-0 md:bottom-0 bg-[#CD853F] w-full p-4">
                     <h4 class="flex flex-wrap gap-4 text-base text-white">Subtotal <span
                             class="ml-auto">{{ Cart::total(0, ',', '.') }} VND</span></h4>
                     <h4 class="flex flex-wrap gap-4 text-base text-white">Shipping <span
@@ -159,7 +159,7 @@
                             class="rounded-md px-4 py-3 w-full text-sm font-semibold bg-transparent hover:bg-gray-100 border-2 text-gray-800 max-md:order-1 text-center">Return
                             to cart</a>
                         <button type="submit"
-                            class="rounded-md px-4 py-3 w-full text-sm font-semibold bg-gray-800 text-white hover:bg-gray-900">Order</button>
+                            class="rounded-md px-4 py-3 w-full text-sm font-semibold bg-[#CD853F] text-white hover:bg-[#A65E18]">Order</button>
                     </div>
                 </div>
             </form>

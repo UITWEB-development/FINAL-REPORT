@@ -34,16 +34,16 @@
                         <div class="flex items-center justify-between pt-3">
                             <div class="flex items-center border-gray-100">
                                 <span @click="if(number > 1) number--"
-                                    class="cursor-pointer rounded-l bg-gray-100 py-1 px-3.5 duration-100 hover:bg-blue-500 hover:text-blue-50 select-none">
+                                    class="cursor-pointer rounded-l bg-gray-100 py-1 px-3.5 duration-100 hover:bg-[#CD853F] hover:text-blue-50 select-none">
                                     - </span>
-                                <input class="no-spinners h-8 w-10 border bg-white text-center text-xs outline-none"
+                                <input class="no-spinners h-8 w-10 border bg-white text-center text-xs focus:outline-none outline-none shadow-none"
                                     type="number" value="2" min="1" x-model="number" />
                                 <span @click="number++"
-                                    class="cursor-pointer rounded-r bg-gray-100 py-1 px-3 duration-100 hover:bg-blue-500 hover:text-blue-50 select-none">
+                                    class="cursor-pointer rounded-r bg-gray-100 py-1 px-3 duration-100 hover:bg-[#CD853F] hover:text-blue-50 select-none">
                                     + </span>
                             </div>
                             <button wire:loading.attr="disabled" wire:target="addToCart"
-                                class="ml-1 custom-margin text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                class="ml-1 custom-margin text-white bg-[#CD853F] hover:bg-[#A65E18] focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-[#925215]">
                                 Add to cart
                             </button>
                         </div>

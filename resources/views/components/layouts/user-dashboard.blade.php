@@ -16,9 +16,9 @@
 </head>
 
 <body class="font-roboto-slab">
-    <header class="bg-[#ECCC95] flex items-center justify-between md:h-20 lg:h-20 sm:h-20 px-4 md:px-4 lg:px-6 h-20">
+    <header class="bg-[#ECCC95] flex items-center justify-between px-4 h-[75px] md:px-4 lg:px-6">
         <a href="/" class="flex items-center">
-            @svg('gouchill', 'bi bi-window-sidebar inline-block h-auto w-[150px]')
+            @svg('gouchill', 'bi bi-window-sidebar inline-block h-10 w-36')
         </a>
         <div class="flex items-center">
             <livewire:user-sign-out></livewire:user-sign-out>

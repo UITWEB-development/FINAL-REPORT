@@ -15,9 +15,9 @@
 <body class="font-roboto-slab">
     {{-- HEADER HERE --}}
     <nav x-data="{ mobileMenuIsOpen: false }" @click.away="mobileMenuIsOpen = false"
-        class=" bg-[#eccc95] flex items-center justify-between gap-4 px-6 py-4" aria-label="penguin ui menu">
+        class=" bg-[#eccc95] flex items-center justify-between gap-4 px-6 py-4 h-[75px]" aria-label="penguin ui menu">
         <!-- Brand Logo -->
-        <a href="/" class="text-2xl font-bold text-black dark:text-white ">
+        <a href="/" class="text-2xl  font-bold text-black dark:text-white  ">
             @svg('gouchill', 'h-10 w-36')
         </a>
         <!-- Desktop Menu -->

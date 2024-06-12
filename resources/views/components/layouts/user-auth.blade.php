@@ -13,10 +13,10 @@
 </head>
 
 <body class="font-roboto-slab">
-    <header class='flex border-b py-4 px-4 sm:px-10 bg-[#eccc95] font-[sans-serif] min-h-[70px] tracking-wide relative z-50'>
+    <header class='flex border-b py-4 px-4 sm:px-10 bg-[#eccc95] font-[sans-serif] tracking-wide relative h-[75px] z-50'>
         <div class='flex flex-wrap items-center  gap-5 w-full '>
         <a href="/" class="">
-            @svg('gouchill', 'w-[150px] h-[auto]')
+            @svg('gouchill', 'w-36 h-10')
         </a>
         </div>
     </header>
