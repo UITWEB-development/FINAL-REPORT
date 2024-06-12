@@ -9,7 +9,7 @@ class HomeSignout extends Component
 
     public function signout() {
         $user = auth()->user();
-        $user_type = $user->role->name; 
+        
 
         $user->remember_token = null;
         $user->save();
@@ -18,7 +18,7 @@ class HomeSignout extends Component
         session()->invalidate();
         session()->regenerateToken();
         
-        return redirect()->route('signin', ['user_type' => $user_type]);
+        return redirect()->route('home');
     }
     
     public function render()

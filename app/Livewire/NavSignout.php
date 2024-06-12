@@ -8,7 +8,7 @@ class NavSignout extends Component
 {
     public function signout() {
         $user = auth()->user();
-        $user_type = $user->role->name; 
+        
 
         $user->remember_token = null;
         $user->save();
@@ -17,7 +17,7 @@ class NavSignout extends Component
         session()->invalidate();
         session()->regenerateToken();
         
-        return redirect()->route('signin', ['user_type' => $user_type]);
+        return redirect()->route('home');
     }
     
     public function render()
