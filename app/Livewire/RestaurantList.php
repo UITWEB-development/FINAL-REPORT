@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use App\Models\User;
+use Illuminate\Support\Facades\DB;
 use Livewire\Attributes\Title;
 use Livewire\Component;
 use Livewire\WithPagination;
@@ -16,16 +17,21 @@ class RestaurantList extends Component
 
     public $search = '';
 
-    #[On('search-updated')]
-    public function update_search($search) {
-        $this->search = $search;
+    public function update() {
         $this->resetPage();
+        $this->dispatch('restaurant_list_update')->self();
     }
 
-    #[On('restaurant_updated')]
+    #[On('restaurant_list_update')]
     public function render()
     {
-        $restaurants = User::has('restaurant_description');
+        
+        $this->search = strip_tags($this->search);
+
+        $restaurants = User::whereHas('restaurant_description', function ($query) {
+            $query->whereRaw('LOWER(`restaurant_name`) like ?', '%'.strtolower($this->search).'%');
+        });
+
 
         $restaurants = $restaurants->paginate(6);
 
