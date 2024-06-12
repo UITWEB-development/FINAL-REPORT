@@ -96,13 +96,7 @@ class RestaurantCheckoutPage extends Component
                     $status = 'Pending';
                 }
 
-                $latestOrder = Order::orderBy('order_date', 'DESC')->first();
-
-                if (!$latestOrder) {
-                    $orderCode = 1;
-                } else {
-                    $orderCode = $latestOrder->code + 1;
-                }
+                $orderCode = DB::table('orders')->max('code') + random_int(10, 100);
 
                 $order = Order::create([
                     'user_id' => auth()->user()->id,

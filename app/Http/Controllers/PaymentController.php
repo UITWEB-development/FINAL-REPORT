@@ -25,7 +25,6 @@ class PaymentController extends Controller
        $body = json_decode($request->getContent(), true);
 
        if ($body != null) {
-    
             $webhookData = $body;
             $payOS = new PayOS($this->payOSClientId, $this->payOSApiKey, $this->payOSChecksumKey);
             $response = $payOS->verifyPaymentWebhookData($webhookData);
@@ -54,8 +53,13 @@ class PaymentController extends Controller
 
             if ($response['status'] == 'CANCELLED') {
                 $order->status = 'Cancelled';
-                $order->save();
             }
+
+            if ($response['status'] == 'PAID') {
+                $order->status = 'Pending';
+            }
+
+            $order->save();
 
             
             return Redirect::route('restaurant.order', ['id' => $order->restaurant_id, 'order_id' => $order->id]);
