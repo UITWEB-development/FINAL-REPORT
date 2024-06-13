@@ -12,6 +12,7 @@
     @vite('resources/css/app.css')
     @vite('resources/js/app.js')
     <title>{{ $title ?? 'Page Title' }}</title>
+    <link rel="icon" href="{{ asset('assets/gouchill.svg') }}">
 </head>
 
 <body class="font-roboto-slab ">

@@ -13,4 +13,9 @@ class ShowOrderSeller extends ModalComponent
     {
         return view('livewire.show-order-seller');
     }
+
+    public static function closeModalOnClickAway(): bool
+    {
+        return false;
+    }
 }

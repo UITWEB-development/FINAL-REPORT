@@ -1,5 +1,5 @@
 <div>
-    <div class="w-full h-[85.8vh]  px-7 py-14 overflow-y-auto">
+    <div class="w-full h-[85.8vh] px-7 py-14 overflow-y-auto">
         <div class="w-full flex flex-col">
             <div class="flex justify-between items-center pb-4 mb-4 rounded-t border-b sm:mb-5 dark:border-gray-600">
                 <h3 class="text-3xl font-semibold text-gray-900 dark:text-white">
