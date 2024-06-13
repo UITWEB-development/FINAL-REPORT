@@ -25,7 +25,6 @@ Route::middleware('auth:admin')->group(function () {
     Route::get('/admin', AdminDashboard::class)->name('admin.dashboard');
     Route::get('/admin/restaurants', AdminDashboardRestaurants::class)->name('admin.restaurants');
     Route::get('/admin/customers', AdminDashboardCustomers::class)->name('admin.customers');
-    Route::get('/admin/reports', AdminDashboardReports::class)->name('admin.reports');
 });
 
 Route::middleware('auth:seller')->group(function() {

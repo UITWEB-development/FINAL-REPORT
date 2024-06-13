@@ -66,12 +66,6 @@ class DashboardConstants
                 'active_route' => 'admin.customers',
                 'icon' => 'customer',
             ],
-            [
-                'label' => 'Reports',
-                'route_name' => 'admin.reports',
-                'active_route' => 'admin.reports',
-                'icon' => 'fluentui-data-bar-vertical-16',
-            ],
         ],
         'submenu' => [],
     ];
@@ -168,5 +162,20 @@ class OrderActionConstants {
         'Failed' => [
             'Show' => 'show',
         ]
+    ];
+}
+
+
+class AdminRestaurantActionContants{
+    const ADMIN_ACTIONS = [
+        'Show' => 'show',
+        'Delete' => 'delete'
+    ];
+}
+
+class AdminCustomerActionContants{
+    const ADMIN_ACTIONS = [
+        'Show' => 'show',
+        'Delete' => 'delete'
     ];
 }
