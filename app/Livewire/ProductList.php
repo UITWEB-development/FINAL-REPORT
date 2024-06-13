@@ -2,8 +2,6 @@
 
 namespace App\Livewire;
 
-use App\Models\Product;
-use Illuminate\Support\Facades\DB;
 use Livewire\Attributes\On;
 use Livewire\Component;
 use Livewire\WithPagination;

@@ -27,10 +27,10 @@
     <hr>
     <div class="flex flex-col md:flex-row md:items-center md:justify-between mt-4">
         <div id="categories" class="flex items-center order-2 md:order-1">
-            <livewire:select-category></livewire:select-category>
+            <livewire:restaurant-select-category></livewire:restaurant-select-category>
         </div>
         <div class="order-1 md:order-2 md:mt-0 ml-4 mr-4">
-            <livewire:search-product></livewire:search-product>
+            <livewire:restaurant-search-product></livewire:restaurant-search-product>
         </div>
     </div>
 
