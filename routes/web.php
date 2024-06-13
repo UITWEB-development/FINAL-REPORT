@@ -47,7 +47,7 @@ Route::get('/contact', Contact::class)->name('contact');
 Route::post('/contact', [Contact::class, 'sendEmail']);
 
 Route::post('/payment/payos', [PaymentController::class, 'handlePayOSWebhook']);
-Route::get('/payment/handling', [PaymentController::class, 'handlePaymentRedirect']);
+Route::get('/payment/handling', [PaymentController::class, 'handlePaymentRedirect'])->middleware('auth:user');
 
 
 require __DIR__ . '/auth.php';
